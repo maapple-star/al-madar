@@ -1,0 +1,2046 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — Smart construction, lit up.</title>
+  <meta name="description" content="Al Madar MGM Construction L.L.C. — UAE construction house with BIM-native delivery, digital twins and live site telemetry across active projects." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       v9 — Smart Build / Dark Futurism
+       Carbon dark · electric cyan · violet accent.
+       BIM-native PropTech for smart-city / Vision 2030 partners.
+       ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      --carbon:    #0A0C10;
+      --carbon-2:  #0E1116;
+      --graphite:  #171B22;
+      --graphite-2:#222731;
+      --graphite-3:#2E343F;
+      --pearl:     #E6E8EE;
+      --pearl-2:   #B8BCC4;
+      --pearl-3:   #7C828D;
+      --pearl-4:   #4F5560;
+      --cyan:      #5BE9F0;
+      --cyan-d:    #2EBEC6;
+      --cyan-glow: rgba(91,233,240,.18);
+      --violet:    #8C7CFF;
+      --violet-d:  #6953E8;
+      --signal-red:#FF5C7A;
+      --signal-grn:#4ADE80;
+      --rule:      rgba(230,232,238,.08);
+      --rule-2:    rgba(230,232,238,.14);
+
+      --display: "Space Grotesk", -apple-system, sans-serif;
+      --sans:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+      --container: min(1480px, 92vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--pearl);
+      background: var(--carbon);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* global ambient gridlines */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(230,232,238,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,232,238,.018) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .micro {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+      font-weight: 500;
+    }
+
+    /* ════════════════════ TELEMETRY BAR ════════════════════ */
+    .telemetry-bar {
+      background: var(--graphite);
+      border-bottom: 1px solid var(--rule);
+      padding: 9px 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      position: relative;
+      z-index: 5;
+    }
+    .telemetry-inner {
+      display: flex; gap: 1.6rem; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .telemetry-inner > div { display: inline-flex; gap: .5rem; align-items: center; color: var(--pearl-2); }
+    .live-dot {
+      width: 8px; height: 8px; background: var(--cyan); border-radius: 999px;
+      box-shadow: 0 0 8px var(--cyan), 0 0 0 0 var(--cyan-glow);
+      animation: live 2.4s var(--ease) infinite;
+    }
+    @keyframes live {
+      0%   { box-shadow: 0 0 8px var(--cyan), 0 0 0 0 var(--cyan-glow); }
+      80%  { box-shadow: 0 0 8px var(--cyan), 0 0 0 10px transparent; }
+      100% { box-shadow: 0 0 8px var(--cyan), 0 0 0 0 transparent; }
+    }
+    .telemetry-inner b { color: var(--cyan); font-weight: 600; }
+    .telemetry-inner .ok { color: var(--signal-grn); }
+
+    /* ════════════════════ NAV ════════════════════ */
+    .nav {
+      background: rgba(10,12,16,.78);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border-bottom: 1px solid var(--rule);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .nav-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .brand { display: flex; align-items: center; gap: .8rem; }
+    .brand-mark {
+      width: 36px; height: 36px;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      display: grid; place-items: center;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 17px;
+      box-shadow: 0 0 12px var(--cyan-glow);
+      position: relative;
+    }
+    .brand-mark::before {
+      content: "";
+      position: absolute; inset: -3px;
+      border: 1px solid rgba(91,233,240,.25);
+    }
+    .brand-text {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--pearl);
+      letter-spacing: -.005em;
+      line-height: 1.1;
+    }
+    .brand-text small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+      margin-top: 2px;
+    }
+    .nav-links { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; justify-self: center; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--pearl-2);
+      transition: color .2s var(--ease);
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      display: inline-flex; gap: .5rem; align-items: center;
+      padding: 10px 18px;
+      background: var(--cyan);
+      color: var(--carbon);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1px solid var(--cyan);
+      transition: all .25s var(--ease);
+      box-shadow: 0 0 0 0 var(--cyan-glow);
+    }
+    .nav-cta:hover { box-shadow: 0 0 24px var(--cyan-glow); transform: translateY(-1px); }
+
+    /* ════════════════════ HERO ════════════════════ */
+    .hero {
+      position: relative;
+      padding: 5rem 0 0;
+      overflow: hidden;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -20%; right: -20%;
+      width: 70%; height: 100%;
+      background: radial-gradient(ellipse at center, var(--cyan-glow), transparent 60%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -10%; left: -20%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse at center, rgba(140,124,255,.13), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      padding-bottom: 5rem;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: 6px 14px;
+      background: rgba(91,233,240,.08);
+      border: 1px solid rgba(91,233,240,.34);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 24px rgba(91,233,240,.08) inset;
+    }
+    .hero-tag i { width: 6px; height: 6px; background: var(--cyan); border-radius: 999px; box-shadow: 0 0 8px var(--cyan); }
+    .hero-headline {
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 6.4vw, 5.8rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.025em;
+      margin: 0 0 2rem;
+      color: var(--pearl);
+    }
+    .hero-headline em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .hero-headline u {
+      text-decoration: none;
+      position: relative;
+    }
+    .hero-headline u::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 8px;
+      height: 8px;
+      background: var(--cyan);
+      opacity: .25;
+    }
+    .hero-lede {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--pearl-2);
+      max-width: 540px;
+      margin: 0 0 2.5rem;
+    }
+    .hero-lede em { color: var(--cyan); font-style: italic; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: 13px 22px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: all .25s var(--ease);
+    }
+    .btn-cyan {
+      background: var(--cyan);
+      color: var(--carbon);
+      box-shadow: 0 0 0 0 var(--cyan-glow);
+    }
+    .btn-cyan:hover { box-shadow: 0 0 32px var(--cyan-glow); transform: translateY(-1px); }
+    .btn-ghost {
+      background: rgba(230,232,238,.04);
+      border: 1px solid var(--rule-2);
+      color: var(--pearl);
+    }
+    .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(91,233,240,.06); }
+    .btn .arr { font-size: 12px; transition: transform .25s var(--ease); }
+    .btn:hover .arr { transform: translate(2px, -2px); }
+
+    /* hero panel — BIM / digital twin viewport */
+    .hero-twin {
+      position: relative;
+      aspect-ratio: 1.1 / 1;
+      max-height: 560px;
+      background: linear-gradient(180deg, var(--graphite-2), var(--carbon-2));
+      border: 1px solid var(--rule-2);
+      overflow: hidden;
+    }
+    .hero-twin::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,233,240,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,233,240,.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+    }
+    .hero-twin-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      opacity: .6;
+      filter: hue-rotate(180deg) saturate(1.4) brightness(1.1) contrast(1.1);
+    }
+    .hero-twin-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(91,233,240,.05) 0%, transparent 40%, rgba(140,124,255,.06) 100%);
+    }
+    .hero-twin-frame {
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(91,233,240,.4);
+      box-shadow: 0 0 30px rgba(91,233,240,.05) inset;
+      pointer-events: none;
+    }
+    .hero-twin-frame::before, .hero-twin-frame::after {
+      content: "";
+      position: absolute;
+      width: 24px; height: 24px;
+      border: 2px solid var(--cyan);
+    }
+    .hero-twin-frame::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .hero-twin-frame::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+    .twin-meta {
+      position: absolute;
+      top: 1.2rem; left: 1.2rem; right: 1.2rem;
+      display: flex; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      z-index: 2;
+    }
+    .twin-stat {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem; right: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(10,12,16,.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(91,233,240,.2);
+      z-index: 2;
+    }
+    .twin-stat > div {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .twin-stat b {
+      display: block;
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: -.01em;
+      margin-top: .35rem;
+    }
+
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+    /* ════════════════════ CHIP STRIP ════════════════════ */
+    .chip-strip {
+      background: var(--graphite);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.6rem 0;
+      position: relative;
+      z-index: 3;
+    }
+    .chip-strip-inner {
+      display: flex; gap: 2rem; align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .chip-strip .micro { color: var(--cyan); }
+    .chips { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex; gap: .5rem; align-items: center;
+      padding: 7px 14px;
+      background: rgba(230,232,238,.04);
+      border: 1px solid var(--rule-2);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--pearl-2);
+    }
+    .chip i {
+      width: 6px; height: 6px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 6px var(--cyan);
+    }
+    .chip.violet i { background: var(--violet); box-shadow: 0 0 6px var(--violet); }
+    .chip.green i { background: var(--signal-grn); box-shadow: 0 0 6px var(--signal-grn); }
+    .chip b { color: var(--pearl); font-weight: 600; }
+
+    /* ════════════════════ SECTION SCAFFOLD ════════════════════ */
+    .section { padding: 6rem 0; border-bottom: 1px solid var(--rule); position: relative; z-index: 2; }
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule-2);
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 500;
+    }
+    .section-num b { display: block; font-family: var(--display); font-size: 32px; font-weight: 500; color: var(--pearl); margin-top: .5rem; letter-spacing: -.012em; }
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+      font-weight: 500;
+      letter-spacing: -.022em;
+      line-height: 1.05;
+      color: var(--pearl);
+    }
+    .section-head h2 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .section-deck {
+      max-width: 60ch;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--pearl-2);
+      margin-top: 1rem;
+    }
+    @media (max-width: 800px) { .section-head { grid-template-columns: 1fr; gap: 1rem; } }
+
+    /* ════════════════════ ABOUT ════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-lead {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--pearl);
+      margin: 0 0 2rem;
+      letter-spacing: -.012em;
+    }
+    .about-lead em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-body { font-size: 15.5px; line-height: 1.75; color: var(--pearl-2); }
+    .about-body p { margin: 0 0 1.2rem; }
+    .about-body p em { color: var(--cyan); font-style: italic; }
+
+    .stack-card {
+      background: rgba(230,232,238,.03);
+      border: 1px solid var(--rule-2);
+      padding: 1.8rem;
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+    .stack-card::before {
+      content: "";
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent 70%);
+    }
+    .stack-card h4 {
+      margin: 0 0 1rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stack-card dl { margin: 0; }
+    .stack-card div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: .75rem 0;
+      border-bottom: 1px dashed var(--rule);
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .stack-card div:last-child { border-bottom: none; }
+    .stack-card dt {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      color: var(--pearl-3);
+    }
+    .stack-card dd {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--pearl);
+    }
+    .stack-card dd b { color: var(--cyan); font-weight: 500; }
+
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* ════════════════════ NUMBERS / TELEMETRY GRID ════════════════════ */
+    .numbers-section { background: var(--carbon-2); }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule-2);
+      border: 1px solid var(--rule-2);
+    }
+    @media (max-width: 800px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } }
+    .number-cell {
+      padding: 2rem 1.6rem;
+      background: var(--carbon);
+      position: relative;
+      transition: background .3s var(--ease);
+    }
+    .number-cell:hover { background: var(--graphite); }
+    .number-cell .lbl-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1rem;
+    }
+    .number-cell .lbl {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 500;
+    }
+    .number-cell .stream {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      color: var(--signal-grn);
+      display: inline-flex; gap: .4rem; align-items: center;
+    }
+    .number-cell .stream::before {
+      content: ""; width: 5px; height: 5px;
+      background: var(--signal-grn); border-radius: 999px;
+      box-shadow: 0 0 4px var(--signal-grn);
+      animation: live 2s var(--ease) infinite;
+    }
+    .number-cell .figure {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.024em;
+      color: var(--pearl);
+    }
+    .number-cell .figure .suffix {
+      font-size: .55em;
+      color: var(--cyan);
+      margin-left: .15em;
+      font-weight: 400;
+    }
+    .number-cell .name {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--pearl-3);
+      margin-top: .8rem;
+    }
+
+    /* ════════════════════ FULL BLEED ════════════════════ */
+    .full-bleed {
+      position: relative;
+      min-height: 80vh;
+      overflow: hidden;
+      background: var(--carbon);
+    }
+    .full-bleed img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.55) contrast(1.15) hue-rotate(180deg) saturate(1.3);
+      mix-blend-mode: screen;
+    }
+    .full-bleed::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,12,16,.7) 0%, rgba(10,12,16,.95) 100%),
+        radial-gradient(ellipse at 70% 30%, rgba(91,233,240,.15), transparent 70%);
+    }
+    .full-bleed-content {
+      position: relative; z-index: 2;
+      width: var(--container);
+      margin: 0 auto;
+      padding: 4.5rem 0 4rem;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--pearl);
+    }
+    .fb-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .fb-top span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .fb-top span b { color: var(--cyan); font-weight: 600; }
+    .full-bleed h3 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4.8vw, 4rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.022em;
+      margin: 0 0 1.5rem;
+      max-width: 18ch;
+      color: var(--pearl);
+    }
+    .full-bleed h3 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .fb-meta {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 760px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .fb-meta li { padding-left: 1rem; border-left: 1px solid var(--cyan); }
+    .fb-meta strong {
+      display: block;
+      color: var(--pearl);
+      font-family: var(--display);
+      font-size: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: .35rem;
+      font-weight: 500;
+    }
+
+    /* ════════════════════ SERVICES — grid of glass cards ════════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+    .service-card {
+      background: rgba(230,232,238,.025);
+      border: 1px solid var(--rule-2);
+      padding: 1.8rem 1.6rem;
+      position: relative;
+      backdrop-filter: blur(8px);
+      transition: all .3s var(--ease);
+      overflow: hidden;
+      display: block;
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent 60%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+    .service-card:hover { border-color: rgba(91,233,240,.45); background: rgba(91,233,240,.04); transform: translateY(-3px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .service-card .num .stack-tag {
+      padding: 3px 8px;
+      background: rgba(140,124,255,.12);
+      color: var(--violet);
+      border: 1px solid rgba(140,124,255,.34);
+      font-size: 9.5px;
+    }
+    .service-card h3 {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2vw, 1.75rem);
+      font-weight: 500;
+      letter-spacing: -.012em;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--pearl);
+    }
+    .service-card h3 em { color: var(--cyan); font-style: normal; }
+    .service-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--pearl-2);
+      margin: 0 0 1.5rem;
+    }
+    .service-card .arr {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .service-card .arr::after { content: " →"; }
+
+    /* ════════════════════ PORTFOLIO / DIGITAL TWINS ════════════════════ */
+    .case-list { display: grid; gap: 5rem; }
+    .case {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .case.flip { grid-template-columns: 1fr 1.2fr; }
+    .case.flip .case-img { order: 2; }
+    .case-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--graphite-2);
+      border: 1px solid var(--rule-2);
+    }
+    .case-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(.7) contrast(1.1) hue-rotate(170deg) saturate(1.2);
+      transition: transform .8s var(--ease);
+      mix-blend-mode: screen;
+      opacity: .85;
+    }
+    .case:hover .case-img img { transform: scale(1.04); }
+    .case-img::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(91,233,240,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91,233,240,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .case-img::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(91,233,240,.34);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .case-tag {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: rgba(10,12,16,.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(91,233,240,.4);
+      padding: 6px 12px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      z-index: 2;
+    }
+    .twin-overlay {
+      position: absolute;
+      bottom: 1rem; left: 1rem; right: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(10,12,16,.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(91,233,240,.2);
+      z-index: 2;
+    }
+    .twin-overlay > div {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .twin-overlay b {
+      display: block;
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--cyan);
+      margin-top: .25rem;
+    }
+    .case-meta { padding: 1rem 0; }
+    .case-meta .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .case-meta h3 {
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -.018em;
+      margin: 0 0 1.2rem;
+      color: var(--pearl);
+    }
+    .case-meta h3 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .case-meta .body {
+      font-size: 15px;
+      color: var(--pearl-2);
+      line-height: 1.7;
+      margin: 0 0 1.6rem;
+    }
+    .case-meta .body em { color: var(--cyan); font-style: italic; }
+    .case-meta .specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-2);
+      border-bottom: 1px solid var(--rule-2);
+      margin-bottom: 1.5rem;
+    }
+    .case-meta .specs > div {
+      padding: .9rem 1rem .9rem 0;
+      border-right: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .case-meta .specs > div:nth-child(2n) { border-right: none; padding-left: 1rem; padding-right: 0; }
+    .case-meta .specs > div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .case-meta .specs strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--pearl);
+      font-weight: 500;
+      margin-top: .35rem;
+    }
+    .case-link {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+      border-bottom: 1px solid var(--cyan);
+      padding-bottom: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .case, .case.flip { grid-template-columns: 1fr; gap: 2rem; }
+      .case.flip .case-img { order: 0; }
+    }
+
+    /* ════════════════════ SECTORS ════════════════════ */
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule-2);
+      border: 1px solid var(--rule-2);
+    }
+    @media (max-width: 800px) { .sectors-grid { grid-template-columns: 1fr; } }
+    .sector-card {
+      background: var(--carbon);
+      padding: 2rem 1.8rem;
+      transition: all .3s var(--ease);
+      position: relative;
+      overflow: hidden;
+      display: block;
+    }
+    .sector-card::after {
+      content: "";
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+    .sector-card:hover { background: var(--graphite); }
+    .sector-card:hover::after { transform: scaleX(1); }
+    .sector-card .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .sector-card h3 {
+      font-family: var(--display);
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      font-weight: 500;
+      letter-spacing: -.012em;
+      line-height: 1.15;
+      margin: 0 0 .8rem;
+      color: var(--pearl);
+    }
+    .sector-card h3 em { color: var(--violet); font-style: normal; }
+    .sector-card .clients {
+      font-size: 13px;
+      color: var(--pearl-3);
+      line-height: 1.55;
+      margin-bottom: 1.4rem;
+    }
+    .sector-card .footer-row {
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .sector-card .footer-row b { color: var(--cyan); font-weight: 600; }
+
+    /* ════════════════════ PILLARS ════════════════════ */
+    .pillars-section { background: var(--carbon-2); }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule-2);
+      border: 1px solid var(--rule-2);
+    }
+    .pillar {
+      padding: 2.6rem 2.2rem;
+      background: var(--carbon);
+      transition: background .25s var(--ease);
+      position: relative;
+    }
+    .pillar:hover { background: var(--graphite); }
+    .pillar .num {
+      font-family: var(--display);
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: -.024em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      display: block;
+      opacity: .9;
+    }
+    .pillar h3 {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+      font-weight: 500;
+      letter-spacing: -.012em;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--pearl);
+    }
+    .pillar h3 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pillar p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--pearl-2);
+      margin: 0 0 1.5rem;
+    }
+    .pillar p em { color: var(--cyan); font-style: italic; }
+    .pillar .stat {
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+    .pillar .stat strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: .35rem;
+    }
+    @media (max-width: 800px) { .pillars-grid { grid-template-columns: 1fr; } }
+
+    /* ════════════════════ CREDENTIALS ════════════════════ */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+    }
+    @media (max-width: 900px) { .credentials-grid { grid-template-columns: 1fr; } }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule-2);
+      border: 1px solid var(--rule-2);
+    }
+    .client-cell {
+      padding: 1.4rem 1rem;
+      background: var(--carbon);
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -.005em;
+      color: var(--pearl);
+      transition: background .2s var(--ease);
+    }
+    .client-cell em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .client-cell:hover { background: var(--graphite); }
+
+    .certs-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--cyan); }
+    .cert-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule-2);
+      align-items: center;
+    }
+    .cert-line .cn {
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--pearl);
+    }
+    .cert-line .cn em {
+      font-style: normal;
+      color: var(--cyan);
+    }
+    .cert-line .cn small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+      margin-top: .35rem;
+      font-weight: 500;
+    }
+    .cert-line .v {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 5px 11px;
+      border: 1px solid var(--cyan);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    /* ════════════════════ JOURNAL ════════════════════ */
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) { .journal-grid { grid-template-columns: 1fr; } }
+    .article {
+      display: block;
+      transition: transform .3s var(--ease);
+      background: rgba(230,232,238,.02);
+      border: 1px solid var(--rule-2);
+      overflow: hidden;
+    }
+    .article:hover { transform: translateY(-4px); border-color: rgba(91,233,240,.3); }
+    .article-img {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--graphite);
+      position: relative;
+    }
+    .article-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(.7) contrast(1.1) hue-rotate(170deg) saturate(1.2);
+      mix-blend-mode: screen;
+      opacity: .85;
+      transition: transform .6s var(--ease);
+    }
+    .article:hover .article-img img { transform: scale(1.04); }
+    .article-meta {
+      padding: 1rem 1.4rem .6rem;
+      display: flex; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+      border-bottom: 1px solid var(--rule);
+    }
+    .article-meta b { color: var(--cyan); font-weight: 600; }
+    .article-body { padding: 1rem 1.4rem 1.4rem; }
+    .article h3 {
+      font-family: var(--display);
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.005em;
+      margin: 0 0 .8rem;
+      color: var(--pearl);
+    }
+    .article h3 em { color: var(--cyan); font-style: normal; }
+    .article p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--pearl-2);
+      margin: 0 0 1rem;
+    }
+    .article .read {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* ════════════════════ CTA ════════════════════ */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 0;
+      background: var(--carbon-2);
+    }
+    .cta-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(91,233,240,.15), transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(140,124,255,.12), transparent 50%);
+    }
+    .cta-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr; } }
+    .cta-section .section-num { color: var(--cyan); }
+    .cta-section h2 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.024em;
+      margin: 1.5rem 0 1.5rem;
+      color: var(--pearl);
+    }
+    .cta-section h2 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    .cta-section .lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--pearl-2);
+      max-width: 540px;
+      margin: 0 0 2.4rem;
+    }
+    .cta-section .lede em { color: var(--cyan); font-style: italic; }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .cta-side {
+      background: rgba(230,232,238,.03);
+      border: 1px solid var(--rule-2);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .cta-side h4 {
+      margin: 0 0 1.2rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .cta-side ul { list-style: none; margin: 0; padding: 0; }
+    .cta-side li {
+      padding: .8rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+      display: flex; justify-content: space-between;
+    }
+    .cta-side li:last-child { border-bottom: none; }
+    .cta-side li b {
+      font-family: var(--display);
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--pearl);
+      font-weight: 500;
+    }
+
+    /* ════════════════════ FOOTER ════════════════════ */
+    .footer { background: var(--graphite); color: var(--pearl); padding: 4rem 0 2rem; border-top: 1px solid var(--rule-2); }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    .footer-brand .name {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--pearl);
+    }
+    .footer-brand .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: .4rem 0 1rem;
+    }
+    .footer-brand .blurb {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--pearl-3);
+      max-width: 32ch;
+      margin: 0;
+    }
+    .footer-brand .blurb em { color: var(--cyan); font-style: italic; }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: 0 0 1.2rem;
+      font-weight: 600;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { margin-bottom: .6rem; }
+    .footer-col a {
+      font-size: 13px;
+      color: var(--pearl-2);
+      transition: color .2s var(--ease);
+    }
+    .footer-col a:hover { color: var(--cyan); }
+    .footer-col .addr {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--pearl-2);
+    }
+    .footer-foot {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-foot, .footer-foot a {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--pearl-3);
+    }
+
+    /* ════════════════════ REVEAL ════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+      transition-delay: var(--d, 0ms);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ TELEMETRY BAR ═══ -->
+  <div class="telemetry-bar">
+    <div class="container telemetry-inner">
+      <div><span class="live-dot"></span> Site telemetry · live</div>
+      <div>23 active sites · <b>online</b></div>
+      <div>412 sensors · <span class="ok">99.4% uptime</span></div>
+      <div>Latency · <b>32 ms</b></div>
+      <div>Last sync · <b>09.05.2026 14:22 UTC</b></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">
+          Al Madar MGM
+          <small>Construction · 1979</small>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Tech stack</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#portfolio">Twins</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#journal">Journal</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Request demo</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══ -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="hero-tag"><i></i> BIM-native · Vision 2030 partner</span>
+        <h1 class="hero-headline">
+          Smart construction,<br/>
+          <em>lit up.</em>
+        </h1>
+        <p class="hero-lede">
+          A privately held UAE construction house — forty-seven years of receipts, now with <em>BIM-native delivery</em>, digital twins and live site telemetry across active projects.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-cyan" href="#capabilities">Tour the platform <span class="arr">↗</span></a>
+          <a class="btn btn-ghost" href="#contact">Request demo <span class="arr">↗</span></a>
+        </div>
+      </div>
+
+      <!-- Digital twin viewport -->
+      <aside class="hero-twin reveal" style="--d:120ms" aria-label="Digital twin viewport">
+        <img class="hero-twin-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=85&auto=format&fit=crop" alt="" loading="eager" decoding="async" />
+        <div class="hero-twin-overlay"></div>
+        <div class="hero-twin-frame"></div>
+
+        <div class="twin-meta">
+          <span>// Twin № 1.247 · Saadiyat</span>
+          <span>BIM 360 · sync ok</span>
+        </div>
+
+        <div class="twin-stat">
+          <div>Progress<b>61%</b></div>
+          <div>Sensors<b>148</b></div>
+          <div>Issues<b>2</b></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CHIP STRIP ═══ -->
+  <div class="chip-strip">
+    <div class="container chip-strip-inner">
+      <span class="micro">— Stack &amp; certifications</span>
+      <div class="chips">
+        <span class="chip"><i></i> BIM <b>L3 ready</b></span>
+        <span class="chip violet"><i></i> Autodesk <b>Construction Cloud</b></span>
+        <span class="chip violet"><i></i> Procore <b>tier-1 partner</b></span>
+        <span class="chip green"><i></i> Bentley <b>iTwin</b></span>
+        <span class="chip"><i></i> ISO <b>19650-2</b></span>
+        <span class="chip green"><i></i> SOC 2 <b>Type II</b></span>
+        <span class="chip"><i></i> Estidama <b>Pearl 3</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ ABOUT ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 01 / About<b>// origins</b></div>
+        <div>
+          <h2>Forty-seven years of receipts.<br/><em>Now plugged in.</em></h2>
+          <p class="section-deck">A construction house combining the engineering discipline of a contractor with the craftsmanship of a finishes atelier — delivered through a digital-first project stack.</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="about-lead">
+            A privately held UAE construction house. Forty-seven years building this country —
+            <em>from structure to surface, plus telemetry.</em>
+          </p>
+          <div class="about-body">
+            <p>Al Madar MGM was established in 1979, predating modern Dubai's construction boom by a decade. We deliver across nine in-house disciplines — civil construction, fit-out, maintenance, specialist finishes, decorative arts, architectural concrete, decorative flooring, metal coatings and theming.</p>
+            <p>Today, every active site is wired. <em>BIM 360 for federated models</em>, Procore for project ops, Bentley iTwin for digital twins, and a custom site-IoT layer that streams progress, environment and quality telemetry to a single dashboard the client can log into at any time.</p>
+            <p>Most peers either deliver craftsmanship or run modern tooling. We do both — without compromise on either. Our oldest active maintenance contract dates to 1991; our newest active digital twin is six weeks old.</p>
+          </div>
+        </div>
+
+        <aside class="stack-card reveal" id="stack" style="--d:140ms">
+          <h4>// Stack · 2026</h4>
+          <dl>
+            <div><dt>Federated BIM</dt><dd>Autodesk <b>BIM 360</b></dd></div>
+            <div><dt>Project ops</dt><dd>Procore <b>tier-1</b></dd></div>
+            <div><dt>Digital twins</dt><dd>Bentley <b>iTwin</b></dd></div>
+            <div><dt>Site IoT</dt><dd>412 <b>sensors live</b></dd></div>
+            <div><dt>Information mgmt</dt><dd>ISO <b>19650-2</b></dd></div>
+            <div><dt>Data security</dt><dd>SOC 2 <b>Type II</b></dd></div>
+            <div><dt>Active sites</dt><dd>14 <b>online</b></dd></div>
+            <div><dt>Twins published</dt><dd>27 <b>year-to-date</b></dd></div>
+            <div><dt>Mean clash count</dt><dd>−68% <b>vs baseline</b></dd></div>
+          </dl>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NUMBERS / TELEMETRY ═══ -->
+  <section class="section numbers-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 02 / Telemetry<b>// live</b></div>
+        <div>
+          <h2>The numbers behind the <em>build.</em></h2>
+          <p class="section-deck">Sample of operational telemetry, refreshed at the top of every hour. Full dashboard access available under NDA to active clients.</p>
+        </div>
+      </div>
+
+      <div class="numbers-grid">
+        <div class="number-cell reveal">
+          <div class="lbl-row">
+            <span class="lbl">// Years building</span>
+            <span class="stream">streaming</span>
+          </div>
+          <div class="figure">47</div>
+          <p class="name">Established 1979 — predating modern Dubai's construction boom by a decade.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:80ms">
+          <div class="lbl-row">
+            <span class="lbl">// Projects delivered</span>
+            <span class="stream">streaming</span>
+          </div>
+          <div class="figure">1,247<span class="suffix">+</span></div>
+          <p class="name">From boutique hotels to palaces — civil, fit-out, decorative.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:160ms">
+          <div class="lbl-row">
+            <span class="lbl">// Sensors online</span>
+            <span class="stream">streaming</span>
+          </div>
+          <div class="figure">412<span class="suffix">/418</span></div>
+          <p class="name">Across 14 active sites · 99.4% uptime over trailing 30 days.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:240ms">
+          <div class="lbl-row">
+            <span class="lbl">// Clash reduction</span>
+            <span class="stream">streaming</span>
+          </div>
+          <div class="figure">−68<span class="suffix">%</span></div>
+          <p class="name">Mean MEP clash count vs. pre-BIM baseline (2018 — 2025).</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FULL BLEED ═══ -->
+  <section class="full-bleed">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=85&auto=format&fit=crop" alt="Saadiyat Cultural District — digital twin" loading="lazy" decoding="async" />
+    <div class="full-bleed-content">
+      <div class="fb-top">
+        <span>// Twin № <b>1.247</b> · live</span>
+        <span>Bentley iTwin · <b>federated</b> · 14 disciplines</span>
+      </div>
+      <div>
+        <h3>Saadiyat Cultural District —<br/><em>federated digital twin.</em></h3>
+        <ul class="fb-meta">
+          <li>BIM model<strong>3.4 GB · 14 disciplines</strong></li>
+          <li>Live sensors<strong>148 · 99.6% uptime</strong></li>
+          <li>Open issues<strong>2 · resolved within SLA</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CAPABILITIES ═══ -->
+  <section class="section" id="capabilities">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 03 / Capabilities<b>// nine disciplines</b></div>
+        <div>
+          <h2>Nine disciplines.<br/>One <em>delivery platform.</em></h2>
+          <p class="section-deck">Civil to gilt, all in-house, all wired. Each capability streams progress, quality and HSE telemetry to your dashboard.</p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <a href="#" class="service-card reveal">
+          <div class="num">— 01<span class="stack-tag">BIM L3</span></div>
+          <h3>Civil <em>construction</em></h3>
+          <p>Low and mid-rise structures, refurbishments, additions. RCC frames, ground works, MEP, completion — federated across 14 disciplines.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:60ms">
+          <div class="num">— 02<span class="stack-tag">Procore</span></div>
+          <h3>Fit-<em>out</em></h3>
+          <p>Commercial, hospitality, retail, residential. End-to-end interior delivery with daily progress capture.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:120ms">
+          <div class="num">— 03<span class="stack-tag">iTwin</span></div>
+          <h3><em>Maintenance</em></h3>
+          <p>Annual maintenance contracts, facilities, planned upkeep — backed by a live digital twin per asset. Many clients have stayed twenty years.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:180ms">
+          <div class="num">— 04<span class="stack-tag">Atelier</span></div>
+          <h3>Specialist <em>finishes</em></h3>
+          <p>Venetian plaster, micro-cement, tadelakt, marmorino. Hand-applied, hand-burnished — quality-checked through computer-vision capture.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:240ms">
+          <div class="num">— 05<span class="stack-tag">Atelier</span></div>
+          <h3>Decorative <em>arts</em></h3>
+          <p>Murals, gilding, hand-painted ornament. 22-carat gold leaf, palladium — 100% chain-of-custody tracked.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:300ms">
+          <div class="num">— 06<span class="stack-tag">BIM L3</span></div>
+          <h3>Architectural <em>concrete</em></h3>
+          <p>Polished, board-formed, exposed-aggregate. Cast-in-place finishes — formwork modelled in BIM ahead of mix-design freeze.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:360ms">
+          <div class="num">— 07<span class="stack-tag">Procore</span></div>
+          <h3>Decorative <em>flooring</em></h3>
+          <p>Epoxy, terrazzo, resin, micro-screed.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:420ms">
+          <div class="num">— 08<span class="stack-tag">Atelier</span></div>
+          <h3>Metal <em>coatings</em></h3>
+          <p>Architectural metallics, patinas, brass &amp; copper finishes.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:480ms">
+          <div class="num">— 09<span class="stack-tag">iTwin</span></div>
+          <h3><em>Theming</em></h3>
+          <p>Themed environments — sculpted GRC, faux finishes, set design crossed with permanent construction. Modelled, twinned, signed off.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PORTFOLIO / DIGITAL TWINS ═══ -->
+  <section class="section" id="portfolio">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 04 / Twins<b>// portfolio</b></div>
+        <div>
+          <h2>Selected <em>digital twins.</em></h2>
+          <p class="section-deck">Every active project ships with a federated BIM model, a live site-IoT layer, and a public-facing client dashboard. Three from the current backlog.</p>
+        </div>
+      </div>
+
+      <div class="case-list">
+
+        <article class="case reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85&auto=format&fit=crop" alt="Saadiyat Cultural" loading="lazy" decoding="async" />
+            <span class="case-tag">// Twin № 1.247 · live</span>
+            <div class="twin-overlay">
+              <div>Progress<b>61%</b></div>
+              <div>Sensors<b>148</b></div>
+              <div>Twins<b>14</b></div>
+            </div>
+          </div>
+          <div class="case-meta">
+            <span class="num">// 1.247 · Cultural · Abu Dhabi</span>
+            <h3>Saadiyat Cultural District —<br/><em>galleries &amp; concourse.</em></h3>
+            <p class="body">A 14-month engagement combining architectural concrete finishes, hand-applied tadelakt to interior galleries, and bespoke metal-leaf detailing across <em>18,400 m²</em>. Federated BIM across 14 disciplines; live IoT telemetry from 148 sensors.</p>
+            <div class="specs">
+              <div>Year<strong>2024 — 2026</strong></div>
+              <div>Sector<strong>Cultural</strong></div>
+              <div>Stack<strong>BIM 360 · iTwin</strong></div>
+              <div>Status<strong>// in execution</strong></div>
+            </div>
+            <a href="#" class="case-link">Open digital twin →</a>
+          </div>
+        </article>
+
+        <article class="case flip reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&q=85&auto=format&fit=crop" alt="Atlantis themed" loading="lazy" decoding="async" />
+            <span class="case-tag">// Twin № 1.192 · archived</span>
+            <div class="twin-overlay">
+              <div>Progress<b>100%</b></div>
+              <div>Sensors<b>76</b></div>
+              <div>Twins<b>9</b></div>
+            </div>
+          </div>
+          <div class="case-meta">
+            <span class="num">// 1.192 · Hospitality · Palm Jumeirah</span>
+            <h3>Atlantis The Royal —<br/><em>themed environments.</em></h3>
+            <p class="body">Sculpted GRC, faux finishes, theming details across guest-facing volumes. <em>Stage 02</em> — themed underwater concourse and public realm. Delivered with a federated BIM model and computer-vision QA on every faux-finish element.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Hospitality</strong></div>
+              <div>Stack<strong>Procore · iTwin</strong></div>
+              <div>Status<strong>// archived</strong></div>
+            </div>
+            <a href="#" class="case-link">Open digital twin →</a>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=1200&q=85&auto=format&fit=crop" alt="Habtoor palace" loading="lazy" decoding="async" />
+            <span class="case-tag">// Twin № 1.166 · archived</span>
+            <div class="twin-overlay">
+              <div>Progress<b>100%</b></div>
+              <div>Sensors<b>42</b></div>
+              <div>Twins<b>6</b></div>
+            </div>
+          </div>
+          <div class="case-meta">
+            <span class="num">// 1.166 · Residential · Dubai</span>
+            <h3>Al Habtoor Palace —<br/><em>gilding restoration.</em></h3>
+            <p class="body">Restoration of historic gold-leaf ornament and decorative paintwork across reception halls. <em>22-carat gold leaf</em>, palladium and hand-painted detailing — 100% chain-of-custody on every gram of precious material, traced via blockchain ledger.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Residential</strong></div>
+              <div>Stack<strong>BIM 360 · custody</strong></div>
+              <div>Status<strong>// archived</strong></div>
+            </div>
+            <a href="#" class="case-link">Open digital twin →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTORS ═══ -->
+  <section class="section" id="sectors">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 05 / Sectors<b>// six</b></div>
+        <div>
+          <h2>Six sectors. <em>One platform.</em></h2>
+          <p class="section-deck">Every mandate, regardless of sector, is delivered through the same digital stack and quality regime.</p>
+        </div>
+      </div>
+
+      <div class="sectors-grid">
+        <a href="#" class="sector-card reveal">
+          <div class="num">// 01</div>
+          <h3><em>Hospitality</em> &amp; F&amp;B</h3>
+          <p class="clients">Atlantis · Mandarin Oriental · Emaar Hospitality · Jumeirah</p>
+          <div class="footer-row"><span>4 active sites</span><b>open →</b></div>
+        </a>
+        <a href="#" class="sector-card reveal" style="--d:60ms">
+          <div class="num">// 02</div>
+          <h3>Retail &amp; <em>malls</em></h3>
+          <p class="clients">Mall of the Emirates · Dubai Mall · MAF · Aldar</p>
+          <div class="footer-row"><span>2 active sites</span><b>open →</b></div>
+        </a>
+        <a href="#" class="sector-card reveal" style="--d:120ms">
+          <div class="num">// 03</div>
+          <h3><em>Residential</em></h3>
+          <p class="clients">Emirates Hills · Palm Jumeirah · Saadiyat · private</p>
+          <div class="footer-row"><span>3 active sites</span><b>open →</b></div>
+        </a>
+        <a href="#" class="sector-card reveal" style="--d:180ms">
+          <div class="num">// 04</div>
+          <h3>Commercial &amp; <em>offices</em></h3>
+          <p class="clients">DIFC · ADGM · Trade Centre · Dubai South</p>
+          <div class="footer-row"><span>2 active sites</span><b>open →</b></div>
+        </a>
+        <a href="#" class="sector-card reveal" style="--d:240ms">
+          <div class="num">// 05</div>
+          <h3>Cultural &amp; <em>heritage</em></h3>
+          <p class="clients">Saadiyat · Sharjah Heritage · Etihad Museum partners</p>
+          <div class="footer-row"><span>2 active sites</span><b>open →</b></div>
+        </a>
+        <a href="#" class="sector-card reveal" style="--d:300ms">
+          <div class="num">// 06</div>
+          <h3>Government &amp; <em>civic</em></h3>
+          <p class="clients">Dubai Municipality · Ministry of Culture · Sharjah authorities</p>
+          <div class="footer-row"><span>1 active site</span><b>open →</b></div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PILLARS ═══ -->
+  <section class="section pillars-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 06 / Pillars<b>// four reasons</b></div>
+        <div>
+          <h2>Four reasons<br/>to <em>build with us.</em></h2>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar reveal">
+          <span class="num">01</span>
+          <h3>Heritage &amp; <em>trust.</em></h3>
+          <p>Established 1979. Forty-seven years of receipts in the UAE — palace projects, civic landmarks, hospitality. Our oldest active maintenance contract dates to <em>1991.</em></p>
+          <div class="stat">Founded<strong>1979</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:80ms">
+          <span class="num">02</span>
+          <h3>Range &amp; <em>capability.</em></h3>
+          <p>Civil to gilt under one roof. Most peers are either generalists or boutique finishers. <em>We are both.</em></p>
+          <div class="stat">Disciplines<strong>9 in-house</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:160ms">
+          <span class="num">03</span>
+          <h3><em>BIM-native</em> delivery.</h3>
+          <p>Federated models, live digital twins, computer-vision QA. <em>Our newest twin is six weeks old; our oldest contract is thirty-five years old.</em></p>
+          <div class="stat">Stack<strong>BIM 360 · iTwin</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:240ms">
+          <span class="num">04</span>
+          <h3>UAE-rooted, <br/><em>cloud-connected.</em></h3>
+          <p>Privately held, family-owned, single-country execution — supported by a SOC-2 cloud stack and a partner network across 34 cities. ICV score <em>78%</em>.</p>
+          <div class="stat">Cloud<strong>SOC 2 Type II</strong></div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CREDENTIALS ═══ -->
+  <section class="section" id="credentials">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 07 / Credentials<b>// receipts</b></div>
+        <div>
+          <h2>Clients &amp;<br/><em>certifications.</em></h2>
+        </div>
+      </div>
+
+      <div class="credentials-grid">
+
+        <div class="reveal">
+          <span class="micro" style="display:block;margin-bottom:1.2rem">— Selected clients · 1979 — 2026</span>
+          <div class="clients-grid">
+            <div class="client-cell">Emaar <em>Properties</em></div>
+            <div class="client-cell">Aldar</div>
+            <div class="client-cell">Mandarin <em>Oriental</em></div>
+            <div class="client-cell">Atlantis</div>
+            <div class="client-cell">Jumeirah <em>Group</em></div>
+            <div class="client-cell">MAF</div>
+            <div class="client-cell">Dubai <em>Holding</em></div>
+            <div class="client-cell">Abu Dhabi <em>Mun.</em></div>
+            <div class="client-cell">Al Habtoor</div>
+            <div class="client-cell">Sharjah <em>Authority</em></div>
+            <div class="client-cell">Meraas</div>
+            <div class="client-cell">DAMAC</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:140ms">
+          <span class="micro" style="display:block;margin-bottom:1.2rem">— Certifications · current</span>
+          <ul class="certs-list">
+            <li class="cert-line">
+              <span class="cn">ISO 19650-2 — <em>BIM information management.</em><small>Bureau Veritas · 19650-AE-00342</small></span>
+              <span class="v">Valid 2027.06</span>
+            </li>
+            <li class="cert-line">
+              <span class="cn">SOC 2 — <em>Type II.</em><small>Project data security · annual review</small></span>
+              <span class="v">Valid 2026.12</span>
+            </li>
+            <li class="cert-line">
+              <span class="cn">ISO 9001:2015 — <em>Quality Management.</em><small>Bureau Veritas · 9001-AE-04211</small></span>
+              <span class="v">Valid 2027.09</span>
+            </li>
+            <li class="cert-line">
+              <span class="cn">ISO 45001:2018 — <em>Occupational H&amp;S.</em><small>Bureau Veritas · 45001-AE-00891</small></span>
+              <span class="v">Valid 2027.04</span>
+            </li>
+            <li class="cert-line">
+              <span class="cn">ISO 14001:2015 — <em>Environmental.</em><small>Bureau Veritas · 14001-AE-01122</small></span>
+              <span class="v">Valid 2026.11</span>
+            </li>
+            <li class="cert-line">
+              <span class="cn">Estidama — <em>Pearl Builder.</em><small>Sustainability · 3-Pearl rated</small></span>
+              <span class="v">Active</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ JOURNAL ═══ -->
+  <section class="section" id="journal">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— 08 / Journal<b>// the studio</b></div>
+        <div>
+          <h2>From the <em>studio.</em></h2>
+        </div>
+      </div>
+
+      <div class="journal-grid">
+
+        <a class="article reveal" href="#">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1000&q=85&auto=format&fit=crop" alt="Decorative coatings" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Article · <b>Knowledge</b></span><span>09.04.2026</span></div>
+          <div class="article-body">
+            <h3>Choosing the right decorative coating for hospitality interiors in <em>UAE climates.</em></h3>
+            <p>How Venetian plaster, tadelakt and micro-cement behave under coastal humidity, AC cycling and direct sun.</p>
+            <span class="read">9 min read →</span>
+          </div>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:120ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1517490232338-06b912a786b5?w=1000&q=85&auto=format&fit=crop" alt="Saadiyat handover" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>News · <b>Press</b></span><span>22.03.2026</span></div>
+          <div class="article-body">
+            <h3>Saadiyat galleries — <em>handover scheduled</em> for Q4 2026.</h3>
+            <p>Eighteen months on site, 38,400 m² of cast-in-place architectural concrete.</p>
+            <span class="read">Press release →</span>
+          </div>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:240ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1000&q=85&auto=format&fit=crop" alt="Hotel show 2026" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Event</span><span>14.05.2026</span></div>
+          <div class="article-body">
+            <h3>Al Madar at <em>The Hotel Show 2026</em> — Hall 4, Stand B-21.</h3>
+            <p>Live demonstrations of marmorino plaster, gold-leaf gilding and patinated metal coatings.</p>
+            <span class="read">Dubai World Trade Centre →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CTA ═══ -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-grid">
+      <div class="reveal">
+        <span class="section-num">— 09 / Contact<b>// project</b></span>
+        <h2>Have a project<br/><em>in mind?</em></h2>
+        <p class="lede">
+          Tell us the brief — sector, scope, programme. <em>One of the studio principals</em> replies within two working days. Drawings, RFPs, BIM models and budgets welcome.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-cyan" href="#">Start a project <span class="arr">↗</span></a>
+          <a class="btn btn-ghost" href="#">+971 4 282 1979</a>
+        </div>
+      </div>
+      <aside class="cta-side reveal" style="--d:140ms">
+        <h4>// direct lines</h4>
+        <ul>
+          <li>Tenders <b>tenders @</b></li>
+          <li>Studio principals <b>studio @</b></li>
+          <li>Demo requests <b>demo @</b></li>
+          <li>Press &amp; media <b>press @</b></li>
+          <li>Vendor portal <b>vendors @</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="name">Al Madar MGM</div>
+          <div class="tag">Construction L.L.C · Est. 1979</div>
+          <p class="blurb">A privately held UAE construction house. Civil works to specialist finishes — <em>structure, surface, telemetry.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">HSE &amp; quality</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <ul>
+            <li><a href="#">Civil construction</a></li>
+            <li><a href="#">Fit-out</a></li>
+            <li><a href="#">Maintenance</a></li>
+            <li><a href="#">Specialist finishes</a></li>
+            <li><a href="#">Theming</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>// Stack</h4>
+          <ul>
+            <li><a href="#">BIM 360</a></li>
+            <li><a href="#">Procore</a></li>
+            <li><a href="#">Bentley iTwin</a></li>
+            <li><a href="#">SOC 2 statement</a></li>
+            <li><a href="#">API access</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find us</h4>
+          <p class="addr">
+            Al Quoz Industrial 3<br/>
+            Dubai · United Arab Emirates<br/>
+            +971 4 282 1979<br/>
+            studio @ almadarmgm . ae
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-foot">
+        <span>© 1979 — 2026 Al Madar MGM · L.L.C</span>
+        <span>// build 2026.5.9 · sync 14:22 UTC</span>
+        <span>Privacy · Terms · Imprint</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+
+</body>
+</html>

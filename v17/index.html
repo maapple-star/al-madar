@@ -1,0 +1,2838 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — Construction operations, in the open.</title>
+  <meta name="description" content="Al Madar MGM Construction L.L.C. — UAE-based Tier-1 construction house. Forty-seven years of audited delivery, now visible in real time. Civil works, fit-out, hospitality interiors, cultural projects." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       v17 — Operations Command
+       Light operational data console. Linear marketing site meets
+       Vercel Analytics, applied to a 47-year-old construction firm.
+       Pure-white surface, hairline borders, monospace numerics,
+       embedded dark "terminal" exhibit panels. No red, no gradients,
+       no cyber. Just a calm, audit-ready operations console.
+       ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      /* surfaces */
+      --white:    #FFFFFF;
+      --card:     #FAFAFB;
+      --panel:    #F5F5F7;
+      --panel-2:  #EFEFF2;
+
+      /* ink */
+      --ink:      #0F1115;
+      --ink-2:    #3A3F4A;
+      --ink-3:    #5A5F6B;
+      --ink-mute: #9097A2;
+      --ink-faint:#B6BBC4;
+
+      /* hairlines */
+      --line:      rgba(15,17,21,0.06);
+      --line-2:    rgba(15,17,21,0.10);
+      --line-3:    rgba(15,17,21,0.16);
+
+      /* signals */
+      --pos:       #10B981;
+      --pos-soft:  rgba(16,185,129,.10);
+      --pos-line:  rgba(16,185,129,.30);
+      --warn:      #F59E0B;
+      --warn-soft: rgba(245,158,11,.10);
+      --warn-line: rgba(245,158,11,.30);
+
+      /* terminal panel */
+      --term-bg:    #0E1015;
+      --term-bg-2:  #15181F;
+      --term-rule:  rgba(255,255,255,.07);
+      --term-ink:   #C7CCD4;
+      --term-mute:  #6B7280;
+      --term-pos:   #86EFAC;
+      --term-warn:  #FCD34D;
+      --term-blue:  #93C5FD;
+
+      /* type */
+      --display: "Geist", "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --sans:    "Geist", "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    "Geist Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+      --container: min(1320px, 92vw);
+      --container-narrow: min(960px, 90vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+      --radius:    14px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+      --shadow-sm: 0 1px 0 rgba(15,17,21,.02), 0 1px 2px rgba(15,17,21,.03);
+      --shadow:    0 1px 0 rgba(15,17,21,.03), 0 6px 16px rgba(15,17,21,.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -.005em;
+      font-feature-settings: "ss01", "cv11";
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+    .container        { width: var(--container);        margin: 0 auto; }
+    .container-narrow { width: var(--container-narrow); margin: 0 auto; }
+
+    /* tabular numerics absolutely everywhere they show up */
+    .num, .mono, .kpi-val, .stat-val, .stat-row td:last-child,
+    .live-strip, .feed code, .pill, .ticker, .kicker, .micro {
+      font-feature-settings: "tnum", "ss01", "zero", "cv11";
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── micro / kicker ─────────────────────────────────────── */
+    .kicker {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kicker::before {
+      content: "";
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--ink);
+      display: inline-block;
+    }
+    .kicker--pos::before { background: var(--pos); box-shadow: 0 0 0 3px var(--pos-soft); }
+    .kicker--warn::before { background: var(--warn); box-shadow: 0 0 0 3px var(--warn-soft); }
+
+    .micro {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    /* ── status pills ───────────────────────────────────────── */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px 3px 8px;
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      background: var(--white);
+      white-space: nowrap;
+    }
+    .pill::before {
+      content: "";
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--ink-mute);
+    }
+    .pill--pos { color: #047857; border-color: var(--pos-line); background: var(--pos-soft); }
+    .pill--pos::before { background: var(--pos); box-shadow: 0 0 0 2px rgba(16,185,129,.20); }
+    .pill--warn { color: #92400E; border-color: var(--warn-line); background: var(--warn-soft); }
+    .pill--warn::before { background: var(--warn); box-shadow: 0 0 0 2px rgba(245,158,11,.20); }
+    .pill--ink { color: var(--ink); border-color: var(--line-3); background: var(--white); }
+    .pill--ink::before { background: var(--ink); }
+
+    /* ════════════════════ LIVE STATUS STRIP ════════════════════ */
+    .live-strip {
+      position: sticky; top: 0; z-index: 60;
+      background: var(--ink);
+      color: #E8EAF0;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      border-bottom: 1px solid #000;
+    }
+    .live-strip-inner {
+      width: var(--container);
+      margin: 0 auto;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .live-strip .dot-live {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--pos);
+      display: inline-block;
+      box-shadow: 0 0 0 3px rgba(16,185,129,.18);
+      animation: pulse 1.6s var(--ease) infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(16,185,129,.18); }
+      50%     { box-shadow: 0 0 0 6px rgba(16,185,129,.04); }
+    }
+    .live-strip span.sep { color: #4B5260; }
+    .live-strip span.k { color: #9097A2; }
+    .live-strip span.v { color: #E8EAF0; }
+    .live-strip span.v--pos { color: var(--term-pos); }
+    .live-strip .ts { margin-left: auto; color: #9097A2; }
+
+    /* ════════════════════ NAV ════════════════════ */
+    .nav {
+      position: sticky;
+      top: 32px; z-index: 55;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      height: 64px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      font-size: 15px;
+    }
+    .brand-mark {
+      width: 26px; height: 26px;
+      border: 1px solid var(--line-3);
+      border-radius: 7px;
+      background: var(--white);
+      display: grid; place-items: center;
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      position: relative;
+    }
+    .brand-mark::after {
+      content: "";
+      position: absolute; inset: 3px;
+      border: 1px solid var(--line-2);
+      border-radius: 4px;
+    }
+    .brand-mark span { position: relative; z-index: 1; }
+    .brand small {
+      font-family: var(--mono);
+      color: var(--ink-3);
+      font-weight: 500;
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-left: 4px;
+      padding-left: 10px;
+      border-left: 1px solid var(--line-2);
+    }
+    .nav-links {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; gap: 1.8rem;
+      justify-self: center;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--ink-2);
+      transition: color .18s var(--ease);
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta-wrap { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-link-secondary {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all .18s var(--ease);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+    .btn--primary:hover { background: #1F2530; }
+    .btn--ghost {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--line-3);
+    }
+    .btn--ghost:hover { background: var(--card); }
+    .btn .arr { font-family: var(--mono); font-size: 12px; }
+
+    /* ════════════════════ FAINT GRID BACKDROP ════════════════════ */
+    .grid-backdrop {
+      position: relative;
+    }
+    .grid-backdrop::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 88px 88px;
+      mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+      -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-backdrop > * { position: relative; z-index: 1; }
+
+    /* ════════════════════ HERO ════════════════════ */
+    .hero {
+      padding: 4.5rem 0 5rem;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 5px 10px 5px 8px;
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      background: var(--white);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--ink-2);
+      margin-bottom: 1.6rem;
+    }
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--pos);
+      box-shadow: 0 0 0 3px rgba(16,185,129,.20);
+    }
+    .hero-eyebrow .v { color: var(--ink); font-weight: 600; }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      margin: 0 0 1.4rem;
+      color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--ink-3);
+    }
+    .hero-lede {
+      font-size: 16.5px;
+      line-height: 1.6;
+      color: var(--ink-2);
+      max-width: 38ch;
+      margin: 0 0 2rem;
+    }
+    .hero-cta {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+      padding-top: 1.6rem;
+      max-width: 540px;
+    }
+    .hero-meta .m-item {
+      padding-right: 1.2rem;
+      border-right: 1px solid var(--line);
+    }
+    .hero-meta .m-item:last-child { border-right: 0; padding-right: 0; }
+    .hero-meta .m-k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .hero-meta .m-v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--ink);
+      letter-spacing: -.01em;
+    }
+
+    /* dashboard preview card */
+    .dash-preview {
+      background: var(--card);
+      border: 1px solid var(--line-2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .dash-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    .dash-head .dash-title {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--ink-2);
+      text-transform: uppercase;
+    }
+    .dash-head .dash-title .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--pos);
+      box-shadow: 0 0 0 3px rgba(16,185,129,.18);
+    }
+    .dash-head .dash-route {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-mute);
+    }
+    .dash-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--line);
+      padding: 0 16px;
+      gap: 18px;
+      background: var(--white);
+    }
+    .dash-tabs .tab {
+      padding: 9px 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      border-bottom: 1.5px solid transparent;
+    }
+    .dash-tabs .tab.is-active {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+    .dash-kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .dash-kpi {
+      padding: 16px 18px 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .dash-kpi:nth-child(2n) { border-right: 0; }
+    .dash-kpi:nth-child(n+3) { border-bottom: 0; }
+    .dash-kpi .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .dash-kpi .v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: -.02em;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .dash-kpi .v small {
+      font-size: 14px;
+      color: var(--ink-3);
+      font-weight: 500;
+      margin-left: 3px;
+    }
+    .dash-kpi .delta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--pos);
+      margin-top: 6px;
+      display: inline-block;
+    }
+    .dash-kpi .delta--warn { color: var(--warn); }
+    .dash-chart {
+      padding: 16px 18px 18px;
+      background: var(--white);
+    }
+    .dash-chart-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .dash-chart-head .ttl {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+    .dash-chart-head .leg {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--ink-3);
+    }
+    .dash-chart-head .leg .pos { color: var(--pos); }
+    .spark-lg {
+      width: 100%; height: 110px;
+      display: block;
+    }
+    .dash-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 16px;
+      border-top: 1px solid var(--line);
+      background: var(--card);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--ink-3);
+    }
+    .dash-foot .stamp { color: var(--ink-2); }
+
+    /* trusted-by row */
+    .trusted {
+      width: var(--container);
+      margin: 3.5rem auto 0;
+      padding-top: 2.2rem;
+      border-top: 1px dashed var(--line-2);
+    }
+    .trusted .lbl {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+    .trusted-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .trusted-row .cell {
+      height: 64px;
+      display: grid; place-items: center;
+      border-right: 1px solid var(--line);
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -.01em;
+      color: var(--ink-2);
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .trusted-row .cell:last-child { border-right: 0; }
+    .trusted-row .cell small {
+      display: block;
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--ink-mute);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ════════════════════ SECTION SHELL ════════════════════ */
+    .section {
+      padding: 5.5rem 0;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .section--tight { padding: 4rem 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.6rem;
+    }
+    .section-head .left { max-width: 56ch; }
+    .section-head .kicker { margin-bottom: 12px; }
+    .section-head h2 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.6vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.022em;
+      margin: 0 0 .6rem;
+      color: var(--ink);
+    }
+    .section-head h2 em { font-style: normal; color: var(--ink-3); }
+    .section-head p {
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+    .section-head .right {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .section-head .right .v { color: var(--ink); }
+
+    /* ════════════════════ CAPABILITIES ════════════════════ */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .cap-card {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background .18s var(--ease);
+      position: relative;
+    }
+    .cap-card:nth-child(4n) { border-right: 0; }
+    .cap-card:nth-child(n+5) { /* keep border-bottom */ }
+    .cap-grid .cap-card:nth-last-child(-n+4) { border-bottom: 0; }
+    .cap-card:hover { background: var(--card); }
+    .cap-card .cap-icon {
+      width: 32px; height: 32px;
+      border: 1px solid var(--line-2);
+      border-radius: var(--radius-xs);
+      display: grid; place-items: center;
+      margin-bottom: 18px;
+      background: var(--card);
+    }
+    .cap-card .cap-icon svg { width: 16px; height: 16px; stroke: var(--ink); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .cap-card .cap-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 15.5px;
+      letter-spacing: -.01em;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+    .cap-card .cap-desc {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ink-2);
+      margin: 0 0 14px;
+    }
+    .cap-card .cap-foot {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cap-card .cap-num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      color: var(--ink-mute);
+    }
+
+    /* ════════════════════ LIVE OPS FEED (DARK) ════════════════════ */
+    .feed-wrap {
+      width: var(--container);
+      margin: 0 auto;
+    }
+    .feed {
+      background: var(--term-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #000;
+      box-shadow: 0 30px 70px rgba(15,17,21,.18), 0 8px 20px rgba(15,17,21,.08);
+    }
+    .feed-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--term-rule);
+      background: var(--term-bg-2);
+    }
+    .feed-head .left {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      color: var(--term-mute);
+      text-transform: uppercase;
+    }
+    .feed-head .left .ttl { color: var(--term-ink); font-weight: 500; }
+    .feed-head .left .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--term-pos);
+      box-shadow: 0 0 0 3px rgba(134,239,172,.16);
+      animation: pulse2 1.6s var(--ease) infinite;
+    }
+    @keyframes pulse2 {
+      0%,100% { box-shadow: 0 0 0 3px rgba(134,239,172,.16); }
+      50%     { box-shadow: 0 0 0 6px rgba(134,239,172,.04); }
+    }
+    .feed-head .right {
+      display: inline-flex; gap: 14px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--term-mute);
+    }
+    .feed-head .right .k { color: var(--term-ink); }
+    .feed-head .traffic {
+      display: inline-flex; gap: 6px; margin-right: 4px;
+    }
+    .feed-head .traffic span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #333A45;
+    }
+    .feed-tabs {
+      display: flex; gap: 0;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--term-rule);
+      background: var(--term-bg-2);
+    }
+    .feed-tabs .tab {
+      padding: 9px 14px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      color: var(--term-mute);
+      text-transform: uppercase;
+      border-bottom: 1.5px solid transparent;
+    }
+    .feed-tabs .tab.is-active {
+      color: var(--term-ink);
+      border-bottom-color: var(--term-pos);
+    }
+    .feed-body {
+      padding: 14px 18px 18px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      line-height: 1.85;
+      color: var(--term-ink);
+    }
+    .feed-body code { font-family: inherit; }
+    .feed-line { display: block; }
+    .feed-line .ts { color: var(--term-mute); }
+    .feed-line .pj { color: var(--term-blue); }
+    .feed-line .ev { color: var(--term-ink); }
+    .feed-line .st-ok   { color: var(--term-pos); }
+    .feed-line .st-warn { color: var(--term-warn); }
+    .feed-line .st-mute { color: var(--term-mute); }
+    .feed-line .arr     { color: var(--term-mute); margin: 0 4px; }
+    .feed-cursor {
+      display: inline-block;
+      width: 8px; height: 14px;
+      background: var(--term-pos);
+      vertical-align: -2px;
+      margin-left: 4px;
+      animation: blink 1.05s steps(2,end) infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .feed-foot {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 18px;
+      border-top: 1px solid var(--term-rule);
+      background: var(--term-bg-2);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--term-mute);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .feed-foot .v { color: var(--term-ink); }
+    .feed-foot .v--pos { color: var(--term-pos); }
+
+    .feed-callouts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .feed-callouts .c {
+      padding: 16px 18px;
+      border-right: 1px solid var(--line);
+    }
+    .feed-callouts .c:last-child { border-right: 0; }
+    .feed-callouts .c .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 6px;
+    }
+    .feed-callouts .c .v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      line-height: 1.05;
+    }
+    .feed-callouts .c .desc {
+      font-size: 12px;
+      color: var(--ink-2);
+      margin-top: 4px;
+    }
+
+    /* ════════════════════ PROJECTS ════════════════════ */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .proj {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex; flex-direction: column;
+      gap: 14px;
+      transition: background .18s var(--ease);
+    }
+    .proj:hover { background: var(--card); }
+    .proj-grid .proj:nth-child(3n) { border-right: 0; }
+    .proj-grid .proj:nth-last-child(-n+3) { border-bottom: 0; }
+    .proj-head {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .proj-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: -.012em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .proj-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 10px;
+      column-gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: .02em;
+    }
+    .proj-meta .k {
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 10px;
+      color: var(--ink-mute);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .proj-meta .v { color: var(--ink); }
+    .proj-prog {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line-2);
+      margin-top: auto;
+    }
+    .proj-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--panel-2);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .proj-bar > span {
+      display: block;
+      height: 100%;
+      background: var(--ink);
+    }
+    .proj-bar.is-pos > span { background: var(--pos); }
+    .proj-bar.is-warn > span { background: var(--warn); }
+    .proj-prog-val {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--ink);
+      width: 44px; text-align: right;
+    }
+
+    /* ════════════════════ BY THE NUMBERS ════════════════════ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .stat {
+      padding: 26px 22px 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stats-grid .stat:nth-child(4n) { border-right: 0; }
+    .stats-grid .stat:nth-last-child(-n+4) { border-bottom: 0; }
+    .stat .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px;
+    }
+    .stat .v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 38px;
+      letter-spacing: -.025em;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .stat .v small {
+      font-size: 16px;
+      color: var(--ink-3);
+      font-weight: 500;
+      margin-left: 4px;
+      letter-spacing: 0;
+    }
+    .stat .desc {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--ink-3);
+      margin-top: 6px;
+    }
+    .stat .desc .pos { color: var(--pos); }
+    .stat .desc .warn { color: var(--warn); }
+    .stat-spark {
+      width: 100%; height: 36px;
+      margin-top: 12px;
+      display: block;
+    }
+
+    .stats-row-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 0;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 var(--radius) var(--radius);
+      overflow: hidden;
+      background: var(--card);
+    }
+    .stats-grid + .stats-row-bottom { border-radius: 0 0 var(--radius) var(--radius); margin-top: -1px; }
+    .stats-grid { border-radius: var(--radius) var(--radius) 0 0; }
+    .stats-row-bottom .cell {
+      padding: 16px 22px;
+      border-right: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .stats-row-bottom .cell:last-child { border-right: 0; }
+    .stats-row-bottom .cell .k {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .stats-row-bottom .cell .v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--ink);
+      letter-spacing: -.01em;
+    }
+
+    /* ════════════════════ HOW IT WORKS ════════════════════ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      counter-reset: step;
+    }
+    .step {
+      padding: 24px 22px;
+      border-right: 1px solid var(--line);
+      counter-increment: step;
+      position: relative;
+    }
+    .step:last-child { border-right: 0; }
+    .step::after {
+      content: "";
+      position: absolute;
+      top: 38px; right: -7px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--line-2);
+      display: grid; place-items: center;
+      z-index: 2;
+    }
+    .step:last-child::after { display: none; }
+    .step::before {
+      content: "→";
+      position: absolute;
+      top: 41px; right: -4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink-3);
+      z-index: 3;
+    }
+    .step:last-child::before { display: none; }
+    .step .num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 12px;
+    }
+    .step .num::before {
+      content: counter(step, decimal-leading-zero) " · ";
+      color: var(--ink);
+    }
+    .step h4 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -.012em;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+    .step p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin: 0 0 14px;
+    }
+    .step .duration {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      padding-top: 10px;
+      border-top: 1px dashed var(--line-2);
+    }
+    .step .duration .v { color: var(--ink); }
+
+    /* ════════════════════ SECTORS / CLIENTS ════════════════════ */
+    .sect-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 2rem;
+    }
+    .sect-list {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .sect-list table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .sect-list th, .sect-list td {
+      text-align: left;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13.5px;
+      vertical-align: middle;
+    }
+    .sect-list th {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      font-weight: 500;
+      background: var(--card);
+    }
+    .sect-list tr:last-child td { border-bottom: 0; }
+    .sect-list .name { font-weight: 500; color: var(--ink); }
+    .sect-list .cnt {
+      font-family: var(--mono);
+      font-weight: 500;
+      color: var(--ink);
+      text-align: right;
+    }
+    .sect-list .share {
+      font-family: var(--mono);
+      color: var(--ink-3);
+      text-align: right;
+      font-size: 12px;
+    }
+
+    .clients {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+    .clients-head {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .clients-head .ttl {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      font-weight: 500;
+    }
+    .clients-head .cnt {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink);
+    }
+    .clients-list {
+      padding: 6px 0;
+    }
+    .clients-list .row {
+      display: grid;
+      grid-template-columns: 24px 1fr auto;
+      gap: 12px;
+      padding: 11px 18px;
+      align-items: center;
+      border-bottom: 1px dashed var(--line);
+    }
+    .clients-list .row:last-child { border-bottom: 0; }
+    .clients-list .ix {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--ink-mute);
+      letter-spacing: .04em;
+    }
+    .clients-list .nm {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--ink);
+      letter-spacing: -.005em;
+    }
+    .clients-list .cat {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    /* ════════════════════ INTERLUDE IMAGE ════════════════════ */
+    .interlude {
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .interlude-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .interlude-img {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+      background: var(--card);
+    }
+    .interlude-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(.92);
+    }
+    .interlude-img .badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line-2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex; gap: 18px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+    .interlude-img .badge .v { color: var(--ink); font-weight: 500; }
+    .interlude-img .stamp {
+      position: absolute;
+      bottom: 14px; right: 14px;
+      background: rgba(15,17,21,.84);
+      backdrop-filter: blur(8px);
+      color: #E8EAF0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .interlude-img .stamp .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--pos);
+      display: inline-block; margin-right: 6px;
+    }
+    .interlude-text h3 {
+      font-family: var(--display);
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -.022em;
+      line-height: 1.1;
+      margin: 14px 0 14px;
+      color: var(--ink);
+    }
+    .interlude-text p {
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 1.2rem;
+    }
+    .interlude-stats {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+    }
+    .interlude-stats .it { padding-right: 1rem; border-right: 1px solid var(--line); }
+    .interlude-stats .it:last-child { border-right: 0; }
+    .interlude-stats .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 4px;
+    }
+    .interlude-stats .v {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -.012em;
+      color: var(--ink);
+    }
+
+    /* ════════════════════ CERTIFICATIONS ════════════════════ */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .cert {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .certs-grid .cert:nth-child(4n) { border-right: 0; }
+    .certs-grid .cert:nth-last-child(-n+4) { border-bottom: 0; }
+    .cert .check {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--pos-soft);
+      border: 1px solid var(--pos-line);
+      display: grid; place-items: center;
+      color: #047857;
+    }
+    .cert .check svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .cert .nm {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .cert .meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: .02em;
+    }
+    .cert .meta .v { color: var(--ink-2); }
+    .cert .desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--ink-2);
+      margin-top: 6px;
+    }
+
+    /* ════════════════════ TRUST / LEADERSHIP ════════════════════ */
+    .trust {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: stretch;
+    }
+    .quote {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: var(--white);
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      gap: 1.4rem;
+    }
+    .quote-mark {
+      font-family: var(--display);
+      font-size: 72px;
+      line-height: .8;
+      color: var(--ink-faint);
+      font-weight: 600;
+    }
+    .quote blockquote {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: -.018em;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .quote cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+    .quote cite .nm { color: var(--ink); font-weight: 500; }
+
+    .leaders {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+    .leaders-head {
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .leaders-head .ttl {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      font-weight: 500;
+    }
+    .leader {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .leader:last-child { border-bottom: 0; }
+    .leader .nm {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .leader .role {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 8px;
+    }
+    .leader .bio {
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .leader .tenure {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-align: right;
+    }
+    .leader .tenure .v {
+      display: block;
+      font-size: 22px;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      text-transform: none;
+      font-weight: 500;
+    }
+
+    /* ════════════════════ CTA ════════════════════ */
+    .cta {
+      border: 1px solid var(--line-2);
+      border-radius: var(--radius);
+      background: var(--white);
+      padding: 56px 56px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse at 100% 50%, #000 0%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 100% 50%, #000 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cta > * { position: relative; z-index: 1; }
+    .cta h2 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.022em;
+      margin: 12px 0 12px;
+      color: var(--ink);
+    }
+    .cta p {
+      font-size: 15.5px;
+      color: var(--ink-2);
+      margin: 0 0 1.6rem;
+      max-width: 44ch;
+    }
+    .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cta-side {
+      border-left: 1px solid var(--line);
+      padding-left: 2rem;
+    }
+    .cta-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line-2);
+      align-items: baseline;
+    }
+    .cta-row:last-child { border-bottom: 0; }
+    .cta-row .k {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .cta-row .v {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    /* ════════════════════ FOOTER ════════════════════ */
+    .footer {
+      background: var(--ink);
+      color: #B7BBC3;
+      padding: 4rem 0 1.6rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2.6rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer .brand-mark {
+      background: transparent;
+      border-color: rgba(255,255,255,.18);
+      color: #fff;
+    }
+    .footer .brand-mark::after { border-color: rgba(255,255,255,.12); }
+    .footer .brand { color: #fff; }
+    .footer .brand small {
+      color: #8C92A0;
+      border-color: rgba(255,255,255,.14);
+    }
+    .footer-blurb {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #9097A2;
+      margin: 1.2rem 0 1.2rem;
+      max-width: 32ch;
+    }
+    .footer-status {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: #B7BBC3;
+      padding: 5px 10px 5px 8px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+    }
+    .footer-status .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--pos);
+      box-shadow: 0 0 0 3px rgba(16,185,129,.18);
+    }
+    .footer-col h5 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin: 6px 0 1rem;
+    }
+    .footer-col ul {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: .55rem;
+    }
+    .footer-col a {
+      font-size: 13.5px;
+      color: #B7BBC3;
+      transition: color .15s var(--ease);
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-col p {
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.7;
+      color: #9097A2;
+      margin: 0;
+    }
+    .footer-foot {
+      padding-top: 1.6rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #6B7280;
+      letter-spacing: .04em;
+    }
+    .footer-foot .stamp { color: #9097A2; }
+    .footer-foot .reg { color: #6B7280; }
+    .footer-foot .reg .v { color: #B7BBC3; }
+    .footer-foot a { color: #9097A2; }
+    .footer-foot a:hover { color: #fff; }
+
+    /* ════════════════════ RESPONSIVE ════════════════════ */
+    @media (max-width: 1080px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cap-grid, .stats-grid, .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .cap-grid .cap-card, .stats-grid .stat, .certs-grid .cert { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .cap-grid .cap-card:nth-child(2n), .stats-grid .stat:nth-child(2n), .certs-grid .cert:nth-child(2n) { border-right: 0; }
+      .proj-grid { grid-template-columns: repeat(2, 1fr); }
+      .proj-grid .proj { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .proj-grid .proj:nth-child(3n) { border-right: 1px solid var(--line); }
+      .proj-grid .proj:nth-child(2n) { border-right: 0; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .step:nth-child(2n) { border-right: 0; }
+      .step { border-bottom: 1px solid var(--line); }
+      .step::after, .step::before { display: none; }
+      .sect-grid { grid-template-columns: 1fr; }
+      .trust { grid-template-columns: 1fr; }
+      .interlude-inner { grid-template-columns: 1fr; }
+      .cta { padding: 36px; grid-template-columns: 1fr; }
+      .cta-side { border-left: 0; padding-left: 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+      .feed-callouts { grid-template-columns: 1fr; }
+      .feed-callouts .c { border-right: 0; border-bottom: 1px solid var(--line); }
+      .feed-callouts .c:last-child { border-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .live-strip-inner { gap: 14px; font-size: 10.5px; }
+      .live-strip-inner span.k--hide { display: none; }
+    }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .nav-link-secondary { display: none; }
+      .cap-grid, .stats-grid, .certs-grid, .proj-grid, .steps { grid-template-columns: 1fr; }
+      .cap-grid .cap-card, .stats-grid .stat, .certs-grid .cert, .proj-grid .proj, .step { border-right: 0; border-bottom: 1px solid var(--line); }
+      .cap-grid .cap-card:last-child, .stats-grid .stat:last-child, .certs-grid .cert:last-child, .proj-grid .proj:last-child, .step:last-child { border-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats-row-bottom { grid-template-columns: 1fr; }
+      .stats-row-bottom .cell { border-right: 0; border-bottom: 1px solid var(--line); }
+      .stats-row-bottom .cell:last-child { border-bottom: 0; }
+      .interlude-stats { grid-template-columns: 1fr; gap: .8rem; }
+      .interlude-stats .it { border-right: 0; padding-right: 0; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .section-head .right { text-align: left; }
+      .live-strip-inner span.k--hide-sm { display: none; }
+      .feed-body { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ LIVE STATUS STRIP ═══ -->
+  <div class="live-strip" role="status" aria-label="Live operations status">
+    <div class="live-strip-inner">
+      <span class="dot-live" aria-hidden="true"></span>
+      <span class="v">LIVE OPS</span>
+      <span class="sep">·</span>
+      <span class="k">ACTIVE SITES</span>
+      <span class="v">14</span>
+      <span class="sep">·</span>
+      <span class="k k--hide-sm">ON-SITE TODAY</span>
+      <span class="v k--hide-sm">4,287</span>
+      <span class="sep k--hide-sm">·</span>
+      <span class="k k--hide">ON-TIME</span>
+      <span class="v v--pos k--hide">99.4%</span>
+      <span class="sep k--hide">·</span>
+      <span class="k k--hide">LTIFR (12M)</span>
+      <span class="v k--hide">0.21</span>
+      <span class="ts">UPDATED <span id="live-ts">14:32:08</span> GST</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark"><span>AM</span></span>
+        Al Madar MGM
+        <small>EST&nbsp;1979</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#press">Press</a></li>
+      </ul>
+      <div class="nav-cta-wrap">
+        <a class="nav-link-secondary" href="#contact">Sign in</a>
+        <a class="btn btn--primary" href="#contact">Request RFP <span class="arr">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══ -->
+  <section class="hero grid-backdrop">
+    <div class="hero-grid">
+
+      <!-- LEFT: headline -->
+      <div>
+        <span class="hero-eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="v">Q2 · 2026</span>
+          <span style="color: var(--ink-3)">FY26 mid-year ops report — now live</span>
+        </span>
+
+        <h1>Construction operations,<br/><em>in the open.</em></h1>
+        <p class="hero-lede">Forty-seven years of audited delivery across the GCC — civil works, fit-out, hospitality interiors, cultural projects. Now visible in real time, the way our clients ask for it.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="#contact">Request an RFP <span class="arr">→</span></a>
+          <a class="btn btn--ghost" href="#operations">View live operations <span class="arr">↗</span></a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="m-item">
+            <span class="m-k">Founded</span>
+            <span class="m-v">1979 · Dubai, UAE</span>
+          </div>
+          <div class="m-item">
+            <span class="m-k">Tier</span>
+            <span class="m-v">Tier-1 · Privately held</span>
+          </div>
+          <div class="m-item">
+            <span class="m-k">Coverage</span>
+            <span class="m-v">UAE · KSA · Oman · Bahrain</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: dashboard preview card -->
+      <div class="dash-preview" aria-label="Live operations dashboard preview">
+        <div class="dash-head">
+          <span class="dash-title">
+            <span class="dot" aria-hidden="true"></span>
+            ops.almadarmgm.ae / overview
+          </span>
+          <span class="dash-route">Q2 · 2026</span>
+        </div>
+        <div class="dash-tabs">
+          <span class="tab is-active">Overview</span>
+          <span class="tab">Sites</span>
+          <span class="tab">Safety</span>
+          <span class="tab">Velocity</span>
+          <span class="tab">Compliance</span>
+        </div>
+
+        <div class="dash-kpis">
+          <div class="dash-kpi">
+            <div class="k">Active projects <span class="pill pill--pos">● ON-TRACK</span></div>
+            <div class="v">14</div>
+            <div class="delta">+2 vs Q1</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="k">Manhours YTD</div>
+            <div class="v">4.21<small>M</small></div>
+            <div class="delta">+8.4% YoY</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="k">Delivery velocity</div>
+            <div class="v">+12<small>%</small></div>
+            <div class="delta">vs 12M baseline</div>
+          </div>
+          <div class="dash-kpi">
+            <div class="k">Safety LTIFR</div>
+            <div class="v">0.21</div>
+            <div class="delta">−0.04 QoQ</div>
+          </div>
+        </div>
+
+        <div class="dash-chart">
+          <div class="dash-chart-head">
+            <span class="ttl">Project velocity · 24 weeks</span>
+            <span class="leg"><span class="pos">●</span> Actual &nbsp; <span style="color: var(--ink-mute)">●</span> Plan</span>
+          </div>
+          <svg class="spark-lg" viewBox="0 0 600 110" preserveAspectRatio="none" aria-hidden="true">
+            <!-- gridlines -->
+            <line x1="0" y1="22"  x2="600" y2="22"  stroke="rgba(15,17,21,0.05)" />
+            <line x1="0" y1="55"  x2="600" y2="55"  stroke="rgba(15,17,21,0.05)" />
+            <line x1="0" y1="88"  x2="600" y2="88"  stroke="rgba(15,17,21,0.05)" />
+            <!-- plan line (dashed grey) -->
+            <polyline fill="none" stroke="#9097A2" stroke-width="1.25" stroke-dasharray="3 4"
+              points="0,68 25,66 50,67 75,64 100,63 125,62 150,60 175,58 200,57 225,55 250,54 275,52 300,51 325,49 350,48 375,46 400,45 425,43 450,42 475,40 500,39 525,38 550,36 575,35 600,34" />
+            <!-- actual line -->
+            <polyline fill="none" stroke="#10B981" stroke-width="1.75"
+              points="0,72 25,69 50,73 75,66 100,68 125,60 150,63 175,55 200,58 225,49 250,52 275,46 300,42 325,45 350,38 375,40 400,33 425,35 450,29 475,32 500,25 525,28 550,22 575,24 600,20" />
+            <!-- area fill under actual -->
+            <polyline fill="rgba(16,185,129,0.06)" stroke="none"
+              points="0,72 25,69 50,73 75,66 100,68 125,60 150,63 175,55 200,58 225,49 250,52 275,46 300,42 325,45 350,38 375,40 400,33 425,35 450,29 475,32 500,25 525,28 550,22 575,24 600,20 600,110 0,110" />
+            <!-- end dot -->
+            <circle cx="600" cy="20" r="3" fill="#10B981" />
+            <circle cx="600" cy="20" r="6" fill="rgba(16,185,129,0.18)" />
+          </svg>
+          <div class="dash-chart-head" style="margin-top: 8px; margin-bottom: 0;">
+            <span class="leg" style="color: var(--ink-mute)">W14 · 04 APR</span>
+            <span class="leg" style="color: var(--ink-mute)">W26 · 27 JUN</span>
+            <span class="leg" style="color: var(--ink-mute)">W38 · 19 SEP</span>
+          </div>
+        </div>
+
+        <div class="dash-foot">
+          <span>BUILD&nbsp;<span class="stamp">2026.18.04</span></span>
+          <span>Refresh&nbsp;15s · <span class="stamp" style="color: var(--pos)">● live</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- trusted by -->
+    <div class="trusted">
+      <div class="kicker lbl" style="display: block; text-align: center;">— Delivering for —</div>
+      <div class="trusted-row">
+        <div class="cell">DCT&nbsp;Abu Dhabi <small>Cultural · 4 projects</small></div>
+        <div class="cell">Emaar <small>Hospitality · 6 projects</small></div>
+        <div class="cell">Aldar <small>Residential · 3 projects</small></div>
+        <div class="cell">Mubadala <small>Civic · 2 projects</small></div>
+        <div class="cell">RAK Hospitality <small>Resorts · 4 projects</small></div>
+        <div class="cell">Sharjah Inv. Authority <small>Cultural · 3 projects</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CAPABILITIES ═══ -->
+  <section class="section" id="capabilities">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 01 / Capabilities</div>
+          <h2>Eight disciplines, <em>one general contractor.</em></h2>
+          <p>From below-grade civil works to the final coat of marmorino. Self-perform where it matters; specialist subcontracting where it doesn't. Every line item routed through the same QA/QC and HSE backbone.</p>
+        </div>
+        <div class="right">
+          <div>SCOPE&nbsp;BREADTH</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">8 / 8</div>
+          <div style="margin-top:6px">UPDATED · APR 2026</div>
+        </div>
+      </div>
+
+      <div class="cap-grid">
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.5" /><path d="M3 9h18M9 3v18" /></svg>
+          </div>
+          <h3 class="cap-name">Civil works</h3>
+          <p class="cap-desc">Below-grade, structural concrete, post-tensioning. RC frames up to 60 storeys.</p>
+          <div class="cap-foot">
+            <span class="cap-num">CW · 01</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12" /><path d="M9 20v-6h6v6" /><path d="M4 12h16" /></svg>
+          </div>
+          <h3 class="cap-name">Fit-out</h3>
+          <p class="cap-desc">Cat-A &amp; Cat-B, joinery, ceilings, partitioning, MEP integration. Studio-grade execution.</p>
+          <div class="cap-foot">
+            <span class="cap-num">FO · 02</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12c4 0 6-3 9-3s5 3 9 3" /></svg>
+          </div>
+          <h3 class="cap-name">Decorative finishes</h3>
+          <p class="cap-desc">Venetian plaster, tadelakt, micro-cement, hand-applied gilding, patinated metal.</p>
+          <div class="cap-foot">
+            <span class="cap-num">DF · 03</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="11" rx="1" /><path d="M7 9V5a3 3 0 016 0v4" /><path d="M3 14h18" /></svg>
+          </div>
+          <h3 class="cap-name">Hospitality interiors</h3>
+          <p class="cap-desc">5-star hotel keys, F&amp;B, BOH. Operating-brand-standard programmes from Marriott to Aman.</p>
+          <div class="cap-foot">
+            <span class="cap-num">HI · 04</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13" /><path d="M3 21h18" /><path d="M9 21v-7h6v7" /></svg>
+          </div>
+          <h3 class="cap-name">Cultural projects</h3>
+          <p class="cap-desc">Museums, galleries, heritage restoration. Conservation-grade material handling and IES.</p>
+          <div class="cap-foot">
+            <span class="cap-num">CP · 05</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18" /><path d="M6 12V6h3v6" /><path d="M15 12v6h3v-6" /><path d="M3 21h18" /></svg>
+          </div>
+          <h3 class="cap-name">Infrastructure</h3>
+          <p class="cap-desc">Civic plazas, pedestrian decks, hard &amp; soft landscape, utilities reticulation.</p>
+          <div class="cap-foot">
+            <span class="cap-num">IN · 06</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20" /><path d="M2 12h20" /><circle cx="12" cy="12" r="4" /></svg>
+          </div>
+          <h3 class="cap-name">MEP coordination</h3>
+          <p class="cap-desc">In-house BIM-led MEP for HVAC, fire, plumbing, low-voltage. Clash-resolved before mobilisation.</p>
+          <div class="cap-foot">
+            <span class="cap-num">ME · 07</span>
+            <span class="pill pill--warn">● MONITORING</span>
+          </div>
+        </article>
+
+        <article class="cap-card">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1" /><path d="M4 10h16M4 16h16M10 4v16M16 4v16" /></svg>
+          </div>
+          <h3 class="cap-name">Façade systems</h3>
+          <p class="cap-desc">Unitised curtain walling, GRC, stone rainscreen. Coordinated with structure for minimal tolerance loss.</p>
+          <div class="cap-foot">
+            <span class="cap-num">FA · 08</span>
+            <span class="pill pill--pos">● ACTIVE</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ LIVE OPS FEED ═══ -->
+  <section class="section" id="operations">
+    <div class="feed-wrap">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker kicker--pos">— 02 / Live operations</div>
+          <h2>The site, <em>as it happens.</em></h2>
+          <p>Every active site reports up. Pours, MEP coordination meetings, facade mock-up approvals, RFI closures, safety toolbox talks — written into the same audit log our clients see.</p>
+        </div>
+        <div class="right">
+          <div>STREAM</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">14 sites · live</div>
+          <div style="margin-top:6px">REFRESH · 15s</div>
+        </div>
+      </div>
+
+      <!-- terminal panel -->
+      <div class="feed">
+        <div class="feed-head">
+          <div class="left">
+            <span class="traffic" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="ttl">live-ops.almadarmgm.ae</span>
+            <span>·</span>
+            <span>tail&nbsp;-f&nbsp;/var/log/sites/*.log</span>
+          </div>
+          <div class="right">
+            <span><span class="k">SITES</span> 14/14</span>
+            <span><span class="k">EVENTS / MIN</span> 38</span>
+            <span><span class="k">UPTIME</span> 99.97%</span>
+          </div>
+        </div>
+
+        <div class="feed-tabs">
+          <span class="tab is-active">All sites · 14</span>
+          <span class="tab">Hospitality · 4</span>
+          <span class="tab">Cultural · 3</span>
+          <span class="tab">Civic · 2</span>
+          <span class="tab">Commercial · 3</span>
+          <span class="tab">Residential · 2</span>
+        </div>
+
+        <div class="feed-body">
+<code><span class="feed-line"><span class="ts">14:32:01</span> <span class="arr">·</span> <span class="pj">MARSA-PVL</span> <span class="arr">·</span> <span class="ev">slab-pour Lvl-7 · 142 m³ · supplier RAK-Cement</span> <span class="arr">→</span> <span class="st-ok">COMPLETE</span></span>
+<span class="feed-line"><span class="ts">14:30:47</span> <span class="arr">·</span> <span class="pj">DIFC-TWR</span> <span class="arr">·</span> <span class="ev">MEP-coord-mtg · 11 of 14 disciplines signed</span> <span class="arr">→</span> <span class="st-warn">3 PENDING</span></span>
+<span class="feed-line"><span class="ts">14:28:12</span> <span class="arr">·</span> <span class="pj">KHF-HOTEL</span> <span class="arr">·</span> <span class="ev">facade mock-up · panel-type B · client review</span> <span class="arr">→</span> <span class="st-ok">APPROVED</span></span>
+<span class="feed-line"><span class="ts">14:24:53</span> <span class="arr">·</span> <span class="pj">YAS-CULT</span> <span class="arr">·</span> <span class="ev">RFI-2026-0418 · joinery sequence Block-C</span> <span class="arr">→</span> <span class="st-ok">CLOSED · 28h</span></span>
+<span class="feed-line"><span class="ts">14:21:20</span> <span class="arr">·</span> <span class="pj">SHJ-LIB</span>   <span class="arr">·</span> <span class="ev">toolbox-talk · working-at-height · 87 attendees</span> <span class="arr">→</span> <span class="st-ok">SIGNED-OFF</span></span>
+<span class="feed-line"><span class="ts">14:18:09</span> <span class="arr">·</span> <span class="pj">MARYAH-RES</span><span class="arr">·</span> <span class="ev">QA-inspection · marmorino sample wall T-3</span> <span class="arr">→</span> <span class="st-ok">PASS</span></span>
+<span class="feed-line"><span class="ts">14:14:42</span> <span class="arr">·</span> <span class="pj">DIFC-TWR</span> <span class="arr">·</span> <span class="ev">crane-3 · maintenance window · 90 min</span> <span class="arr">→</span> <span class="st-warn">PLANNED · NO-DELAY</span></span>
+<span class="feed-line"><span class="ts">14:11:33</span> <span class="arr">·</span> <span class="pj">MARSA-PVL</span> <span class="arr">·</span> <span class="ev">delivery · GRC panels · batch 18 of 24</span> <span class="arr">→</span> <span class="st-ok">RECEIVED</span></span>
+<span class="feed-line"><span class="ts">14:08:51</span> <span class="arr">·</span> <span class="pj">YAS-CULT</span> <span class="arr">·</span> <span class="ev">heritage-stone delivery · Jordan limestone</span> <span class="arr">→</span> <span class="st-ok">QA-CLEARED</span></span>
+<span class="feed-line"><span class="ts">14:05:14</span> <span class="arr">·</span> <span class="pj">KHF-HOTEL</span> <span class="arr">·</span> <span class="ev">safety-walk · L-12 BOH · 0 findings · supervisor-K</span> <span class="arr">→</span> <span class="st-ok">CLEAR</span></span>
+<span class="feed-line"><span class="ts">14:02:47</span> <span class="arr">·</span> <span class="pj">SHJ-LIB</span>   <span class="arr">·</span> <span class="ev">progress · facade unit-install · 218 of 312</span> <span class="arr">→</span> <span class="st-ok">+12 vs PLAN</span></span>
+<span class="feed-line"><span class="ts">13:59:18</span> <span class="arr">·</span> <span class="pj">MARYAH-RES</span><span class="arr">·</span> <span class="ev">ITP signoff · waterproofing podium · cons. eng.</span> <span class="arr">→</span> <span class="st-ok">SIGNED</span></span>
+<span class="feed-line st-mute">— stream paused at <span class="st-mute">14:32:08 GST</span> · auto-refresh in 11s<span class="feed-cursor"></span></span></code>
+        </div>
+
+        <div class="feed-foot">
+          <span><span class="v">14</span> ACTIVE STREAMS · <span class="v">4,287</span> ON-SITE · <span class="v v--pos">99.97%</span> UPTIME</span>
+          <span>UPDATED <span class="v">14:32:08</span> GST · TZ <span class="v">+04:00</span></span>
+        </div>
+      </div>
+
+      <!-- callout strip beneath terminal -->
+      <div class="feed-callouts">
+        <div class="c">
+          <div class="k">Avg RFI close time</div>
+          <div class="v">31.4 <span style="font-size:14px;color:var(--ink-3)">hrs</span></div>
+          <div class="desc">vs industry median 96 hrs (CIOB UAE benchmark, 2025)</div>
+        </div>
+        <div class="c">
+          <div class="k">Pour QA pass rate</div>
+          <div class="v">99.6 <span style="font-size:14px;color:var(--ink-3)">%</span></div>
+          <div class="desc">cubes tested 28-day · 4,142 of 4,159 since Jan 2024</div>
+        </div>
+        <div class="c">
+          <div class="k">Audit-log retention</div>
+          <div class="v">10 <span style="font-size:14px;color:var(--ink-3)">yrs</span></div>
+          <div class="desc">Immutable, signed, exportable. ISO 9001 conformant.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ INTERLUDE / IMAGE ═══ -->
+  <section class="interlude">
+    <div class="interlude-inner">
+      <div class="interlude-img">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=85&auto=format&fit=crop" alt="Active construction site at dusk" loading="lazy" decoding="async" />
+        <div class="badge">
+          <span><span class="v">25.197° N</span></span>
+          <span><span class="v">55.274° E</span></span>
+          <span><span class="v">DIFC · DXB</span></span>
+        </div>
+        <div class="stamp">
+          <span class="dot" aria-hidden="true"></span>LIVE · 14:32 GST
+        </div>
+      </div>
+      <div class="interlude-text">
+        <div class="kicker kicker--pos">— Site of the day · DIFC-TWR</div>
+        <h3>Forty-two storeys of structure, on programme, on safety.</h3>
+        <p>The DIFC tower fit-out is at level 28 today. 312 trade workers on site, two pours scheduled before sunset, zero recordable incidents in the last 184 days. The numbers are in the feed above — they're the same numbers we send the client at end-of-shift.</p>
+        <div class="interlude-stats">
+          <div class="it">
+            <div class="k">Project</div>
+            <div class="v">DIFC-TWR</div>
+          </div>
+          <div class="it">
+            <div class="k">Programme</div>
+            <div class="v">+4d ahead</div>
+          </div>
+          <div class="it">
+            <div class="k">RIR (12M)</div>
+            <div class="v">0.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PROJECTS ═══ -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 03 / Selected projects</div>
+          <h2>Six of fourteen, <em>currently active.</em></h2>
+          <p>A representative slice of the live portfolio. Status pills reflect last reconciliation against programme baseline; completion percentages are weighted-physical, not invoice.</p>
+        </div>
+        <div class="right">
+          <div>PORTFOLIO VALUE</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">AED 3.84B</div>
+          <div style="margin-top:6px">As at 18 APR 2026</div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">Marsa Heritage Pavilion</h3>
+            <span class="pill pill--pos">● ON-TRACK</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Cultural · Heritage</span></div>
+            <div><span class="k">Location</span><span class="v">Saadiyat · AUH</span></div>
+            <div><span class="k">Year</span><span class="v">2024 — 2026</span></div>
+            <div><span class="k">Scope</span><span class="v">Civil + finishes</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar is-pos"><span style="width:78%"></span></div>
+            <div class="proj-prog-val">78%</div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">DIFC Tower Fit-Out</h3>
+            <span class="pill pill--pos">● ON-TRACK</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Commercial · Cat-B</span></div>
+            <div><span class="k">Location</span><span class="v">DIFC · DXB</span></div>
+            <div><span class="k">Year</span><span class="v">2025 — 2026</span></div>
+            <div><span class="k">Scope</span><span class="v">42-storey fit-out</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar is-pos"><span style="width:64%"></span></div>
+            <div class="proj-prog-val">64%</div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">Khor Fakkan Boutique Hotel</h3>
+            <span class="pill pill--warn">● MONITORING</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Hospitality · 5-star</span></div>
+            <div><span class="k">Location</span><span class="v">Khor Fakkan · SHJ</span></div>
+            <div><span class="k">Year</span><span class="v">2024 — 2026</span></div>
+            <div><span class="k">Scope</span><span class="v">Shell + interiors</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar is-warn"><span style="width:52%"></span></div>
+            <div class="proj-prog-val">52%</div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">Yas Cultural Hall</h3>
+            <span class="pill pill--pos">● ON-TRACK</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Cultural · Civic</span></div>
+            <div><span class="k">Location</span><span class="v">Yas Island · AUH</span></div>
+            <div><span class="k">Year</span><span class="v">2025 — 2027</span></div>
+            <div><span class="k">Scope</span><span class="v">Auditorium build</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar is-pos"><span style="width:31%"></span></div>
+            <div class="proj-prog-val">31%</div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">Sharjah Civic Library</h3>
+            <span class="pill pill--pos">● ON-TRACK</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Civic · Government</span></div>
+            <div><span class="k">Location</span><span class="v">Al Majaz · SHJ</span></div>
+            <div><span class="k">Year</span><span class="v">2024 — 2026</span></div>
+            <div><span class="k">Scope</span><span class="v">Civil + facade + FF&amp;E</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar is-pos"><span style="width:88%"></span></div>
+            <div class="proj-prog-val">88%</div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head">
+            <h3 class="proj-name">Al Maryah Residences</h3>
+            <span class="pill pill--ink">● COMPLETE</span>
+          </div>
+          <div class="proj-meta">
+            <div><span class="k">Sector</span><span class="v">Residential · Premium</span></div>
+            <div><span class="k">Location</span><span class="v">Al Maryah · AUH</span></div>
+            <div><span class="k">Year</span><span class="v">2022 — 2025</span></div>
+            <div><span class="k">Scope</span><span class="v">Tower + decorative</span></div>
+          </div>
+          <div class="proj-prog">
+            <div class="proj-bar"><span style="width:100%"></span></div>
+            <div class="proj-prog-val">100%</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ BY THE NUMBERS ═══ -->
+  <section class="section" id="numbers">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 04 / By the numbers</div>
+          <h2>Forty-seven years, <em>still counting.</em></h2>
+          <p>Cumulative-since-inception where labelled; rolling-12-month otherwise. Every figure traceable to the audited system of record. Last reconciled 18 April 2026.</p>
+        </div>
+        <div class="right">
+          <div>RECONCILED</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">18 APR 2026</div>
+          <div style="margin-top:6px">SOURCE · ERP · IFRS</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat">
+          <div class="k">Years operating</div>
+          <div class="v">47</div>
+          <div class="desc">since 1979 · founder-led</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#0F1115" stroke-width="1.25"
+              points="0,30 12,29 24,30 36,28 48,27 60,26 72,25 84,24 96,22 108,21 120,19 132,18 144,16 156,14 168,12 180,9 192,6 200,5" />
+            <circle cx="200" cy="5" r="2.5" fill="#0F1115" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Projects delivered</div>
+          <div class="v">280<small>+</small></div>
+          <div class="desc"><span class="pos">+12</span> in trailing 12M</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#0F1115" stroke-width="1.25"
+              points="0,32 12,30 24,31 36,28 48,29 60,26 72,27 84,23 96,24 108,20 120,18 132,19 144,15 156,13 168,14 180,9 192,7 200,5" />
+            <circle cx="200" cy="5" r="2.5" fill="#0F1115" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Manhours worked</div>
+          <div class="v">12.4<small>M</small></div>
+          <div class="desc">since 2010 · audit-traceable</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#10B981" stroke-width="1.25"
+              points="0,30 12,28 24,29 36,25 48,26 60,22 72,23 84,18 96,19 108,15 120,13 132,14 144,10 156,11 168,8 180,6 192,5 200,4" />
+            <circle cx="200" cy="4" r="2.5" fill="#10B981" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Programme adherence</div>
+          <div class="v">99.4<small>%</small></div>
+          <div class="desc"><span class="pos">on-time</span> · last 36M</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#10B981" stroke-width="1.25"
+              points="0,18 12,16 24,20 36,15 48,17 60,12 72,14 84,10 96,11 108,8 120,12 132,7 144,9 156,6 168,8 180,5 192,7 200,5" />
+            <circle cx="200" cy="5" r="2.5" fill="#10B981" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Safety LTIFR</div>
+          <div class="v">0.21</div>
+          <div class="desc"><span class="pos">−18%</span> vs prev. 12M</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#10B981" stroke-width="1.25"
+              points="0,8 12,9 24,12 36,10 48,14 60,12 72,16 84,14 96,18 108,17 120,20 132,22 144,24 156,23 168,26 180,28 192,30 200,32" />
+            <circle cx="200" cy="32" r="2.5" fill="#10B981" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Active sites</div>
+          <div class="v">14</div>
+          <div class="desc">UAE 11 · KSA 2 · OMN 1</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#0F1115" stroke-width="1.25"
+              points="0,22 12,24 24,20 36,22 48,18 60,21 72,17 84,19 96,15 108,18 120,13 132,16 144,12 156,15 168,10 180,12 192,8 200,9" />
+            <circle cx="200" cy="9" r="2.5" fill="#0F1115" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">On-site today</div>
+          <div class="v">4,287</div>
+          <div class="desc">trade · 3,818 · supervision · 469</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#0F1115" stroke-width="1.25"
+              points="0,28 12,26 24,29 36,24 48,27 60,23 72,25 84,20 96,22 108,18 120,21 132,16 144,18 156,13 168,15 180,11 192,12 200,9" />
+            <circle cx="200" cy="9" r="2.5" fill="#0F1115" />
+          </svg>
+        </div>
+
+        <div class="stat">
+          <div class="k">Repeat-client share</div>
+          <div class="v">68<small>%</small></div>
+          <div class="desc"><span class="pos">+6pp</span> vs FY24</div>
+          <svg class="stat-spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+            <polyline fill="none" stroke="#10B981" stroke-width="1.25"
+              points="0,28 12,26 24,29 36,23 48,25 60,21 72,22 84,17 96,19 108,15 120,16 132,12 144,14 156,10 168,11 180,8 192,9 200,6" />
+            <circle cx="200" cy="6" r="2.5" fill="#10B981" />
+          </svg>
+        </div>
+
+      </div>
+
+      <div class="stats-row-bottom">
+        <div class="cell">
+          <div>
+            <div class="k">Insurance · contract works</div>
+            <div style="font-size:11px;color:var(--ink-mute);font-family:var(--mono);margin-top:3px">AIG · Lloyd&#39;s syndicate</div>
+          </div>
+          <div class="v">AED 4.0B</div>
+        </div>
+        <div class="cell">
+          <div>
+            <div class="k">Banking · commercial paper</div>
+            <div style="font-size:11px;color:var(--ink-mute);font-family:var(--mono);margin-top:3px">A-rated · 4 institutions</div>
+          </div>
+          <div class="v">AED 1.6B</div>
+        </div>
+        <div class="cell">
+          <div>
+            <div class="k">Bonding capacity · single</div>
+            <div style="font-size:11px;color:var(--ink-mute);font-family:var(--mono);margin-top:3px">Performance + retention</div>
+          </div>
+          <div class="v">AED 850M</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HOW DELIVERY WORKS ═══ -->
+  <section class="section" id="delivery">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 05 / How delivery works</div>
+          <h2>Five stages, <em>same playbook every time.</em></h2>
+          <p>The shape of every project — from a museum in Saadiyat to a tower in DIFC. Tightly held methodology; flexible execution. Each stage has its own gate, sign-off, and audit trail.</p>
+        </div>
+        <div class="right">
+          <div>METHODOLOGY · v3.4</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">since 2014</div>
+          <div style="margin-top:6px">REV · JAN 2026</div>
+        </div>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="num">Brief</div>
+          <h4>Brief</h4>
+          <p>Scope, programme, brand standards, budget envelope. Two principals on every kickoff — never delegated.</p>
+          <div class="duration"><span class="v">2 — 3 weeks</span></div>
+        </div>
+
+        <div class="step">
+          <div class="num">Coordinate</div>
+          <h4>Coordinate</h4>
+          <p>BIM-led MEP &amp; structural coordination, value engineering, supplier qualification. Clash-free before mobilisation.</p>
+          <div class="duration"><span class="v">6 — 10 weeks</span></div>
+        </div>
+
+        <div class="step">
+          <div class="num">Mobilise</div>
+          <h4>Mobilise</h4>
+          <p>Site set-up, hoarding, welfare, HSE induction, baseline programme issued, weekly cadence locked.</p>
+          <div class="duration"><span class="v">3 — 4 weeks</span></div>
+        </div>
+
+        <div class="step">
+          <div class="num">Deliver</div>
+          <h4>Deliver</h4>
+          <p>Civil → frame → envelope → MEP → fit-out → finishes. Weekly client reporting; live dashboard access from day one.</p>
+          <div class="duration"><span class="v">programme</span></div>
+        </div>
+
+        <div class="step">
+          <div class="num">Aftercare</div>
+          <h4>Aftercare</h4>
+          <p>12-month defect liability, snagging, callouts. Plus a non-contractual second visit at 24 months. Always.</p>
+          <div class="duration"><span class="v">12 — 24 months</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTORS / CLIENTS ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 06 / Sectors &amp; clients</div>
+          <h2>Where the work goes, <em>who it goes to.</em></h2>
+          <p>Sector mix is balanced by intent — never more than 35% of revenue from any single sector. Repeat-client work accounts for 68% of FY26 revenue, the highest in our history.</p>
+        </div>
+        <div class="right">
+          <div>SECTOR MIX</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">7 sectors</div>
+          <div style="margin-top:6px">FY26 BLEND</div>
+        </div>
+      </div>
+
+      <div class="sect-grid">
+
+        <div class="sect-list">
+          <table>
+            <thead>
+              <tr><th>Sector</th><th style="text-align:right">Projects</th><th style="text-align:right">Revenue share</th><th style="text-align:right">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="name">Hospitality · hotels &amp; resorts</td>
+                <td class="cnt">68</td>
+                <td class="share">31.4%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Cultural · museums &amp; galleries</td>
+                <td class="cnt">42</td>
+                <td class="share">22.8%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Commercial · towers &amp; offices</td>
+                <td class="cnt">54</td>
+                <td class="share">18.6%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Civic / Government</td>
+                <td class="cnt">38</td>
+                <td class="share">12.1%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Residential · premium</td>
+                <td class="cnt">46</td>
+                <td class="share">9.4%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Heritage &amp; restoration</td>
+                <td class="cnt">22</td>
+                <td class="share">3.8%</td>
+                <td style="text-align:right"><span class="pill pill--pos">● ACTIVE</span></td>
+              </tr>
+              <tr>
+                <td class="name">Infrastructure · civic plazas</td>
+                <td class="cnt">14</td>
+                <td class="share">1.9%</td>
+                <td style="text-align:right"><span class="pill pill--warn">● MONITORING</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="clients">
+          <div class="clients-head">
+            <span class="ttl">Selected clients · since 1979</span>
+            <span class="cnt">12 of 80+</span>
+          </div>
+          <div class="clients-list">
+            <div class="row">
+              <span class="ix">01</span>
+              <span class="nm">Department of Culture &amp; Tourism — Abu Dhabi</span>
+              <span class="cat">Cultural</span>
+            </div>
+            <div class="row">
+              <span class="ix">02</span>
+              <span class="nm">Emaar Properties</span>
+              <span class="cat">Hospitality</span>
+            </div>
+            <div class="row">
+              <span class="ix">03</span>
+              <span class="nm">Aldar Properties</span>
+              <span class="cat">Residential</span>
+            </div>
+            <div class="row">
+              <span class="ix">04</span>
+              <span class="nm">Mubadala Investment Co.</span>
+              <span class="cat">Civic</span>
+            </div>
+            <div class="row">
+              <span class="ix">05</span>
+              <span class="nm">Miral · Yas Island</span>
+              <span class="cat">Cultural</span>
+            </div>
+            <div class="row">
+              <span class="ix">06</span>
+              <span class="nm">Marriott International</span>
+              <span class="cat">Hospitality</span>
+            </div>
+            <div class="row">
+              <span class="ix">07</span>
+              <span class="nm">RAK Hospitality Holding</span>
+              <span class="cat">Resorts</span>
+            </div>
+            <div class="row">
+              <span class="ix">08</span>
+              <span class="nm">Sharjah Investment &amp; Development Authority</span>
+              <span class="cat">Civic</span>
+            </div>
+            <div class="row">
+              <span class="ix">09</span>
+              <span class="nm">DIFC Authority</span>
+              <span class="cat">Commercial</span>
+            </div>
+            <div class="row">
+              <span class="ix">10</span>
+              <span class="nm">Aman Resorts</span>
+              <span class="cat">Hospitality</span>
+            </div>
+            <div class="row">
+              <span class="ix">11</span>
+              <span class="nm">Saadiyat Cultural District</span>
+              <span class="cat">Cultural</span>
+            </div>
+            <div class="row">
+              <span class="ix">12</span>
+              <span class="nm">Dubai Holding</span>
+              <span class="cat">Mixed-use</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CERTIFICATIONS ═══ -->
+  <section class="section" id="compliance">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker kicker--pos">— 07 / Certifications &amp; compliance</div>
+          <h2>Audit-ready, <em>by design.</em></h2>
+          <p>ISO-certified across quality, environment, and occupational health &amp; safety. Registered with every major UAE municipality. Approved contractor list participant for all listed federal entities.</p>
+        </div>
+        <div class="right">
+          <div>NEXT AUDIT</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">14 OCT 2026</div>
+          <div style="margin-top:6px">ISO 9001 · BV</div>
+        </div>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">ISO 9001:2015</div>
+            <div class="meta">Cert · <span class="v">QMS-AM-2009-44</span> · valid to <span class="v">2027-03</span></div>
+            <div class="desc">Quality management. Audited annually by Bureau Veritas.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">ISO 14001:2015</div>
+            <div class="meta">Cert · <span class="v">EMS-AM-2011-18</span> · valid to <span class="v">2027-03</span></div>
+            <div class="desc">Environmental management. Site-by-site EIA programme.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">ISO 45001:2018</div>
+            <div class="meta">Cert · <span class="v">OHS-AM-2018-09</span> · valid to <span class="v">2027-03</span></div>
+            <div class="desc">Occupational H&amp;S. LTIFR target ≤ 0.30 (12M).</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">BREEAM In-Use</div>
+            <div class="meta">Programme · <span class="v">14 active certificates</span></div>
+            <div class="desc">Sustainability assessment for delivered assets.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">LEED · USGBC</div>
+            <div class="meta">Programme · <span class="v">8 platinum / 22 gold</span></div>
+            <div class="desc">Delivered LEED-rated projects since 2012.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">Dubai Municipality</div>
+            <div class="meta">Reg · <span class="v">DM-CC-1979-021</span> · Class <span class="v">A1</span></div>
+            <div class="desc">Original 1979 registration. Class A1 unrestricted.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">Abu Dhabi · DMT</div>
+            <div class="meta">Reg · <span class="v">DMT-AM-1984-114</span> · <span class="v">Special Cat.</span></div>
+            <div class="desc">Special-category contractor for cultural assets.</div>
+          </div>
+        </div>
+
+        <div class="cert">
+          <div class="check">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4 10-10" /></svg>
+          </div>
+          <div>
+            <div class="nm">Emirates Authority · ESMA</div>
+            <div class="meta">Conformity · <span class="v">CoC-2024-AM-007</span></div>
+            <div class="desc">Materials conformity scheme — site-imported finishes.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ TRUST / LEADERSHIP ═══ -->
+  <section class="section" id="leadership">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="left">
+          <div class="kicker">— 08 / Leadership &amp; trust</div>
+          <h2>Held privately, <em>run by the same family.</em></h2>
+          <p>Two generations on the executive committee. No external shareholders, no PE overhang. The principals are personally on every project of meaningful scope — and have been since 1979.</p>
+        </div>
+        <div class="right">
+          <div>OWNERSHIP</div>
+          <div class="v" style="font-size:22px; letter-spacing:-.02em">100% private</div>
+          <div style="margin-top:6px">FAMILY-HELD</div>
+        </div>
+      </div>
+
+      <div class="trust">
+
+        <div class="quote">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote>If we can't show the client what's happening on site, in real time, with the audit log they can hand to their own board — we're not actually doing the job. That's been the standard since '79. The dashboard just makes it visible.</blockquote>
+          <cite>
+            <span class="nm">Mohammed Al-Madar</span> · Chairman &amp; CEO · Al Madar MGM
+          </cite>
+        </div>
+
+        <div class="leaders">
+          <div class="leaders-head">
+            <span class="ttl">Executive committee · 2026</span>
+            <span class="ttl">3 of 7</span>
+          </div>
+          <div class="leader">
+            <div>
+              <div class="nm">Mohammed Al-Madar</div>
+              <div class="role">Chairman &amp; CEO</div>
+              <p class="bio">Founder, 1979. Civil engineer. Leads the executive committee and chairs every quarterly client review board.</p>
+            </div>
+            <div class="tenure">since<br/><span class="v">1979</span></div>
+          </div>
+          <div class="leader">
+            <div>
+              <div class="nm">Yusra Al-Madar</div>
+              <div class="role">Managing Director · Operations</div>
+              <p class="bio">Joined 2004. Runs the active-site portfolio and the operations dashboard programme. RIBA chartered.</p>
+            </div>
+            <div class="tenure">since<br/><span class="v">2004</span></div>
+          </div>
+          <div class="leader">
+            <div>
+              <div class="nm">Ahmad Al-Madar</div>
+              <div class="role">Director · Hospitality &amp; Cultural</div>
+              <p class="bio">Joined 2009. Heads the hospitality and cultural delivery practice. Previously with Aman Group, Geneva.</p>
+            </div>
+            <div class="tenure">since<br/><span class="v">2009</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CTA ═══ -->
+  <section class="section" id="contact">
+    <div class="container">
+
+      <div class="cta">
+        <div>
+          <div class="kicker">— 09 / Brief us</div>
+          <h2>Brief us on your project.</h2>
+          <p>Sector, scope, programme. One of the principals personally responds within two working days. RFPs encrypted in transit; NDAs returned same-day on request.</p>
+          <div class="cta-actions">
+            <a class="btn btn--primary" href="mailto:rfp@almadarmgm.ae">Send an RFP <span class="arr">→</span></a>
+            <a class="btn btn--ghost" href="tel:+97142821979">+971 4 282 1979 <span class="arr">↗</span></a>
+          </div>
+        </div>
+        <div class="cta-side">
+          <div class="cta-row">
+            <span class="k">Email</span>
+            <span class="v">rfp&nbsp;@&nbsp;almadarmgm.ae</span>
+          </div>
+          <div class="cta-row">
+            <span class="k">Press</span>
+            <span class="v">press&nbsp;@&nbsp;almadarmgm.ae</span>
+          </div>
+          <div class="cta-row">
+            <span class="k">Studio</span>
+            <span class="v">Al Quoz Industrial 3 · Dubai</span>
+          </div>
+          <div class="cta-row">
+            <span class="k">Hours</span>
+            <span class="v">Sun — Thu · 08:00 — 18:00 GST</span>
+          </div>
+          <div class="cta-row">
+            <span class="k">Response</span>
+            <span class="v" style="color: var(--pos)">● within 2 working days</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer" id="press">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a href="#" class="brand">
+            <span class="brand-mark"><span>AM</span></span>
+            Al Madar MGM
+            <small>EST&nbsp;1979</small>
+          </a>
+          <p class="footer-blurb">A privately held UAE construction house. Civil works to specialist finishes — from structure to surface, audited every step.</p>
+          <span class="footer-status">
+            <span class="dot" aria-hidden="true"></span>
+            All systems operational · 14 sites · 99.97% uptime
+          </span>
+        </div>
+
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">HSE &amp; quality</a></li>
+            <li><a href="#">Methodology</a></li>
+            <li><a href="#">Careers · 14 open</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Capabilities</h5>
+          <ul>
+            <li><a href="#">Civil works</a></li>
+            <li><a href="#">Fit-out</a></li>
+            <li><a href="#">Decorative finishes</a></li>
+            <li><a href="#">Hospitality interiors</a></li>
+            <li><a href="#">Cultural projects</a></li>
+            <li><a href="#">MEP coordination</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#">Company profile · PDF</a></li>
+            <li><a href="#">Certifications · ZIP</a></li>
+            <li><a href="#">Press kit</a></li>
+            <li><a href="#">Vendor portal</a></li>
+            <li><a href="#">Open RFPs</a></li>
+            <li><a href="#">Status · live</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Find us</h5>
+          <p>
+            Al Quoz Industrial 3<br/>
+            Dubai · UAE<br/>
+            <br/>
+            T &nbsp;+971 4 282 1979<br/>
+            E &nbsp;rfp@almadarmgm.ae<br/>
+            <br/>
+            25.197° N · 55.274° E
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-foot">
+        <span class="stamp">© 1979 — 2026 · Al Madar MGM Construction L.L.C</span>
+        <span class="reg">TRN <span class="v">100-2841-7790-03</span> · DM Reg <span class="v">DM-CC-1979-021</span></span>
+        <span>
+          <a href="#">Privacy</a> &nbsp;·&nbsp;
+          <a href="#">Accessibility</a> &nbsp;·&nbsp;
+          <a href="#">Terms</a> &nbsp;·&nbsp;
+          <a href="#">Imprint</a>
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    /* live timestamp ticker — updates the GST clock in the top status strip */
+    (function () {
+      var el = document.getElementById('live-ts');
+      if (!el) return;
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+      function tick() {
+        var now = new Date();
+        // GST is UTC+4
+        var gst = new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (4 * 3600000));
+        el.textContent = pad(gst.getHours()) + ':' + pad(gst.getMinutes()) + ':' + pad(gst.getSeconds());
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>

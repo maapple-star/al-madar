@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Al Madar MGM — A house of finishes, in color</title>
+  <meta name="description" content="A construction house. Established 1979. United Arab Emirates." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ───────────────────────────────────────────────────────────────
+       v3 — MODERNIST COLOR
+       Cool near-white · deep ink · concrete · petrol-teal accent
+       Same typography as v2 (Plus Jakarta + Cormorant + JetBrains)
+       Difference: full-color photography + single restrained accent
+       ─────────────────────────────────────────────────────────────── */
+
+    :root {
+      --paper:       #F7F7F4;
+      --paper-soft:  #EFEFEB;
+      --paper-deep:  #E4E3DD;
+      --ink:         #0A0A0A;
+      --ink-soft:    #1A1A1A;
+      --ink-mute:    #6B6B68;
+      --concrete:    #9A968F;
+      --rule:        rgba(10,10,10,.08);
+      --rule-strong: rgba(10,10,10,.14);
+
+      /* — petrol teal accent (used sparingly) — */
+      --accent:      #1E4A4F;
+      --accent-hi:   #2D6E72;
+      --accent-deep: #143638;
+      --accent-soft: rgba(30,74,79,.10);
+
+      --sans:    "Plus Jakarta Sans", "Söhne", "Suisse Int'l", -apple-system, sans-serif;
+      --serif:   "Cormorant Garamond", Georgia, serif;
+      --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+      --container: min(1500px, 92vw);
+      --container-narrow: min(880px, 86vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+      --ease-soft: cubic-bezier(.6,.05,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      letter-spacing: -.005em;
+    }
+    ::selection { background: var(--accent); color: var(--paper); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+    .container { width: var(--container); margin: 0 auto; }
+    .container-narrow { width: var(--container-narrow); margin: 0 auto; }
+
+    /* ── Type tokens ── */
+    .micro {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      font-weight: 400;
+    }
+    .display {
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: .96;
+    }
+    .serif-em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    /* ── Universal photo treatment: editorial color ── */
+    /* photos rendered in natural color with a touch of contrast.
+       no grayscale anywhere — that's the v3 mandate. */
+
+    /* ───────────────────────────────────────────────────────────────
+       NAV
+       ─────────────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 24px clamp(1.5rem, 3vw, 2.5rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      mix-blend-mode: difference;
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .nav .brand {
+      letter-spacing: .14em;
+      font-weight: 500;
+    }
+    .nav .brand sub {
+      vertical-align: baseline;
+      font-size: 9px;
+      opacity: .7;
+      margin-left: 8px;
+    }
+    .nav-links {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; justify-content: center; gap: 1.75rem;
+    }
+    .nav-links a {
+      transition: opacity .25s var(--ease);
+      opacity: .8;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta-row {
+      display: flex; justify-content: flex-end; gap: 1.5rem;
+    }
+    .nav-cta-row a:hover { opacity: 1; }
+    .nav-cta-row a { opacity: .8; transition: opacity .25s var(--ease); }
+    @media (max-width: 1000px) {
+      .nav-links { display: none; }
+      .nav { grid-template-columns: 1fr auto; }
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       HERO — full-bleed image with overlaid type
+       ─────────────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 720px;
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: contrast(1.06) brightness(.78) saturate(.95);
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,10,10,.35) 0%, rgba(10,10,10,.1) 30%, rgba(10,10,10,.35) 70%, rgba(10,10,10,.6) 100%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: absolute; inset: 0;
+      z-index: 2;
+      padding: clamp(6rem, 10vh, 8rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3rem);
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: var(--paper);
+    }
+    .hero-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-top .micro { color: rgba(250,250,248,.7); }
+    .hero-headline {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 7.5vw, 8rem);
+      line-height: .92;
+      letter-spacing: -.035em;
+      margin: 0;
+      max-width: 14ch;
+    }
+    .hero-headline .em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: #C9D7D6; /* ivory tinted petrol — readable on dark hero */
+    }
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      align-items: end;
+    }
+    @media (max-width: 800px) {
+      .hero-bottom { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .hero-bottom .lede {
+      max-width: 30ch;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: rgba(250,250,248,.85);
+      font-weight: 400;
+    }
+    .hero-bottom .lede em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: rgba(250,250,248,1);
+      font-weight: 400;
+    }
+    .hero-bottom .meta-col {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.7);
+    }
+    .hero-bottom .meta-col strong {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--paper);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 6px;
+    }
+    .hero-bottom .actions {
+      display: flex; justify-content: flex-end; gap: 1rem;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 800px) {
+      .hero-bottom .actions { justify-content: flex-start; }
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-light {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--paper);
+    }
+    .btn-light:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+    .btn-ghost-light {
+      background: transparent;
+      color: var(--paper);
+      border-color: rgba(250,250,248,.6);
+    }
+    .btn-ghost-light:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn-dark:hover { background: transparent; color: var(--ink); }
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+    .btn-ghost-dark:hover { background: var(--ink); color: var(--paper); }
+    .btn .arrow { transition: transform .35s var(--ease); display: inline-block; }
+    .btn:hover .arrow { transform: translate(3px, -3px); }
+
+    /* ───────────────────────────────────────────────────────────────
+       SECTION GENERIC
+       ─────────────────────────────────────────────────────────────── */
+    .section { padding: clamp(7rem, 14vw, 12rem) 0; }
+    .section-light { background: var(--paper); }
+    .section-dark { background: var(--ink); color: var(--paper); }
+    .section-soft { background: var(--paper-soft); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      margin-bottom: clamp(4rem, 8vw, 7rem);
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .section-head { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .section-head .label-block { display: flex; flex-direction: column; gap: .5rem; }
+    .section-head .label-num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      font-weight: 500;
+    }
+    .section-head .label-name {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--ink);
+      letter-spacing: -.005em;
+    }
+    .section-head h2 {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(2.25rem, 5.5vw, 5rem);
+      line-height: .98;
+      letter-spacing: -.03em;
+      margin: 0;
+      max-width: 18ch;
+    }
+    .section-head h2 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .section-dark .section-head .label-num,
+    .section-dark .section-head .label-name { color: rgba(250,250,248,.7); }
+    .section-dark .section-head h2 { color: var(--paper); }
+    .section-dark .section-head h2 em { color: #8FB0AE; /* tinted petrol on ink */ }
+
+    /* ───────────────────────────────────────────────────────────────
+       INTRO QUOTE
+       ─────────────────────────────────────────────────────────────── */
+    .intro {
+      padding: clamp(8rem, 16vw, 14rem) 0;
+      background: var(--paper);
+    }
+    .intro-text {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.625rem, 3.4vw, 2.875rem);
+      line-height: 1.18;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      max-width: 22ch;
+      margin: 0;
+    }
+    .intro-text em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: end;
+    }
+    @media (max-width: 900px) { .intro-grid { grid-template-columns: 1fr; } }
+    .intro-meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      line-height: 1.7;
+    }
+    .intro-meta div + div { margin-top: 1rem; }
+    .intro-meta strong {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 4px;
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       NUMBERS — minimal, large
+       ─────────────────────────────────────────────────────────────── */
+    .numbers-wrap {
+      background: var(--paper-soft);
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      border-top: 1px solid var(--accent);
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+    @media (max-width: 800px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .numbers-grid { grid-template-columns: 1fr; } }
+    .number-cell {
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 2vw, 2rem);
+      border-right: 1px solid var(--rule);
+      position: relative;
+    }
+    .number-cell:last-child { border-right: 0; }
+    @media (max-width: 800px) {
+      .number-cell:nth-child(2n) { border-right: 0; }
+      .number-cell:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    }
+    @media (max-width: 480px) {
+      .number-cell { border-right: 0 !important; border-bottom: 1px solid var(--rule); }
+    }
+    .number-cell .micro { display: block; margin-bottom: 1.5rem; }
+    .number-cell .figure {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: var(--ink);
+      display: flex; align-items: baseline; gap: 4px;
+    }
+    .number-cell .figure .suffix {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--accent);
+      letter-spacing: 0;
+    }
+    .number-cell .name {
+      margin-top: 1.25rem;
+      font-size: 14.5px;
+      color: var(--ink);
+      max-width: 22ch;
+      font-weight: 400;
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       FULL-BLEED PROJECT (Saadiyat moment)
+       ─────────────────────────────────────────────────────────────── */
+    .full-bleed {
+      position: relative;
+      height: 100vh; min-height: 700px;
+      overflow: hidden;
+    }
+    .full-bleed img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: contrast(1.04) brightness(.92) saturate(.98);
+    }
+    .full-bleed::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(10,10,10,.6) 0%, rgba(10,10,10,.1) 60%, rgba(10,10,10,.2) 100%);
+      pointer-events: none;
+    }
+    .full-bleed-content {
+      position: absolute; inset: 0;
+      z-index: 2;
+      padding: clamp(2rem, 5vw, 4rem);
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: var(--paper);
+    }
+    .full-bleed-content .top {
+      display: flex; justify-content: space-between;
+      gap: 2rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.8);
+      flex-wrap: wrap;
+    }
+    .full-bleed-content .bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: end;
+    }
+    @media (max-width: 800px) {
+      .full-bleed-content .bottom { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .full-bleed-content h3 {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 4.25rem);
+      line-height: 1;
+      letter-spacing: -.03em;
+      margin: 0;
+      max-width: 16ch;
+    }
+    .full-bleed-content h3 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: #B5C7C5; /* tinted petrol */
+    }
+    .full-bleed-content .meta-list {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.85);
+      display: grid; gap: .5rem;
+    }
+    .full-bleed-content .meta-list strong {
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 14.5px;
+      color: var(--paper);
+      margin-left: 1.5rem;
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       SERVICES — minimal type-only list
+       ─────────────────────────────────────────────────────────────── */
+    .services-list {
+      list-style: none; padding: 0; margin: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+    .service {
+      border-bottom: 1px solid var(--rule);
+      transition: padding .4s var(--ease);
+    }
+    .service .row {
+      display: grid;
+      grid-template-columns: 60px 1fr 1.5fr 60px;
+      gap: 2rem;
+      padding: clamp(1.75rem, 3vw, 2.75rem) 0;
+      align-items: center;
+      cursor: pointer;
+      transition: padding .4s var(--ease);
+    }
+    @media (max-width: 700px) {
+      .service .row { grid-template-columns: 40px 1fr; gap: 1rem; }
+      .service .row .desc, .service .row .arrow { display: none; }
+    }
+    .service .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--concrete);
+    }
+    .service .name {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      transition: transform .5s var(--ease);
+    }
+    .service:hover .name { transform: translateX(8px); }
+    .service .name em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .service .desc {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-mute);
+      max-width: 44ch;
+    }
+    .service .arrow {
+      font-family: var(--mono);
+      font-size: 18px;
+      color: var(--ink-mute);
+      text-align: right;
+      transition: transform .4s var(--ease), color .4s var(--ease);
+    }
+    .service:hover .arrow { color: var(--ink); transform: translateX(6px); }
+
+    /* ───────────────────────────────────────────────────────────────
+       PORTFOLIO — alternating large image + caption
+       ─────────────────────────────────────────────────────────────── */
+    .portfolio { background: var(--paper); padding: clamp(6rem, 12vw, 10rem) 0; }
+    .portfolio-list { display: flex; flex-direction: column; gap: clamp(5rem, 10vw, 9rem); }
+    .work {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .work { grid-template-columns: 1fr; }
+    }
+    .work.flip .work-img { order: 2; }
+    @media (max-width: 800px) { .work.flip .work-img { order: 0; } }
+    .work-img {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .work-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: contrast(1.03) saturate(.98);
+      transition: transform 1.2s var(--ease);
+    }
+    .work:hover .work-img img { transform: scale(1.04); }
+    .work-img .index {
+      position: absolute; top: 18px; left: 18px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.95);
+      mix-blend-mode: difference;
+    }
+    .work-meta .num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 1.25rem;
+    }
+    .work-meta h3 {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      line-height: 1;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+    }
+    .work-meta h3 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .work-meta .body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink-mute);
+      max-width: 36ch;
+      margin: 0 0 2rem;
+    }
+    .work-meta .body em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--ink);
+    }
+    .work-meta .specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 2rem;
+    }
+    .work-meta .specs div {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .work-meta .specs strong {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 14px;
+      color: var(--ink);
+      margin-top: 4px;
+    }
+    .work-meta .read {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 4px;
+      transition: color .3s var(--ease), border-color .3s var(--ease);
+    }
+    .work-meta .read:hover { color: var(--accent); border-color: var(--accent-hi); }
+
+    /* ───────────────────────────────────────────────────────────────
+       SECTORS — index list
+       ─────────────────────────────────────────────────────────────── */
+    .sectors-list {
+      list-style: none; padding: 0; margin: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+    .sector-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 2fr 60px;
+      gap: 2rem;
+      padding: clamp(1.5rem, 2.5vw, 2.25rem) 0;
+      align-items: baseline;
+      border-bottom: 1px solid var(--rule);
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .sector-row { grid-template-columns: 40px 1fr 40px; }
+      .sector-row .clients { display: none; }
+    }
+    .sector-row .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--concrete);
+    }
+    .sector-row .name {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      transition: transform .4s var(--ease);
+    }
+    .sector-row:hover .name { transform: translateX(8px); }
+    .sector-row .name em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .sector-row .clients {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      text-align: right;
+    }
+    .sector-row .arrow {
+      font-family: var(--mono);
+      font-size: 16px;
+      color: var(--ink-mute);
+      text-align: right;
+      transition: transform .4s var(--ease), color .4s var(--ease);
+    }
+    .sector-row:hover .arrow { color: var(--ink); transform: translateX(6px); }
+
+    /* ───────────────────────────────────────────────────────────────
+       PILLARS — minimal 4-column
+       ─────────────────────────────────────────────────────────────── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(250,250,248,.18);
+    }
+    @media (max-width: 900px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .pillars-grid { grid-template-columns: 1fr; } }
+    .pillar {
+      padding: clamp(2rem, 3.5vw, 3rem) clamp(1rem, 2vw, 1.75rem);
+      border-right: 1px solid rgba(250,250,248,.18);
+      min-height: 380px;
+      display: flex; flex-direction: column;
+    }
+    .pillar:last-child { border-right: 0; }
+    @media (max-width: 900px) {
+      .pillar:nth-child(2) { border-right: 0; }
+      .pillar:nth-child(-n+2) { border-bottom: 1px solid rgba(250,250,248,.18); }
+    }
+    @media (max-width: 520px) {
+      .pillar { border-right: 0 !important; border-bottom: 1px solid rgba(250,250,248,.18); }
+      .pillar:last-child { border-bottom: 0; }
+    }
+    .pillar .num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      color: rgba(250,250,248,.55);
+      margin-bottom: 2.5rem;
+    }
+    .pillar h3 {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      color: var(--paper);
+      margin: 0 0 1.5rem;
+    }
+    .pillar h3 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: #8FB0AE;
+    }
+    .pillar p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(250,250,248,.75);
+      margin: 0;
+      flex: 1;
+    }
+    .pillar p em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--paper);
+    }
+    .pillar .stat {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(250,250,248,.18);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.55);
+    }
+    .pillar .stat strong {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 14.5px;
+      color: var(--paper);
+      margin-top: 6px;
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       CREDENTIALS — minimal
+       ─────────────────────────────────────────────────────────────── */
+    .credentials { background: var(--paper-soft); }
+    .credentials-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    @media (max-width: 900px) { .credentials-row { grid-template-columns: 1fr; } }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--rule-strong);
+    }
+    @media (max-width: 600px) { .clients-grid { grid-template-columns: repeat(2, 1fr); } }
+    .client-cell {
+      padding: 1.75rem 1rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: grid; place-items: center;
+      min-height: 100px;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--ink);
+      text-align: center;
+      transition: color .3s var(--ease);
+    }
+    .client-cell:hover { color: var(--concrete); }
+    .client-cell em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--concrete);
+      font-weight: 400;
+    }
+
+    .certs-list {
+      list-style: none; padding: 0; margin: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+    .cert-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .cert-row .name {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    .cert-row .name em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--concrete);
+    }
+    .cert-row .name small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-top: 4px;
+    }
+    .cert-row .valid {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       JOURNAL
+       ─────────────────────────────────────────────────────────────── */
+    .journal { background: var(--paper); }
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 3.5rem);
+    }
+    @media (max-width: 900px) { .journal-grid { grid-template-columns: 1fr; } }
+    .article {
+      cursor: pointer;
+      display: flex; flex-direction: column;
+    }
+    .article-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+    .article-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: contrast(1.03) saturate(.98);
+      transition: transform 1s var(--ease);
+    }
+    .article:hover .article-img img { transform: scale(1.04); }
+    .article-meta {
+      display: flex; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 1rem;
+    }
+    .article h3 {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(1.25rem, 1.9vw, 1.625rem);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin: 0 0 1rem;
+    }
+    .article h3 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-mute);
+      margin: 0;
+      flex: 1;
+    }
+    .article .read {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       CTA — full bleed b/w
+       ─────────────────────────────────────────────────────────────── */
+    .cta-bleed {
+      position: relative;
+      min-height: 80vh;
+      overflow: hidden;
+      border-bottom: 1px solid var(--accent);
+    }
+    .cta-bleed img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) brightness(.62) saturate(.92);
+    }
+    .cta-bleed::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,.45) 0%, rgba(10,10,10,.7) 100%);
+    }
+    .cta-bleed-content {
+      position: relative; z-index: 2;
+      padding: clamp(6rem, 12vw, 10rem) 0;
+      color: var(--paper);
+    }
+    .cta-bleed-content .micro { color: rgba(250,250,248,.7); margin-bottom: 1.5rem; display: block; }
+    .cta-bleed-content h2 {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: clamp(2.5rem, 7vw, 7rem);
+      line-height: .95;
+      letter-spacing: -.03em;
+      margin: 0 0 2rem;
+      max-width: 16ch;
+    }
+    .cta-bleed-content h2 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: #8FB0AE;
+    }
+    .cta-bleed-content .lede {
+      font-size: 17px;
+      line-height: 1.55;
+      color: rgba(250,250,248,.85);
+      max-width: 44ch;
+      margin: 0 0 2.5rem;
+    }
+    .cta-bleed-content .lede em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--paper);
+    }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ───────────────────────────────────────────────────────────────
+       FOOTER
+       ─────────────────────────────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: clamp(4rem, 7vw, 6rem) 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
+      border-bottom: 1px solid rgba(250,250,248,.18);
+    }
+    @media (max-width: 1100px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-brand .name {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin-bottom: .5rem;
+      font-weight: 500;
+    }
+    .footer-brand .tag {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.55);
+      margin-bottom: 1.5rem;
+    }
+    .footer-brand .blurb {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(250,250,248,.78);
+      max-width: 32ch;
+      margin: 0;
+    }
+    .footer-brand .blurb em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--paper);
+    }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.5);
+      margin: 0 0 1.25rem;
+      font-weight: 500;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .65rem; }
+    .footer-col a {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(250,250,248,.85);
+      transition: color .25s var(--ease);
+    }
+    .footer-col a:hover { color: var(--paper); }
+    .footer-col .addr {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(250,250,248,.85);
+      margin: 0;
+    }
+    .subfooter {
+      display: flex; justify-content: space-between; gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.45);
+    }
+    .subfooter .links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .subfooter a { color: rgba(250,250,248,.45); transition: color .25s var(--ease); }
+    .subfooter a:hover { color: var(--paper); }
+
+
+    /* ── Live pip indicator (v3-only accent) ── */
+    .live-pip {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .live-pip::before {
+      content: ""; width: 6px; height: 6px;
+      background: var(--accent); border-radius: 999px;
+      animation: pip-blink 2s ease-in-out infinite;
+    }
+    @keyframes pip-blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .35; transform: scale(.7); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .live-pip::before { animation: none; }
+    }
+
+    /* ───────────────────────────────────────────────────────────────
+       REVEAL
+       ─────────────────────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s var(--ease-soft), transform 1.2s var(--ease-soft);
+      transition-delay: var(--d, 0ms);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="brand">Al Madar MGM<sub>Est. 1979</sub></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#sectors">Sectors</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#journal">Journal</a></li>
+    </ul>
+    <div class="nav-cta-row">
+      <a href="#contact">Contact ↗</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══ -->
+  <header class="hero">
+    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2000&q=85&auto=format&fit=crop" alt="Architectural composition" loading="eager" decoding="async" />
+    <div class="hero-content">
+
+      <div class="hero-top">
+        <span class="micro">Al Madar MGM &nbsp; / &nbsp; Construction L.L.C</span>
+        <span class="live-pip">14 live sites · in build</span>
+      </div>
+
+      <div>
+        <h1 class="hero-headline">
+          Building <span class="em">the</span> UAE<br/>
+          <span class="em">since</span> 1979.
+        </h1>
+      </div>
+
+      <div class="hero-bottom">
+        <p class="lede">
+          A construction house combining the engineering discipline of a contractor with the craftsmanship of a finishes <em>atelier.</em>
+        </p>
+        <div class="meta-col">
+          Currently in build
+          <strong>Saadiyat Cultural District</strong>
+        </div>
+        <div class="actions">
+          <a class="btn btn-light" href="#work">View work <span class="arrow">↗</span></a>
+          <a class="btn btn-ghost-light" href="#contact">Contact <span class="arrow">↗</span></a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════ INTRO ═══ -->
+  <section class="intro" id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <p class="intro-text reveal">
+          A privately held UAE construction house. Forty-seven years building this country —<br/>
+          <em>from structure to surface.</em>
+        </p>
+        <div class="intro-meta reveal" style="--d:140ms">
+          <div>Founded<strong>1979 — Dubai</strong></div>
+          <div>Disciplines<strong>9 in-house</strong></div>
+          <div>Active sites<strong>14 across UAE</strong></div>
+          <div>Offices<strong>Dubai · Abu Dhabi · Sharjah</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NUMBERS ═══ -->
+  <div class="numbers-wrap">
+    <div class="container">
+      <div class="numbers-grid">
+
+        <div class="number-cell reveal">
+          <span class="micro">Years building</span>
+          <div class="figure">47</div>
+          <div class="name">Established 1979 — predating modern Dubai's construction boom by a decade.</div>
+        </div>
+        <div class="number-cell reveal" style="--d:80ms">
+          <span class="micro">Projects delivered</span>
+          <div class="figure">1,247<span class="suffix">+</span></div>
+          <div class="name">From boutique hotels to palaces — civil, fit-out, decorative.</div>
+        </div>
+        <div class="number-cell reveal" style="--d:160ms">
+          <span class="micro">Disciplines</span>
+          <div class="figure">9</div>
+          <div class="name">Civil, fit-out, maintenance, finishes, arts, concrete, flooring, metals, theming.</div>
+        </div>
+        <div class="number-cell reveal" style="--d:240ms">
+          <span class="micro">Currently active</span>
+          <div class="figure">38<span class="suffix">k m²</span></div>
+          <div class="name">Built-up area in execution across hospitality, cultural &amp; civic mandates.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FULL BLEED — SAADIYAT ═══ -->
+  <section class="full-bleed">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=85&auto=format&fit=crop" alt="Saadiyat Cultural District" loading="lazy" decoding="async" />
+    <div class="full-bleed-content">
+      <div class="top">
+        <span>№ 1.247 &nbsp; / &nbsp; In execution &nbsp; / &nbsp; 2024 — 2026</span>
+        <span>Plate I &nbsp; / &nbsp; Currently in build</span>
+      </div>
+      <div class="bottom">
+        <h3>Saadiyat Cultural District —<br/><em>Galleries &amp; concourse.</em></h3>
+        <ul class="meta-list">
+          <li>Client<strong>Cultural authority — Abu Dhabi</strong></li>
+          <li>Scope<strong>18,400 m² · concrete · tadelakt · gilding</strong></li>
+          <li>Programme<strong>14 months · handover Q4 2026</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SERVICES ═══ -->
+  <section class="section section-light" id="work">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— II.</span>
+          <span class="label-name">Capabilities</span>
+        </div>
+        <h2>Nine disciplines.<br/><em>One contractor.</em></h2>
+      </header>
+
+      <ol class="services-list">
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">01</span>
+          <span class="name">Civil <em>construction</em></span>
+          <span class="desc">Low and mid-rise structures, refurbishments, additions. RCC frames, ground works, MEP, completion.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">02</span>
+          <span class="name">Fit-<em>out</em></span>
+          <span class="desc">Commercial, hospitality, retail, residential. End-to-end interior delivery.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">03</span>
+          <span class="name"><em>Maintenance</em></span>
+          <span class="desc">Annual maintenance contracts, facilities, planned upkeep. Many clients have stayed twenty years.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">04</span>
+          <span class="name">Specialist <em>finishes</em></span>
+          <span class="desc">Venetian plaster, micro-cement, tadelakt, marmorino. Hand-applied, hand-burnished.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">05</span>
+          <span class="name">Decorative <em>arts</em></span>
+          <span class="desc">Murals, gilding, hand-painted ornament. 22-carat gold leaf, palladium.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">06</span>
+          <span class="name">Architectural <em>concrete</em></span>
+          <span class="desc">Polished, board-formed, exposed-aggregate. Cast-in-place finishes.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">07</span>
+          <span class="name">Decorative <em>flooring</em></span>
+          <span class="desc">Epoxy, terrazzo, resin, micro-screed.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">08</span>
+          <span class="name">Metal <em>coatings</em></span>
+          <span class="desc">Architectural metallics, patinas, brass &amp; copper finishes.</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li class="service reveal"><a class="row" href="#">
+          <span class="num">09</span>
+          <span class="name"><em>Theming</em></span>
+          <span class="desc">Themed environments — sculpted GRC, faux finishes, set design crossed with permanent construction.</span>
+          <span class="arrow">→</span>
+        </a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PORTFOLIO ═══ -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— III.</span>
+          <span class="label-name">Selected work</span>
+        </div>
+        <h2>Selected <em>works.</em><br/>Edited monthly.</h2>
+      </header>
+
+      <div class="portfolio-list">
+
+        <article class="work reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85&auto=format&fit=crop" alt="Saadiyat Cultural" loading="lazy" decoding="async" />
+            <span class="index">№ 1.247</span>
+          </div>
+          <div class="work-meta">
+            <div class="num">№ 1.247 — Cultural — Abu Dhabi</div>
+            <h3>Saadiyat Cultural District —<br/><em>Galleries &amp; concourse.</em></h3>
+            <p class="body">A 14-month engagement combining architectural concrete finishes, hand-applied tadelakt to interior galleries, and bespoke metal-leaf detailing across <em>18,400 m²</em>.</p>
+            <div class="specs">
+              <div>Year<strong>2024 — 2026</strong></div>
+              <div>Sector<strong>Cultural</strong></div>
+              <div>Scope<strong>Concrete · tadelakt</strong></div>
+              <div>Status<strong>In execution</strong></div>
+            </div>
+            <a href="#" class="read">View case study →</a>
+          </div>
+        </article>
+
+        <article class="work flip reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&q=85&auto=format&fit=crop" alt="Atlantis themed" loading="lazy" decoding="async" />
+            <span class="index">№ 1.192</span>
+          </div>
+          <div class="work-meta">
+            <div class="num">№ 1.192 — Hospitality — Palm Jumeirah</div>
+            <h3>Atlantis The Royal —<br/><em>Themed environments.</em></h3>
+            <p class="body">Sculpted GRC, faux finishes, theming details across guest-facing volumes. <em>Stage 02</em> — themed underwater concourse, public realm.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Hospitality</strong></div>
+              <div>Scope<strong>Theming · GRC</strong></div>
+              <div>Status<strong>Completed</strong></div>
+            </div>
+            <a href="#" class="read">View case study →</a>
+          </div>
+        </article>
+
+        <article class="work reveal">
+          <div class="work-img">
+            <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=1200&q=85&auto=format&fit=crop" alt="Habtoor palace" loading="lazy" decoding="async" />
+            <span class="index">№ 1.166</span>
+          </div>
+          <div class="work-meta">
+            <div class="num">№ 1.166 — Residential — Dubai</div>
+            <h3>Al Habtoor Palace —<br/><em>Gilding restoration.</em></h3>
+            <p class="body">Restoration of historic gold-leaf ornament and decorative paintwork across reception halls. <em>22-carat gold leaf</em>, palladium and hand-painted detailing.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Residential</strong></div>
+              <div>Scope<strong>Gilding · murals</strong></div>
+              <div>Status<strong>Completed</strong></div>
+            </div>
+            <a href="#" class="read">View case study →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTORS ═══ -->
+  <section class="section section-light" id="sectors">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— IV.</span>
+          <span class="label-name">By industry</span>
+        </div>
+        <h2>Sectors <em>served.</em></h2>
+      </header>
+
+      <ul class="sectors-list">
+        <li><a class="sector-row" href="#">
+          <span class="num">01</span>
+          <span class="name"><em>Hospitality</em> &amp; F&amp;B</span>
+          <span class="clients">Atlantis · Mandarin Oriental · Emaar Hospitality · Jumeirah</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">02</span>
+          <span class="name">Retail &amp; <em>malls</em></span>
+          <span class="clients">Mall of the Emirates · Dubai Mall · MAF · Aldar</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">03</span>
+          <span class="name"><em>Residential</em></span>
+          <span class="clients">Emirates Hills · Palm Jumeirah · Saadiyat · private</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">04</span>
+          <span class="name">Commercial &amp; <em>offices</em></span>
+          <span class="clients">DIFC · ADGM · Trade Centre · Dubai South</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">05</span>
+          <span class="name">Cultural &amp; <em>heritage</em></span>
+          <span class="clients">Saadiyat · Sharjah Heritage · Etihad Museum partners</span>
+          <span class="arrow">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">06</span>
+          <span class="name">Government &amp; <em>civic</em></span>
+          <span class="clients">Dubai Municipality · Ministry of Culture · Sharjah authorities</span>
+          <span class="arrow">→</span>
+        </a></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PILLARS ═══ -->
+  <section class="section section-dark">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— V.</span>
+          <span class="label-name">Why Al Madar</span>
+        </div>
+        <h2>Four reasons<br/>to <em>build with us.</em></h2>
+      </header>
+
+      <div class="pillars-grid">
+        <article class="pillar reveal">
+          <div class="num">— 01.</div>
+          <h3>Heritage &amp; <em>trust.</em></h3>
+          <p>Established 1979. Forty-seven years of receipts in the UAE — palace projects, civic landmarks, hospitality. Our oldest active maintenance contract dates to <em>1991.</em></p>
+          <div class="stat">Founded<strong>1979</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:80ms">
+          <div class="num">— 02.</div>
+          <h3>Range &amp; <em>capability.</em></h3>
+          <p>Civil to gilt under one roof. Most peers are either generalists or boutique finishers. <em>We are both.</em></p>
+          <div class="stat">Disciplines<strong>9 in-house</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:160ms">
+          <div class="num">— 03.</div>
+          <h3><em>Craftsmanship.</em></h3>
+          <p>Muralists, gilders, tadelakt artisans, decorative painters and theming sculptors — in-house. <em>Where most contractors stop, we begin.</em></p>
+          <div class="stat">Atelier<strong>Est. 1979</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:240ms">
+          <div class="num">— 04.</div>
+          <h3>UAE-rooted, <br/><em>UAE-committed.</em></h3>
+          <p>Privately held, family-owned, single-country. Every senior PM has worked through at least one cycle of UAE construction.</p>
+          <div class="stat">Offices<strong>Dubai · AUH · SHJ</strong></div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CREDENTIALS ═══ -->
+  <section class="section credentials" id="credentials">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— VI.</span>
+          <span class="label-name">Receipts</span>
+        </div>
+        <h2>Clients &amp;<br/><em>certifications.</em></h2>
+      </header>
+
+      <div class="credentials-row">
+
+        <div class="reveal">
+          <div class="micro" style="margin-bottom:1.25rem;display:block">— Selected clients · 1979 — 2026</div>
+          <div class="clients-grid">
+            <div class="client-cell">Emaar <em>Properties</em></div>
+            <div class="client-cell">Aldar</div>
+            <div class="client-cell">Mandarin <em>Oriental</em></div>
+            <div class="client-cell">Atlantis</div>
+            <div class="client-cell">Jumeirah <em>Group</em></div>
+            <div class="client-cell">MAF</div>
+            <div class="client-cell">Dubai <em>Holding</em></div>
+            <div class="client-cell">Abu Dhabi <em>Mun.</em></div>
+            <div class="client-cell">Al Habtoor</div>
+            <div class="client-cell">Sharjah <em>Authority</em></div>
+            <div class="client-cell">Meraas</div>
+            <div class="client-cell">DAMAC</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:140ms">
+          <div class="micro" style="margin-bottom:1.25rem;display:block">— Certifications · current</div>
+          <ul class="certs-list">
+            <li class="cert-row">
+              <span class="name">ISO 9001:2015 — <em>Quality Management.</em><small>Bureau Veritas · 9001-AE-04211</small></span>
+              <span class="valid">Valid 2027.09</span>
+            </li>
+            <li class="cert-row">
+              <span class="name">ISO 45001:2018 — <em>Occupational H&amp;S.</em><small>Bureau Veritas · 45001-AE-00891</small></span>
+              <span class="valid">Valid 2027.04</span>
+            </li>
+            <li class="cert-row">
+              <span class="name">ISO 14001:2015 — <em>Environmental.</em><small>Bureau Veritas · 14001-AE-01122</small></span>
+              <span class="valid">Valid 2026.11</span>
+            </li>
+            <li class="cert-row">
+              <span class="name">Dubai Municipality — <em>Grade A.</em><small>Construction · Fit-out · Maintenance</small></span>
+              <span class="valid">Active</span>
+            </li>
+            <li class="cert-row">
+              <span class="name">Estidama — <em>Pearl Builder.</em><small>Sustainability · 3-Pearl rated</small></span>
+              <span class="valid">Active</span>
+            </li>
+            <li class="cert-row">
+              <span class="name">In-Country Value — <em>78%.</em><small>UAE national supplier ratio</small></span>
+              <span class="valid">2025 · Top tier</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ JOURNAL ═══ -->
+  <section class="section journal" id="journal">
+    <div class="container">
+
+      <header class="section-head reveal">
+        <div class="label-block">
+          <span class="label-num">— VII.</span>
+          <span class="label-name">Journal</span>
+        </div>
+        <h2>From the <em>studio.</em></h2>
+      </header>
+
+      <div class="journal-grid">
+
+        <a class="article reveal" href="#">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1000&q=85&auto=format&fit=crop" alt="Decorative coatings" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Article · Knowledge</span><span>09.04.2026</span></div>
+          <h3>Choosing the right decorative coating for hospitality interiors in <em>UAE climates.</em></h3>
+          <p>How Venetian plaster, tadelakt and micro-cement behave under coastal humidity, AC cycling and direct sun.</p>
+          <span class="read">9 min read →</span>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:120ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1517490232338-06b912a786b5?w=1000&q=85&auto=format&fit=crop" alt="Saadiyat handover" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>News · Press</span><span>22.03.2026</span></div>
+          <h3>Saadiyat galleries — <em>handover scheduled</em> for Q4 2026.</h3>
+          <p>Eighteen months on site, 38,400 m² of cast-in-place architectural concrete.</p>
+          <span class="read">Press release →</span>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:240ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1000&q=85&auto=format&fit=crop" alt="Hotel show 2026" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Event</span><span>14.05.2026</span></div>
+          <h3>Al Madar at <em>The Hotel Show 2026</em> — Hall 4, Stand B-21.</h3>
+          <p>Live demonstrations of marmorino plaster, gold-leaf gilding and patinated metal coatings.</p>
+          <span class="read">Dubai World Trade Centre →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CTA ═══ -->
+  <section class="cta-bleed" id="contact">
+    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=2000&q=85&auto=format&fit=crop" alt="" loading="lazy" decoding="async" />
+    <div class="container cta-bleed-content">
+      <span class="micro">— VIII. Contact</span>
+      <h2>Have a project<br/><em>in mind?</em></h2>
+      <p class="lede">Tell us the brief — sector, scope, programme. <em>One of the studio principals</em> replies within two working days. Drawings, RFPs &amp; budgets welcome.</p>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="#">Start a project <span class="arrow">↗</span></a>
+        <a class="btn btn-ghost-light" href="#">+971 4 282 1979</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="name">Al Madar MGM</div>
+          <div class="tag">Construction L.L.C · Est. 1979</div>
+          <p class="blurb">A privately held UAE construction house. Civil works to specialist finishes — <em>from structure to surface.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Vision &amp; values</a></li>
+            <li><a href="#">HSE &amp; quality</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <ul>
+            <li><a href="#">Civil construction</a></li>
+            <li><a href="#">Fit-out</a></li>
+            <li><a href="#">Maintenance</a></li>
+            <li><a href="#">Specialist finishes</a></li>
+            <li><a href="#">Decorative arts</a></li>
+            <li><a href="#">Theming</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Company profile</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">HSE policy</a></li>
+            <li><a href="#">Vendor portal</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find us</h4>
+          <p class="addr">
+            Al Quoz Industrial 3<br/>
+            Dubai · United Arab Emirates<br/>
+            +971 4 282 1979<br/>
+            studio @ almadarmgm . ae
+          </p>
+        </div>
+      </div>
+
+      <div class="subfooter">
+        <span>© 1979 — 2026 · Al Madar MGM · All rights reserved</span>
+        <div class="links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+          <a href="#">عربي</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('in'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>

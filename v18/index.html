@@ -1,0 +1,2978 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — Capability Statement · Government, Institutional &amp; Cultural Delivery</title>
+  <meta name="description" content="Al Madar MGM Construction L.L.C. — Capability Statement. Forty-seven years of civil works, fit-out, decorative finishes, hospitality interiors, cultural projects and infrastructure across the GCC. Compiled for government, ministerial and sovereign procurement." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       v18 — Public Sector / Quiet Institutional Authority
+       Light parchment Palantir. Government white-paper severity.
+       Reads like a treaty title page, a Treasury whitepaper,
+       a national audit publication. Three-tone discipline:
+       parchment, deep ink, signal red. Footnoted, classified,
+       audit-ready.
+       Title: CAPABILITY STATEMENT — DOC-2026-AM-MGM-0142, Rev 03.
+       ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      /* paper */
+      --paper:        #F4F1EA;
+      --paper-deep:   #ECE7DC;
+      --paper-faint:  #FAF7F0;
+      --paper-edge:   #E5E0D2;
+
+      /* ink */
+      --ink:          #0B0B0C;
+      --ink-slate:    #2A2D33;
+      --ink-graphite: #5C5F66;
+      --ink-mute:     #8B8E94;
+
+      /* signal — used VERY sparingly */
+      --red:          #B7291E;
+      --red-d:        #8E1F17;
+
+      /* hairlines */
+      --rule:         rgba(11,11,12,.16);
+      --rule-soft:    rgba(11,11,12,.08);
+      --rule-faint:   rgba(11,11,12,.04);
+
+      /* type */
+      --display: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif:   "IBM Plex Serif", Georgia, serif;
+      --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+      /* layout */
+      --container: min(1240px, 92vw);
+      --container-narrow: min(880px, 90vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.62;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* page-edge ink rule down LEFT margin (legal document) */
+    body::before {
+      content: "";
+      position: fixed;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(11,11,12,.18);
+      z-index: 1;
+      pointer-events: none;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      left: 36px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(11,11,12,.06);
+      z-index: 1;
+      pointer-events: none;
+    }
+    @media (max-width: 720px) {
+      body::before, body::after { display: none; }
+    }
+
+    .container { width: var(--container); margin: 0 auto; }
+    .narrow    { width: var(--container-narrow); margin: 0 auto; }
+
+    /* ═══════════ utility type ═══════════ */
+    .micro {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      font-weight: 500;
+    }
+    .micro--ink { color: var(--ink); }
+    .micro--red { color: var(--red); }
+    .smcp {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink-slate);
+    }
+    .em { font-style: italic; }
+    sup, .fn {
+      font-family: var(--serif);
+      font-size: .62em;
+      vertical-align: super;
+      color: var(--red);
+      font-weight: 500;
+      letter-spacing: 0;
+      margin-left: 1px;
+    }
+
+    /* ═══════════ classification bar ═══════════ */
+    .classbar {
+      background: var(--ink);
+      color: var(--paper);
+      height: 22px;
+      display: flex;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      position: relative;
+      z-index: 5;
+    }
+    .classbar-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .classbar .dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: .4rem;
+      box-shadow: 0 0 0 2px rgba(183,41,30,.18);
+    }
+    .classbar .sep { opacity: .35; }
+    .classbar em {
+      font-style: normal;
+      color: rgba(244,241,234,.65);
+    }
+    .classbar .right {
+      margin-left: auto;
+    }
+
+    /* ═══════════ nav row ═══════════ */
+    .nav-wrap {
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      backdrop-filter: blur(6px);
+      background: rgba(244,241,234,.94);
+    }
+    .nav {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 18px 0;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--ink);
+      display: grid;
+      place-items: center;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      position: relative;
+    }
+    .brand-mark::before, .brand-mark::after {
+      content: "";
+      position: absolute;
+      background: var(--ink);
+    }
+    .brand-mark::before {
+      left: -3px; top: 50%; width: 2px; height: 2px;
+      transform: translateY(-50%);
+    }
+    .brand-mark::after {
+      right: -3px; top: 50%; width: 2px; height: 2px;
+      transform: translateY(-50%);
+    }
+    .brand-text {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -.018em;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .brand-text small {
+      display: block;
+      font-family: var(--mono);
+      font-weight: 400;
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      justify-self: center;
+    }
+    .nav-links a {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      color: var(--ink-slate);
+      transition: color .2s var(--ease);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 100%; bottom: -2px;
+      height: 1px;
+      background: var(--ink);
+      transition: right .25s var(--ease);
+    }
+    .nav-links a:hover::after { right: 0; }
+    .nav-links .num {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--ink-mute);
+      margin-right: .35rem;
+      letter-spacing: .08em;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: 10px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--ink);
+      transition: all .2s var(--ease);
+    }
+    .nav-cta:hover {
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .nav-cta .ico {
+      width: 12px; height: 12px;
+      display: inline-block;
+      position: relative;
+    }
+    .nav-cta .ico::before, .nav-cta .ico::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+    }
+    .nav-cta .ico::before {
+      left: 5px; top: 0; width: 2px; height: 9px;
+    }
+    .nav-cta .ico::after {
+      left: 1px; top: 5px; width: 10px; height: 2px;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      height: 5px;
+    }
+
+    @media (max-width: 880px) {
+      .nav { grid-template-columns: auto auto; }
+      .nav-links { display: none; }
+    }
+
+    /* ═══════════ TITLE PAGE / HERO ═══════════ */
+    .titlepage {
+      padding: 80px 0 90px;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(11,11,12,.025), transparent 55%),
+        var(--paper);
+    }
+
+    .doc-meta {
+      width: var(--container);
+      margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      color: var(--ink-graphite);
+      text-transform: uppercase;
+    }
+    .doc-meta .l, .doc-meta .r {
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .doc-meta .r { justify-self: end; }
+    .doc-meta .pair { display: inline-flex; gap: .5rem; }
+    .doc-meta .pair b {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .title-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .title-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-slate);
+      margin-bottom: 2.2rem;
+      padding-bottom: .9rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .kicker .num {
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .headline {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(3.2rem, 7.4vw, 6.4rem);
+      line-height: .96;
+      letter-spacing: -.034em;
+      color: var(--ink);
+      margin: 0 0 2rem;
+      max-width: 14ch;
+    }
+    .headline .em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+    .headline .amp {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink-graphite);
+    }
+
+    .byline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink-slate);
+      margin: 0 0 2.4rem;
+      line-height: 1.55;
+      max-width: 56ch;
+    }
+    .byline b {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .abstract {
+      max-width: 60ch;
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.72;
+      color: var(--ink-slate);
+      margin: 0 0 2.6rem;
+    }
+    .abstract p {
+      margin: 0 0 1.1rem;
+      text-indent: 0;
+    }
+    .abstract .sec {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      color: var(--ink);
+      font-weight: 500;
+      margin-right: .55rem;
+      vertical-align: 1px;
+    }
+
+    /* signature block + stamp */
+    .sigblock {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: end;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      max-width: 760px;
+    }
+    .sig-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: -.018em;
+      color: var(--ink);
+      margin: 0 0 .25rem;
+    }
+    .sig-role {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-graphite);
+      margin: 0 0 .8rem;
+    }
+    .sig-line {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      color: var(--ink-graphite);
+      text-transform: uppercase;
+    }
+    .sig-line b { color: var(--ink); font-weight: 500; }
+
+    .sig-script {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 32px;
+      color: var(--ink);
+      letter-spacing: .02em;
+      transform: rotate(-2deg);
+      margin: 0 0 .6rem;
+      padding-bottom: .3rem;
+      border-bottom: 1px solid var(--ink);
+      display: inline-block;
+    }
+
+    /* CSS rubber stamp */
+    .stamp {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px 12px;
+      border: 2.5px solid var(--red);
+      color: var(--red);
+      font-family: var(--mono);
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transform: rotate(-3.5deg);
+      position: relative;
+      box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px rgba(183,41,30,.55);
+      opacity: .92;
+      mix-blend-mode: multiply;
+      filter: contrast(1.05);
+    }
+    .stamp::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px dashed rgba(183,41,30,.45);
+      pointer-events: none;
+    }
+    .stamp .stamp-1 {
+      font-size: 14px;
+      letter-spacing: .22em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stamp .stamp-2 {
+      font-size: 9.5px;
+      letter-spacing: .14em;
+      color: rgba(183,41,30,.85);
+    }
+    .stamp .stamp-3 {
+      font-size: 8px;
+      letter-spacing: .14em;
+      margin-top: 3px;
+      color: rgba(183,41,30,.7);
+    }
+
+    /* RIGHT column of title grid: certified card + key facts */
+    .title-aside {
+      border-left: 1px solid var(--rule);
+      padding-left: 2.4rem;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+    @media (max-width: 980px) {
+      .title-aside { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
+    }
+    .stamp-wrap {
+      padding: 1.4rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .keyfacts {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+    }
+    .keyfacts h5 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .keyfacts dl { margin: 0; }
+    .keyfacts div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+      gap: 1rem;
+    }
+    .keyfacts dt { font-weight: 400; color: var(--ink-graphite); }
+    .keyfacts dd {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-align: right;
+    }
+
+    /* ═══════════ asterism / dividers ═══════════ */
+    .asterism {
+      text-align: center;
+      padding: 3.4rem 0;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--ink-graphite);
+      letter-spacing: 1.2em;
+    }
+    .rule-thin {
+      border: 0;
+      border-top: 1px solid var(--rule-soft);
+      margin: 0;
+    }
+    .rule-double {
+      border: 0;
+      height: 4px;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      background: transparent;
+      margin: 0;
+    }
+    .redact-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+    .redact {
+      display: inline-block;
+      height: 14px;
+      background: var(--ink);
+    }
+    .redact.r1 { width: 80px; }
+    .redact.r2 { width: 32px; }
+    .redact.r3 { width: 140px; }
+    .redact.r4 { width: 22px; }
+    .redact.r5 { width: 56px; }
+    .redact-row .lbl {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-left: .8rem;
+    }
+
+    /* ═══════════ section scaffolding ═══════════ */
+    .section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+      position: relative;
+    }
+    .section-meta {
+      width: var(--container);
+      margin: 0 auto 1.6rem;
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      padding-bottom: .9rem;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .section-meta b { color: var(--ink); font-weight: 500; }
+    .section-meta .pair { display: inline-flex; gap: .5rem; }
+
+    .section-head {
+      width: var(--container);
+      margin: 0 auto 3.4rem;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 2.4rem;
+      align-items: end;
+      padding-top: 1rem;
+    }
+    @media (max-width: 720px) {
+      .section-head { grid-template-columns: 1fr; gap: 1rem; }
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--red);
+      padding-top: 14px;
+      border-top: 2px solid var(--red);
+      align-self: start;
+    }
+    .section-num small {
+      display: block;
+      font-size: 9.5px;
+      color: var(--ink-graphite);
+      font-weight: 400;
+      margin-top: 6px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2rem, 4.6vw, 3.6rem);
+      letter-spacing: -.028em;
+      line-height: 1.02;
+      margin: 0;
+      color: var(--ink);
+    }
+    .section-title .em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink-graphite);
+    }
+    .section-deck {
+      grid-column: 2;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+      margin: 1.2rem 0 0;
+      max-width: 64ch;
+      font-style: italic;
+    }
+    @media (max-width: 720px) {
+      .section-deck { grid-column: 1; }
+    }
+
+    .pagenum {
+      width: var(--container);
+      margin: 4rem auto 0;
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      color: var(--ink-graphite);
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .pagenum b { color: var(--ink); font-weight: 500; }
+
+    /* ═══════════ TABLE OF CONTENTS ═══════════ */
+    .toc-section {
+      padding: 4.6rem 0 3rem;
+      border-bottom: 1px solid var(--rule-soft);
+      background: var(--paper-faint);
+    }
+    .toc-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 4rem;
+    }
+    @media (max-width: 760px) {
+      .toc-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      padding-top: 6px;
+      border-top: 2px solid var(--ink);
+      align-self: start;
+    }
+    .toc-label small {
+      display: block;
+      font-size: 9.5px;
+      color: var(--ink-graphite);
+      font-weight: 400;
+      margin-top: 6px;
+      letter-spacing: .12em;
+    }
+    .toc {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      column-count: 2;
+      column-gap: 3.2rem;
+    }
+    @media (max-width: 760px) {
+      .toc { column-count: 1; }
+    }
+    .toc li {
+      break-inside: avoid;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: .6rem;
+      align-items: baseline;
+      padding: .7rem 0;
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .toc li .n {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--ink);
+      font-weight: 500;
+      width: 3.4em;
+    }
+    .toc li .leaders {
+      border-bottom: 1px dotted var(--rule);
+      transform: translateY(-3px);
+      min-width: 1.5rem;
+    }
+    .toc li .pg {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-graphite);
+      font-weight: 500;
+    }
+    .toc li:hover .leaders { border-color: var(--ink); }
+    .toc li.cls {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--rule-soft);
+      padding-top: 1.2rem;
+      margin-top: .6rem;
+      font-style: italic;
+      color: var(--ink-graphite);
+      font-size: 13.5px;
+    }
+
+    /* ═══════════ § 01 MANDATE ═══════════ */
+    .mandate-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr 220px;
+      gap: 3rem;
+    }
+    @media (max-width: 1000px) {
+      .mandate-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .marginalia {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      line-height: 1.55;
+      color: var(--ink-graphite);
+      text-transform: uppercase;
+    }
+    .marginalia .h {
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .4rem;
+      letter-spacing: .12em;
+    }
+    .marginalia p {
+      margin: 0 0 1.2rem;
+      text-transform: none;
+      letter-spacing: .02em;
+    }
+    .marginalia .key {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: .45rem 0;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .marginalia .key b { color: var(--ink); font-weight: 500; }
+    .prose {
+      font-family: var(--serif);
+      font-size: 17.5px;
+      line-height: 1.78;
+      color: var(--ink);
+      max-width: 60ch;
+    }
+    .prose p {
+      margin: 0 0 1.4rem;
+    }
+    .prose p:first-of-type::first-letter {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 4.6em;
+      float: left;
+      line-height: .85;
+      padding: 6px 12px 0 0;
+      color: var(--ink);
+      letter-spacing: -.04em;
+    }
+    .prose .em { font-style: italic; }
+    .prose b { font-weight: 600; color: var(--ink); }
+    .prose blockquote {
+      margin: 2rem 0;
+      padding: .4rem 0 .4rem 1.6rem;
+      border-left: 2px solid var(--ink);
+      font-family: var(--display);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -.018em;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .prose blockquote cite {
+      display: block;
+      margin-top: .8rem;
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+    }
+
+    /* ═══════════ § 02 DISCIPLINES ═══════════ */
+    .disc-frame {
+      width: var(--container);
+      margin: 0 auto;
+    }
+    .disc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--rule-soft);
+    }
+    @media (max-width: 900px) {
+      .disc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .disc-grid { grid-template-columns: 1fr; }
+    }
+    .disc {
+      padding: 2.2rem 1.8rem 2rem;
+      border-right: 1px solid var(--rule-soft);
+      border-bottom: 1px solid var(--rule-soft);
+      position: relative;
+      transition: background .25s var(--ease);
+    }
+    .disc:hover { background: var(--paper-deep); }
+    .disc-head {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+    .disc-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      color: var(--ink-graphite);
+      font-weight: 500;
+    }
+    .disc-name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 19px;
+      letter-spacing: -.018em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .disc-deck {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+      margin: 0 0 1.4rem;
+    }
+    .disc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      color: var(--ink-graphite);
+    }
+    .disc-list li {
+      padding: .35rem 0 .35rem 1.2rem;
+      position: relative;
+      text-transform: uppercase;
+    }
+    .disc-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--ink-graphite);
+    }
+    .disc-list li b {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ═══════════ § 03 SELECTED WORKS / FIGURES ═══════════ */
+    .figures {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 3rem;
+    }
+    @media (max-width: 820px) {
+      .figures { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    figure {
+      margin: 0;
+    }
+    .fig-frame {
+      position: relative;
+      border: 1px solid var(--ink);
+      padding: 6px;
+      background: var(--paper-faint);
+      box-shadow: 0 1px 0 0 var(--rule);
+    }
+    .fig-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--rule-faint);
+      pointer-events: none;
+    }
+    .fig-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      filter: sepia(.18) saturate(.62) contrast(1.05) brightness(.96);
+      display: block;
+    }
+    .fig-num {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 1rem 0 .5rem;
+      padding-top: .8rem;
+      border-top: 1px solid var(--ink);
+    }
+    .fig-num em {
+      font-style: normal;
+      color: var(--ink-graphite);
+      font-weight: 400;
+    }
+    figcaption {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14.5px;
+      color: var(--ink-slate);
+      line-height: 1.55;
+      margin-bottom: .9rem;
+    }
+    .fig-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .04em;
+      color: var(--ink-graphite);
+      padding-top: .6rem;
+      border-top: 1px dotted var(--rule);
+    }
+    .fig-meta div { display: flex; flex-direction: column; }
+    .fig-meta .l {
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      letter-spacing: .12em;
+      font-size: 9.5px;
+      margin-bottom: 3px;
+    }
+    .fig-meta .v {
+      color: var(--ink);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: .04em;
+    }
+
+    /* ═══════════ § 04 TRACK RECORD TABLE ═══════════ */
+    .table-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    .stat-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 12.5px;
+    }
+    .stat-table caption {
+      caption-side: top;
+      text-align: left;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-graphite);
+      margin-bottom: 1rem;
+    }
+    .stat-table caption b {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: .04em;
+    }
+    .stat-table thead th {
+      text-align: right;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 14px 16px 10px;
+      border-bottom: 2px solid var(--ink);
+      vertical-align: bottom;
+      white-space: nowrap;
+    }
+    .stat-table thead th:first-child {
+      text-align: left;
+    }
+    .stat-table thead th small {
+      display: block;
+      font-weight: 400;
+      font-size: 9px;
+      color: var(--ink-graphite);
+      margin-top: 4px;
+      letter-spacing: .08em;
+    }
+    .stat-table tbody td {
+      text-align: right;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--rule-soft);
+      color: var(--ink);
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .stat-table tbody tr:hover td {
+      background: var(--paper-deep);
+    }
+    .stat-table tbody tr.total td {
+      border-top: 1px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      background: var(--paper-deep);
+      font-weight: 600;
+    }
+    .stat-table tfoot td {
+      padding: 12px 16px;
+      font-size: 10px;
+      color: var(--ink-graphite);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .delta-up   { color: var(--red); }
+    .delta-flat { color: var(--ink-graphite); }
+    .delta-down { color: var(--ink); }
+
+    .footnotes-inline {
+      width: var(--container);
+      margin: 1.6rem auto 0;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--ink-graphite);
+      text-transform: uppercase;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule-soft);
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footnotes-inline span sup { color: var(--red); }
+
+    /* ═══════════ § 05 METHODOLOGY ═══════════ */
+    .method-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    @media (max-width: 880px) {
+      .method-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    }
+    .method-prose {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.78;
+      color: var(--ink);
+      max-width: 56ch;
+    }
+    .method-prose p { margin: 0 0 1.2rem; }
+    .method-prose b { font-weight: 600; }
+    .method-list {
+      list-style: none;
+      counter-reset: m;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--ink);
+    }
+    .method-list li {
+      counter-increment: m;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.6rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .method-list li::before {
+      content: counter(m, decimal-leading-zero);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--red);
+      font-weight: 600;
+      letter-spacing: .12em;
+      padding-top: 4px;
+    }
+    .method-list h4 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -.012em;
+      color: var(--ink);
+      margin: 0 0 .35rem;
+    }
+    .method-list p {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+      margin: 0;
+    }
+    .method-list p .em { font-style: italic; color: var(--ink); }
+
+    /* ═══════════ § 06 GOVERNANCE / COMPLIANCE ═══════════ */
+    .gov-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--ink);
+      background: var(--paper-faint);
+    }
+    @media (max-width: 880px) {
+      .gov-wrap { grid-template-columns: 1fr; }
+    }
+    .gov-col {
+      padding: 2.4rem;
+      border-right: 1px solid var(--rule);
+    }
+    .gov-col:last-child { border-right: 0; border-top: 0; }
+    @media (max-width: 880px) {
+      .gov-col { border-right: 0; border-top: 1px solid var(--rule); }
+      .gov-col:first-child { border-top: 0; }
+    }
+    .gov-col h4 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0 0 1.2rem;
+      padding-bottom: .55rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .gov-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .gov-list li {
+      display: grid;
+      grid-template-columns: 86px 1fr auto;
+      gap: 1rem;
+      padding: .85rem 0;
+      border-bottom: 1px dotted var(--rule);
+      align-items: baseline;
+    }
+    .gov-list li:last-child { border-bottom: 0; }
+    .gov-list .code {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      color: var(--red);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .gov-list .body { color: var(--ink); }
+    .gov-list .body em {
+      display: block;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--ink-graphite);
+      margin-top: 2px;
+    }
+    .gov-list .stat {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+    }
+    .gov-list .stat.ok { color: var(--ink); }
+
+    /* ═══════════ § 07 LEADERSHIP ═══════════ */
+    .leaders {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 2.4rem;
+    }
+    @media (max-width: 900px) {
+      .leaders { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .leaders { grid-template-columns: 1fr; }
+    }
+    .leader figure { margin: 0; }
+    .leader-portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--paper-deep);
+      border: 1px solid var(--ink);
+      padding: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .leader-portrait .silhouette {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 28% 22% at 50% 32%, var(--ink) 0%, var(--ink) 60%, transparent 62%),
+        radial-gradient(ellipse 50% 38% at 50% 92%, var(--ink) 0%, var(--ink) 60%, transparent 62%),
+        linear-gradient(180deg, var(--paper-faint), var(--paper-edge));
+      filter: contrast(1.05);
+    }
+    .leader-portrait::after {
+      content: attr(data-id);
+      position: absolute;
+      top: 10px; left: 12px;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      mix-blend-mode: difference;
+    }
+    .leader-num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 1rem 0 .35rem;
+      padding-top: .8rem;
+      border-top: 1px solid var(--ink);
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+    }
+    .leader-num em {
+      font-style: normal;
+      color: var(--ink-graphite);
+      font-weight: 400;
+    }
+    .leader h4 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -.018em;
+      margin: 0 0 .25rem;
+      color: var(--ink);
+    }
+    .leader .role {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-graphite);
+      margin: 0 0 .9rem;
+    }
+    .leader p {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-slate);
+      margin: 0;
+    }
+    .leader p b { font-weight: 600; color: var(--ink); }
+
+    /* ═══════════ LETTER FROM CHIEF ENGINEER ═══════════ */
+    .letter-section {
+      padding: 6rem 0;
+      background: var(--paper-deep);
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .letter {
+      width: var(--container-narrow);
+      margin: 0 auto;
+      background: var(--paper-faint);
+      padding: 3.4rem 3.4rem 3rem;
+      border: 1px solid var(--rule);
+      box-shadow: 0 1px 0 0 rgba(11,11,12,.05), 0 30px 60px -40px rgba(11,11,12,.18);
+      position: relative;
+    }
+    @media (max-width: 720px) {
+      .letter { padding: 2.4rem 1.6rem; }
+    }
+    .letter-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--ink);
+      margin-bottom: 1.6rem;
+    }
+    .letter-head h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -.022em;
+      margin: 0;
+    }
+    .letter-head h3 small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      font-weight: 400;
+      margin-top: 6px;
+    }
+    .letter-date {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      text-align: right;
+    }
+    .letter-date b { color: var(--ink); font-weight: 500; display: block; margin-bottom: 4px; }
+    .letter-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.78;
+      color: var(--ink);
+    }
+    .letter-body p { margin: 0 0 1.1rem; }
+    .letter-greeting {
+      font-style: italic;
+      color: var(--ink-slate);
+    }
+    .letter-foot {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+      margin-top: 2rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .letter-sig {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 30px;
+      color: var(--ink);
+      line-height: 1;
+      transform: rotate(-2deg);
+      letter-spacing: -.01em;
+      margin: 0 0 .5rem;
+      padding-bottom: .15rem;
+      display: inline-block;
+    }
+    .letter-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -.014em;
+      margin: 0;
+    }
+    .letter-name small {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 13.5px;
+      color: var(--ink-graphite);
+      margin-top: 2px;
+    }
+    .letter-seal {
+      width: 96px; height: 96px;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      transform: rotate(-6deg);
+      position: relative;
+      opacity: .85;
+      mix-blend-mode: multiply;
+    }
+    .letter-seal::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px dashed rgba(183,41,30,.5);
+      border-radius: 50%;
+    }
+    .letter-seal span {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    /* ═══════════ ENDNOTES ═══════════ */
+    .endnotes {
+      width: var(--container);
+      margin: 0 auto;
+      padding-top: 1rem;
+      border-top: 2px solid var(--ink);
+    }
+    .endnotes h4 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 1.6rem;
+    }
+    .endnotes ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      column-count: 2;
+      column-gap: 3.6rem;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      line-height: 1.7;
+      color: var(--ink-slate);
+    }
+    @media (max-width: 800px) {
+      .endnotes ol { column-count: 1; }
+    }
+    .endnotes ol li {
+      break-inside: avoid;
+      padding: .55rem 0;
+      border-bottom: 1px dotted var(--rule);
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: .8rem;
+      align-items: baseline;
+    }
+    .endnotes ol li::before {
+      content: attr(data-n);
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--red);
+      font-weight: 500;
+      vertical-align: super;
+      text-align: right;
+    }
+    .endnotes em { font-style: italic; color: var(--ink); }
+
+    /* ═══════════ CONTACT ═══════════ */
+    .contact-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+    }
+    @media (max-width: 880px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .contact-h {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.024em;
+      line-height: 1.05;
+      margin: 0 0 1.4rem;
+      color: var(--ink);
+    }
+    .contact-h .em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink-graphite);
+    }
+    .contact-deck {
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink-slate);
+      max-width: 50ch;
+      margin: 0 0 2rem;
+    }
+    .contact-card {
+      border: 1px solid var(--ink);
+      padding: 1.8rem 2rem;
+      background: var(--paper-faint);
+    }
+    .contact-card h5 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0 0 1rem;
+      padding-bottom: .55rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .contact-card dl {
+      margin: 0;
+      display: grid;
+      gap: .65rem;
+    }
+    .contact-card div {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      padding-bottom: .55rem;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .contact-card div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .contact-card dt {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-graphite);
+      padding-top: 3px;
+    }
+    .contact-card dd {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .contact-card dd b { font-weight: 500; }
+    .contact-card dd small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: var(--ink-graphite);
+      margin-top: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════ FOOTER ═══════════ */
+    .footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 4rem 0 2rem;
+      font-family: var(--serif);
+    }
+    .footer-grid {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(244,241,234,.18);
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-brand {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -.022em;
+      margin: 0 0 1rem;
+    }
+    .footer-brand small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: rgba(244,241,234,.6);
+      margin-top: 6px;
+    }
+    .footer-deck {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(244,241,234,.72);
+      max-width: 36ch;
+    }
+    .footer-col h6 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(244,241,234,.55);
+      margin: 0 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid rgba(244,241,234,.18);
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: .6rem;
+    }
+    .footer-col a {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      color: rgba(244,241,234,.85);
+      transition: color .2s var(--ease);
+    }
+    .footer-col a:hover {
+      color: var(--paper);
+      border-bottom: 1px solid rgba(244,241,234,.5);
+    }
+    .footer-col span {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: rgba(244,241,234,.45);
+      margin-right: .4rem;
+    }
+    .footer-meta {
+      width: var(--container);
+      margin: 1.4rem auto 0;
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(244,241,234,.55);
+    }
+    .footer-meta b { color: var(--paper); font-weight: 500; }
+    .footer-meta .right { margin-left: auto; }
+    .footer-meta .dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: .4rem;
+    }
+    .footer-rev {
+      width: var(--container);
+      margin: 2rem auto 0;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(244,241,234,.12);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(244,241,234,.5);
+    }
+    @media (max-width: 800px) {
+      .footer-rev { grid-template-columns: repeat(2, 1fr); }
+    }
+    .footer-rev div { display: flex; flex-direction: column; gap: 4px; }
+    .footer-rev b { color: rgba(244,241,234,.85); font-weight: 500; }
+
+    /* ═══════════ small helpers ═══════════ */
+    .nowrap { white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+  <!-- ═════════════════════ CLASSIFICATION BAR ═════════════════════ -->
+  <div class="classbar">
+    <div class="classbar-inner">
+      <span><span class="dot"></span>UNCLASSIFIED</span>
+      <span class="sep">·</span>
+      <span>OPEN PUBLICATION</span>
+      <span class="sep">·</span>
+      <span>DOC-2026-AM-MGM-0142</span>
+      <span class="sep">·</span>
+      <span>REV 03</span>
+      <span class="sep">·</span>
+      <span>2026-05-09T14:32:08Z</span>
+      <span class="right">FOR DISTRIBUTION TO ACCREDITED PROCURING AUTHORITIES <em>·</em> NOT FOR ONWARD RELEASE</span>
+    </div>
+  </div>
+
+  <!-- ═════════════════════ NAV ═════════════════════ -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">AM</span>
+        <span class="brand-text">
+          Al Madar MGM
+          <small>Construction L.L.C. · Est. 1979 · Dubai</small>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#mandate"><span class="num">01</span>Mandate</a></li>
+        <li><a href="#disciplines"><span class="num">02</span>Disciplines</a></li>
+        <li><a href="#works"><span class="num">03</span>Works</a></li>
+        <li><a href="#record"><span class="num">04</span>Record</a></li>
+        <li><a href="#governance"><span class="num">06</span>Governance</a></li>
+        <li><a href="#contact"><span class="num">∞</span>Tenders</a></li>
+      </ul>
+      <a class="nav-cta" href="#capability-pdf">
+        <span class="ico"></span>
+        Capability Statement · PDF · 4.2 MB
+      </a>
+    </nav>
+  </div>
+
+  <!-- ═════════════════════ TITLE PAGE / HERO ═════════════════════ -->
+  <header class="titlepage" id="top">
+
+    <div class="doc-meta">
+      <div class="l">
+        <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+        <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+        <span class="pair"><span>VOLUME</span><b>I OF I</b></span>
+        <span class="pair"><span>PAGES</span><b>01 / 22</b></span>
+      </div>
+      <div class="r">
+        <span class="pair"><span>JURISDICTION</span><b>U.A.E. + GCC</b></span>
+        <span class="pair"><span>LANG</span><b>EN · AR</b></span>
+      </div>
+    </div>
+
+    <div class="title-grid">
+      <div>
+        <div class="kicker">
+          <span class="num">§ 00</span>
+          <span>Capability Statement · Government, Institutional &amp; Cultural Delivery</span>
+        </div>
+
+        <h1 class="headline">
+          Forty-seven&nbsp;years <span class="em">on the public</span> record<span class="amp">.</span>
+        </h1>
+
+        <p class="byline">
+          Compiled by the <b>Office of the Chief Engineer</b> · Al Madar MGM Construction L.L.C., Dubai, U.A.E. ·
+          <span class="em">in response to recurring requests from ministries, sovereign wealth procurement offices, and accredited consulting engineers across the Gulf Cooperation Council.</span>
+        </p>
+
+        <div class="abstract">
+          <p>
+            <span class="sec">§ 1</span>
+            Al Madar MGM is a privately held construction house founded in 1979<sup class="fn">¹</sup>. We hold an unbroken 47-year record of civil works, fit-out, decorative finishes, hospitality interiors, cultural projects and infrastructure across the Emirates and the wider GCC, and have closed each of the last twelve fiscal years with a clean, unqualified audit<sup class="fn">²</sup>.
+          </p>
+          <p>
+            <span class="sec">§ 2</span>
+            The present document compiles, in summary form, our institutional mandate (§ 01), the seven disciplines under which we tender (§ 02), a redacted register of selected works delivered for sovereign and ministerial principals (§ 03), a multi-year statistical record (§ 04), our delivery methodology (§ 05), and the governance and compliance instruments that hold us answerable (§ 06)<sup class="fn">³</sup>.
+          </p>
+          <p>
+            <span class="sec">§ 3</span>
+            It is published in plain language, with footnotes, on the understanding that public capital deserves public legibility.
+          </p>
+        </div>
+
+        <div class="sigblock">
+          <div>
+            <span class="sig-script">M.&thinsp;A.&thinsp;Madar</span>
+            <h4 class="sig-name">Mohammed A. Al-Madar</h4>
+            <p class="sig-role">Chief Engineer · Office of the Managing Director</p>
+            <p class="sig-line">For and on behalf of <b>Al Madar MGM Construction L.L.C.</b> · Dubai, U.A.E. · 9 May 2026</p>
+          </div>
+          <div class="micro" style="text-align:right; max-width: 200px;">
+            <span class="micro--ink">Document executed under</span><br>
+            seal of the Office of the<br>
+            Chief Engineer<br>
+            <span class="micro--red">▲ original on file</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="title-aside">
+        <div class="stamp-wrap">
+          <div class="stamp" aria-hidden="true">
+            <span class="stamp-1">Certified</span>
+            <span class="stamp-2">ISO 9001:2015 · ISO 14001 · ISO 45001</span>
+            <span class="stamp-3">Issued · 2026 · Geneva</span>
+          </div>
+        </div>
+
+        <div class="keyfacts">
+          <h5>Quick reference</h5>
+          <dl>
+            <div><dt>Established</dt><dd>1979</dd></div>
+            <div><dt>Years operating</dt><dd>47</dd></div>
+            <div><dt>Disciplines</dt><dd>07</dd></div>
+            <div><dt>Audit firm</dt><dd>KPMG GCC</dd></div>
+            <div><dt>Audit findings 2024</dt><dd>0 · qualified</dd></div>
+            <div><dt>HQ</dt><dd>Dubai, U.A.E.</dd></div>
+            <div><dt>Form</dt><dd>L.L.C., privately held</dd></div>
+            <div><dt>Registry</dt><dd>DED 1979/0742</dd></div>
+            <div><dt>Tax No.</dt><dd>100 246 091 700 003</dd></div>
+            <div><dt>Reachable for</dt><dd>RFQ · ITT · EOI</dd></div>
+          </dl>
+        </div>
+
+        <div class="redact-row">
+          <span class="redact r1"></span>
+          <span class="redact r4"></span>
+          <span class="redact r5"></span>
+          <span class="lbl">Decorative</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- ═════════════════════ TABLE OF CONTENTS ═════════════════════ -->
+  <section class="toc-section" aria-label="Table of Contents">
+    <div class="toc-grid">
+      <div class="toc-label">
+        Contents
+        <small>By section &amp; folio</small>
+      </div>
+      <ol class="toc">
+        <li><span class="n">§ 01</span><span>Mandate</span><span class="leaders"></span><span class="pg">02</span></li>
+        <li><span class="n">§ 02</span><span>Disciplines</span><span class="leaders"></span><span class="pg">04</span></li>
+        <li><span class="n">§ 03</span><span>Selected Works</span><span class="leaders"></span><span class="pg">07</span></li>
+        <li><span class="n">§ 04</span><span>Track Record</span><span class="leaders"></span><span class="pg">11</span></li>
+        <li><span class="n">§ 05</span><span>Methodology</span><span class="leaders"></span><span class="pg">14</span></li>
+        <li><span class="n">§ 06</span><span>Governance &amp; Compliance</span><span class="leaders"></span><span class="pg">16</span></li>
+        <li><span class="n">§ 07</span><span>Leadership</span><span class="leaders"></span><span class="pg">18</span></li>
+        <li><span class="n">§ 08</span><span>Letter from the Chief Engineer</span><span class="leaders"></span><span class="pg">20</span></li>
+        <li><span class="n">§ 09</span><span>Endnotes &amp; references</span><span class="leaders"></span><span class="pg">21</span></li>
+        <li><span class="n">§ 10</span><span>Office of Tenders · Contact</span><span class="leaders"></span><span class="pg">22</span></li>
+        <li class="cls">
+          Citations follow the <em>Chicago Manual</em>, 17th ed. Statistical figures are independently audited unless otherwise marked. Imagery is rendered in archival sepia for printing economy and uniformity across rev. 03.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 01 MANDATE ═════════════════════ -->
+  <section class="section" id="mandate">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>02 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 01</b></span>
+      <span class="pair"><span>PRINCIPAL AUTHOR</span><b>OFFICE OF THE CHIEF ENGINEER</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 01<small>Mandate</small></div>
+      <div>
+        <h2 class="section-title">A construction house <span class="em">in service of</span> the public hand.</h2>
+        <p class="section-deck">Who we build for, on what terms, and the auditable instruments by which we are held to those terms.</p>
+      </div>
+    </header>
+
+    <div class="mandate-grid">
+      <aside class="marginalia">
+        <div class="h">Marginalia</div>
+        <p>The Mandate is reviewed annually by the Office of the Chief Engineer, signed by two members of the board, and lodged with the firm's external auditor before the start of each fiscal year.</p>
+        <div class="key"><span>Reviewed</span><b>2026-01-08</b></div>
+        <div class="key"><span>Lodged</span><b>2026-01-12</b></div>
+        <div class="key"><span>Auditor</span><b>KPMG GCC</b></div>
+        <div class="key"><span>File ref.</span><b>OCE/MAN/26-01</b></div>
+      </aside>
+
+      <div class="prose">
+        <p>
+          Al Madar MGM Construction L.L.C. has, since its founding in 1979, operated under a single mandate: to build, fit-out and finish public, civic and culturally significant works across the United Arab Emirates and the wider Gulf to a standard that does not embarrass either the principal who commissioned them or the public who will use them<sup class="fn">⁴</sup>. We work at every scale from a 96-room boutique hotel fit-out to a 1.4 km infrastructure causeway, and at every register from the painstaking restoration of plaster cornicing in a heritage majlis to the casting of a 28,000 m² monolithic civic raft.
+        </p>
+
+        <blockquote>
+          We do not regard a project as delivered until the warranty period has closed without claim, the operations &amp; maintenance manuals are accepted by the principal in writing, and the file is closed in our archive.
+          <cite>— Standing instruction · Office of the Chief Engineer · 2014</cite>
+        </blockquote>
+
+        <p>
+          Our principals fall in five broad classes: ministerial and federal authorities; <b>sovereign wealth and government-related entities</b> on the procurement side of cultural and infrastructure investment; the boards of accredited cultural institutions (museums, archives, libraries); the development arms of municipal authorities; and a small, repeating roster of hospitality groups whose interiors we have built since the late 1990s. We accept private commercial work selectively, where it does not crowd out our institutional pipeline<sup class="fn">⁵</sup>.
+        </p>
+
+        <p>
+          We are <b>privately held</b> and intend to remain so. The shareholding has not changed since 1989. The firm carries no public debt, no convertibles and no parties with disclosable conflicts of interest. We submit annually to an unqualified audit by KPMG (GCC), to ISO surveillance audits on three running certifications, and to whichever local-authority inspections are required of every job we open. Each of these instruments is designed to make our work answerable in writing — not because answerability is fashionable, but because the public hand deserves it.
+        </p>
+      </div>
+
+      <aside class="marginalia">
+        <div class="h">Recurring principals</div>
+        <p style="text-transform:none; letter-spacing:.02em;">
+          A non-exhaustive register of the standing relationships maintained by the firm under § 01.
+        </p>
+        <div class="key"><span>Ministry of Culture</span><b>since '11</b></div>
+        <div class="key"><span>Dubai Municipality</span><b>since '83</b></div>
+        <div class="key"><span>DCT — Abu Dhabi</span><b>since '15</b></div>
+        <div class="key"><span>Sharjah Public Wks.</span><b>since '02</b></div>
+        <div class="key"><span>Khor Fakkan Council</span><b>since '19</b></div>
+        <div class="key"><span>Etihad Museum brd.</span><b>since '17</b></div>
+        <div class="key"><span>Mubadala (cult.)</span><b>since '20</b></div>
+      </aside>
+    </div>
+
+    <div class="pagenum"><b>02</b> · 22 · § 01 · Mandate</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 02 DISCIPLINES ═════════════════════ -->
+  <section class="section" id="disciplines">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>04 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 02</b></span>
+      <span class="pair"><span>SCOPE</span><b>SEVEN DISCIPLINES</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 02<small>Disciplines</small></div>
+      <div>
+        <h2 class="section-title">Seven disciplines, <span class="em">one</span> chain of custody.</h2>
+        <p class="section-deck">The trades under which Al Madar MGM tenders, self-performs and warrants. Subcontracted scopes are ring-fenced, written and disclosed to the principal in advance.</p>
+      </div>
+    </header>
+
+    <div class="disc-frame">
+      <div class="disc-grid">
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-01</span>
+            <h3 class="disc-name">Civil Works</h3>
+          </header>
+          <p class="disc-deck">Substructure, superstructure, raft and shell. Self-performed up to G+12; managed-tier above. Fully RICS-priced<sup class="fn">⁶</sup>.</p>
+          <ul class="disc-list">
+            <li><b>Earthworks</b> · cut, fill, dewatering</li>
+            <li><b>Foundations</b> · piling, raft, mat</li>
+            <li><b>Reinforced concrete</b> · cast-in-situ &amp; precast</li>
+            <li><b>Structural steel</b> · primary &amp; secondary</li>
+            <li><b>External works</b> · paving, hardscape, civils</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-02</span>
+            <h3 class="disc-name">Fit-out</h3>
+          </header>
+          <p class="disc-deck">Cat-A and Cat-B fit-out delivery for offices, hospitality, civic and cultural use. In-house joinery shop in Al Quoz<sup class="fn">⁷</sup>.</p>
+          <ul class="disc-list">
+            <li><b>Joinery</b> · veneered &amp; lacquered</li>
+            <li><b>Stonework</b> · cladding, slabs, mosaic</li>
+            <li><b>Metalwork</b> · architectural &amp; ornamental</li>
+            <li><b>Glazing</b> · structural &amp; decorative</li>
+            <li><b>MEP integration</b> · concealed services</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-03</span>
+            <h3 class="disc-name">Decorative Finishes</h3>
+          </header>
+          <p class="disc-deck">Plasterwork, gilding, marquetry, lime-wash, fresco repair, gypsum cornicing. The studio retains six master craftsmen on indefinite engagement.</p>
+          <ul class="disc-list">
+            <li><b>Hand-applied plaster</b> · Venetian, Tadelakt</li>
+            <li><b>Gilding</b> · loose &amp; transfer leaf</li>
+            <li><b>Marquetry</b> · figured &amp; geometric</li>
+            <li><b>Heritage repair</b> · documented &amp; reversible</li>
+            <li><b>Specialist finishes</b> · matched to sample</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-04</span>
+            <h3 class="disc-name">Hospitality Interiors</h3>
+          </header>
+          <p class="disc-deck">Five-star hotel and resort interior packages, soup-to-nuts. Standing relationships with three of the GCC's largest operators since 1998.</p>
+          <ul class="disc-list">
+            <li><b>Guest rooms</b> · turn-key delivery</li>
+            <li><b>F&amp;B</b> · restaurants, bars, lounges</li>
+            <li><b>Public-facing areas</b> · lobbies, lifts</li>
+            <li><b>BOH</b> · service corridors, stewarding</li>
+            <li><b>Pre-opening</b> · snag-list to handover</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-05</span>
+            <h3 class="disc-name">Cultural Projects</h3>
+          </header>
+          <p class="disc-deck">Museums, libraries, archives, civic halls, heritage pavilions. Built to museum-grade RH/T tolerances; verified by independent commissioning agents.</p>
+          <ul class="disc-list">
+            <li><b>Gallery enclosures</b> · class-A controlled</li>
+            <li><b>Storage &amp; archive</b> · acid-free, RH-stable</li>
+            <li><b>Heritage shells</b> · listed-building protocols</li>
+            <li><b>Display joinery</b> · vitrines &amp; plinths</li>
+            <li><b>Way-finding</b> · multilingual &amp; ADA</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-06</span>
+            <h3 class="disc-name">Infrastructure</h3>
+          </header>
+          <p class="disc-deck">Civic-scale infrastructure executed in joint venture with specialist consortia. Managed under FIDIC Red &amp; Yellow forms<sup class="fn">⁸</sup>.</p>
+          <ul class="disc-list">
+            <li><b>Roads &amp; bridges</b> · municipal scale</li>
+            <li><b>Water &amp; drainage</b> · network &amp; pumping</li>
+            <li><b>Public realm</b> · plazas, civic squares</li>
+            <li><b>Coastal works</b> · revetment &amp; landings</li>
+            <li><b>Electromechanical</b> · plant &amp; switchgear</li>
+          </ul>
+        </article>
+
+        <article class="disc">
+          <header class="disc-head">
+            <span class="disc-num">D-07</span>
+            <h3 class="disc-name">Specialist Restoration</h3>
+          </header>
+          <p class="disc-deck">A small, separately staffed studio for buildings of cultural value. Working under conservation-grade specifications endorsed by ICOMOS.</p>
+          <ul class="disc-list">
+            <li><b>Stone consolidation</b> · documented intervention</li>
+            <li><b>Earthen architecture</b> · adobe &amp; barasti</li>
+            <li><b>Period joinery</b> · matched-grain repair</li>
+            <li><b>Plaster archaeology</b> · in-situ recording</li>
+            <li><b>Reversible works</b> · per Venice Charter</li>
+          </ul>
+        </article>
+
+        <article class="disc" style="background: var(--paper-deep);">
+          <header class="disc-head">
+            <span class="disc-num">D-∞</span>
+            <h3 class="disc-name">Cross-discipline coordination</h3>
+          </header>
+          <p class="disc-deck">A standing programme office sits across all seven trades, holding a single chain of custody on document control, RFI, IR and snag throughout the project.</p>
+          <ul class="disc-list">
+            <li><b>BIM 360</b> · shared model environment</li>
+            <li><b>Document control</b> · ISO 19650 compliant</li>
+            <li><b>QA / QC</b> · third-party witnessed</li>
+            <li><b>HSE</b> · ISO 45001 governance</li>
+            <li><b>Handover</b> · single-binder protocol</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pagenum"><b>04</b> · 22 · § 02 · Disciplines</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 03 SELECTED WORKS ═════════════════════ -->
+  <section class="section" id="works">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>07 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 03</b></span>
+      <span class="pair"><span>FIGURES</span><b>FIG. 01 — 06</b></span>
+      <span class="pair"><span>IMAGERY</span><b>SEPIA-RENDERED</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 03<small>Selected Works</small></div>
+      <div>
+        <h2 class="section-title">Six representative <span class="em">handovers,</span> 2019 — 2024.</h2>
+        <p class="section-deck">A redacted register of recently delivered works for ministerial, cultural and sovereign principals. Each entry carries an independently signed handover certificate; copies are available on application by accredited procuring authorities.</p>
+      </div>
+    </header>
+
+    <div class="figures">
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1517256673644-36ad11246d21?auto=format&fit=crop&w=1280&q=80" alt="Marsa Heritage Pavilion exterior, late afternoon light, 2024" />
+        </div>
+        <div class="fig-num">Fig. 01 <em>— Marsa Heritage Pavilion</em></div>
+        <figcaption>
+          Marsa Heritage Pavilion, Al Mina district, Abu Dhabi. Hand-over photograph, 2024-11-08. Photographer credited; © Al Madar MGM, used with permission of the Department of Culture &amp; Tourism — Abu Dhabi.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">DCT — Abu Dhabi</span></div>
+          <div><span class="l">Scope</span><span class="v">Civil + Cultural · D-01, D-05, D-07</span></div>
+          <div><span class="l">Term</span><span class="v">2022 — 2024</span></div>
+          <div><span class="l">Status</span><span class="v">Handed over · DLP closed</span></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1280&q=80" alt="Yas Cultural Hall foyer, terrazzo and travertine, daylight" />
+        </div>
+        <div class="fig-num">Fig. 02 <em>— Yas Cultural Hall</em></div>
+        <figcaption>
+          Yas Cultural Hall · public foyer, with travertine ribbon-soffit and bespoke terrazzo. Handed over to the principal on 2023-09-21; commissioned for public use 2023-12-02.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">Mubadala (cultural)</span></div>
+          <div><span class="l">Scope</span><span class="v">Fit-out + Finishes · D-02, D-03, D-05</span></div>
+          <div><span class="l">Term</span><span class="v">2021 — 2023</span></div>
+          <div><span class="l">Status</span><span class="v">Operating · in warranty</span></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1280&q=80" alt="Sharjah Civic Library reading room, oak shelving, controlled daylight" />
+        </div>
+        <div class="fig-num">Fig. 03 <em>— Sharjah Civic Library</em></div>
+        <figcaption>
+          Sharjah Civic Library · principal reading room, with figured-oak shelving, controlled-spectrum daylighting, and a museum-grade RH envelope of 50 ± 4&thinsp;%. Photograph 2024-03-04.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">Sharjah Public Works</span></div>
+          <div><span class="l">Scope</span><span class="v">Fit-out + Cultural · D-02, D-05</span></div>
+          <div><span class="l">Term</span><span class="v">2022 — 2024</span></div>
+          <div><span class="l">Status</span><span class="v">Public · in warranty</span></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1280&q=80" alt="Etihad Museum extension, plaster gallery enclosure, daylight" />
+        </div>
+        <div class="fig-num">Fig. 04 <em>— Etihad Museum, gallery extension</em></div>
+        <figcaption>
+          Etihad Museum, gallery-extension package: hand-applied plaster enclosure, low-iron vitrine glazing, blackened-steel display joinery. Handed over 2022-11-30; opening exhibition 2023-02-12.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">Etihad Museum board</span></div>
+          <div><span class="l">Scope</span><span class="v">Cultural + Finishes · D-03, D-05</span></div>
+          <div><span class="l">Term</span><span class="v">2021 — 2022</span></div>
+          <div><span class="l">Status</span><span class="v">Public · DLP closed</span></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1280&q=80" alt="Khor Fakkan Civic Centre exterior, stone façade, late afternoon" />
+        </div>
+        <div class="fig-num">Fig. 05 <em>— Khor Fakkan Civic Centre</em></div>
+        <figcaption>
+          Khor Fakkan Civic Centre · seafront elevation. Local sandstone, hand-tooled, on a primary RC frame. Photograph 2021-10-19. Civic centre opened to the public 2021-12-04.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">Khor Fakkan Council</span></div>
+          <div><span class="l">Scope</span><span class="v">Civil + Infrastructure · D-01, D-06</span></div>
+          <div><span class="l">Term</span><span class="v">2019 — 2021</span></div>
+          <div><span class="l">Status</span><span class="v">Operating · DLP closed</span></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <img class="fig-img" src="https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1280&q=80" alt="Al Ain Heritage House restored courtyard, palm columns, dusk" />
+        </div>
+        <div class="fig-num">Fig. 06 <em>— Al Ain Heritage House</em></div>
+        <figcaption>
+          Al Ain Heritage House · restored courtyard, with date-palm column repair under conservation-grade specification. Photograph 2020-04-22; project handed back to the principal 2020-09-08.
+        </figcaption>
+        <div class="fig-meta">
+          <div><span class="l">Principal</span><span class="v">DCT — Abu Dhabi</span></div>
+          <div><span class="l">Scope</span><span class="v">Restoration · D-07</span></div>
+          <div><span class="l">Term</span><span class="v">2019 — 2020</span></div>
+          <div><span class="l">Status</span><span class="v">Public · DLP closed</span></div>
+        </div>
+      </figure>
+
+    </div>
+
+    <div class="pagenum"><b>07</b> · 22 · § 03 · Selected Works</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 04 TRACK RECORD ═════════════════════ -->
+  <section class="section" id="record">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>11 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 04</b></span>
+      <span class="pair"><span>SOURCE</span><b>KPMG GCC · IFRS · FY '19—'24</b></span>
+      <span class="pair"><span>FORMAT</span><b>STATISTICAL TABULATION</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 04<small>Track Record</small></div>
+      <div>
+        <h2 class="section-title">The record, <span class="em">in numbers</span> the auditor will sign.</h2>
+        <p class="section-deck">Six fiscal years, nine columns, one footnote regime. Each cell is reproducible against the audited file with the reference shown in the footer of the table.</p>
+      </div>
+    </header>
+
+    <div class="table-wrap">
+      <table class="stat-table" aria-label="Track Record FY 2019–2024">
+        <caption>
+          <b>Table 04.1</b> — Operational and safety record, FY 2019 – FY 2024. Source: KPMG GCC, audited financial statements, lodged 2025-03-30.
+        </caption>
+        <thead>
+          <tr>
+            <th>Fiscal Year</th>
+            <th>Projects<br><small>delivered</small></th>
+            <th>Handovers<br><small>on time</small></th>
+            <th>On-time<br><small>%</small></th>
+            <th>Manhours<br><small>millions</small></th>
+            <th>LTIFR<br><small>per 200k hrs</small></th>
+            <th>Audit<br><small>findings</small></th>
+            <th>Recordable<br><small>incidents</small></th>
+            <th>Litigation<br><small>open</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FY 2019</td>
+            <td>21</td><td>19</td><td>90.4&thinsp;%</td>
+            <td>3.81</td><td>0.42</td>
+            <td>0</td><td>4</td><td>0</td>
+          </tr>
+          <tr>
+            <td>FY 2020</td>
+            <td>17</td><td>15</td><td>88.2&thinsp;%</td>
+            <td>3.04</td><td>0.36</td>
+            <td>0</td><td>3</td><td>0</td>
+          </tr>
+          <tr>
+            <td>FY 2021</td>
+            <td>23</td><td>22</td><td>95.6&thinsp;%</td>
+            <td>4.18</td><td>0.31</td>
+            <td>0</td><td>2</td><td>0</td>
+          </tr>
+          <tr>
+            <td>FY 2022</td>
+            <td>26</td><td>24</td><td>92.3&thinsp;%</td>
+            <td>4.74</td><td>0.28</td>
+            <td>0</td><td>3</td><td>1</td>
+          </tr>
+          <tr>
+            <td>FY 2023</td>
+            <td>29</td><td>28</td><td>96.5&thinsp;%</td>
+            <td>5.21</td><td>0.24</td>
+            <td>0</td><td>2</td><td>0</td>
+          </tr>
+          <tr>
+            <td>FY 2024</td>
+            <td>31</td><td>30</td><td>96.8&thinsp;%</td>
+            <td>5.62</td><td>0.21</td>
+            <td>0</td><td>2</td><td>0</td>
+          </tr>
+          <tr class="total">
+            <td>6-year total</td>
+            <td>147</td><td>138</td><td>93.9&thinsp;%</td>
+            <td>26.60</td><td>0.30</td>
+            <td>0</td><td>16</td><td>—</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="9">
+              <span class="micro--red">▲</span> &nbsp; All figures audited. LTIFR computed on rolling 200,000-hour basis per ISO 45001. Litigation open as of 2024-12-31, GCC jurisdictions only. Source file: KPMG/GCC/AM-MGM/FY24/0712-001.
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="footnotes-inline">
+      <span><sup>⁹</sup> &nbsp; Audited by KPMG (GCC) under IFRS.</span>
+      <span><sup>¹⁰</sup> &nbsp; LTIFR on rolling 200,000-hour basis.</span>
+      <span><sup>¹¹</sup> &nbsp; Litigation excludes routine commercial recovery.</span>
+      <span><sup>¹²</sup> &nbsp; Audit findings = qualifications, not observations.</span>
+    </div>
+
+    <div class="pagenum"><b>11</b> · 22 · § 04 · Track Record</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 05 METHODOLOGY ═════════════════════ -->
+  <section class="section" id="methodology">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>14 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 05</b></span>
+      <span class="pair"><span>STAGES</span><b>SEVEN</b></span>
+      <span class="pair"><span>BASIS</span><b>FIDIC + ISO 19650</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 05<small>Methodology</small></div>
+      <div>
+        <h2 class="section-title">Seven stages, <span class="em">written down,</span> auditable.</h2>
+        <p class="section-deck">A formal description of the firm's standing delivery method, lodged with our auditor and updated under change-control. Every project is run against the version live at the date the principal's commission is received.</p>
+      </div>
+    </header>
+
+    <div class="method-grid">
+      <div class="method-prose">
+        <p>
+          Our delivery method is not a marketing exercise. It is a working document, kept under change-control by the Office of the Chief Engineer and version-stamped at every revision. The current version is <b>OCE/MET/V12.3</b>, ratified 2026-01-08<sup class="fn">¹³</sup>.
+        </p>
+        <p>
+          Each of the seven stages below has a written gate, a named gate-keeper, and a documented evidence pack required to close it. <b>No stage closes informally.</b> Where the principal asks for an exception, we record the exception and have it counter-signed.
+        </p>
+        <p>
+          The result is, to the extent it can be, an <span class="em">audit-grade</span> chain of custody from the day a tender is opened to the day the warranty period closes — typically a span of 36 to 60 months for civic and cultural work.
+        </p>
+        <p>
+          The methodology is open to inspection by an accredited procuring authority on request, on the standing condition that subcontractor and pricing schedules remain commercially confidential.
+        </p>
+      </div>
+
+      <ol class="method-list">
+        <li>
+          <div>
+            <h4>Tender intake &amp; conflict-of-interest screen</h4>
+            <p>Every RFQ / ITT / EOI is logged within 24 hours. <span class="em">No tender opens before the COI screen is signed.</span></p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Pre-construction &amp; design coordination</h4>
+            <p>BIM-360 model federated; ISO 19650 information-management plan ratified before mobilisation.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Procurement &amp; ring-fenced subcontracting</h4>
+            <p>Subcontracted scopes named in the principal's contract; chain of custody held centrally.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Site mobilisation &amp; HSE governance</h4>
+            <p>ISO 45001 site file opened; weekly safety walks; monthly LTIFR returned to the principal in writing.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Construction, QA / QC &amp; third-party witnessing</h4>
+            <p>Hold-points witnessed by the principal's commissioning agent. Defects logged, not negotiated.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Pre-commissioning, commissioning &amp; T&amp;C</h4>
+            <p>Test &amp; commissioning under the consultant's witnessed protocol. T&amp;C certificates archived in PDF/A.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Hand-over, DLP &amp; warranty close-out</h4>
+            <p>O&amp;M binders accepted in writing; defects-liability period closed only on the principal's counter-signature.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="pagenum"><b>14</b> · 22 · § 05 · Methodology</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 06 GOVERNANCE & COMPLIANCE ═════════════════════ -->
+  <section class="section" id="governance">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>16 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 06</b></span>
+      <span class="pair"><span>INSTRUMENTS</span><b>FOUR</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 06<small>Governance &amp; Compliance</small></div>
+      <div>
+        <h2 class="section-title">The instruments by which <span class="em">we are held</span> to it.</h2>
+        <p class="section-deck">Certifications, registrations, audit relationships and board governance. Each item is current as of 2026-05-09 unless otherwise noted; expired or pending instruments are flagged in the right-hand column.</p>
+      </div>
+    </header>
+
+    <div class="gov-wrap">
+
+      <div class="gov-col">
+        <h4>I · Certifications · ISO &amp; sectoral</h4>
+        <ul class="gov-list">
+          <li>
+            <span class="code">ISO 9001</span>
+            <span class="body">Quality Management Systems<em>Bureau Veritas, Geneva · cert. no. FR-7421-2026</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+          <li>
+            <span class="code">ISO 14001</span>
+            <span class="body">Environmental Management<em>Bureau Veritas · cert. no. FR-7422-2025</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+          <li>
+            <span class="code">ISO 45001</span>
+            <span class="body">Occupational Health &amp; Safety<em>Bureau Veritas · cert. no. FR-7423-2025</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+          <li>
+            <span class="code">ISO 19650</span>
+            <span class="body">Information management — BIM<em>BSI · cert. BIM-2024-1148</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+          <li>
+            <span class="code">ISO 27001</span>
+            <span class="body">Information Security<em>BSI · scope: project document control</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+          <li>
+            <span class="code">ICOMOS</span>
+            <span class="body">Heritage practice declaration<em>Restoration studio only; renewed annually</em></span>
+            <span class="stat ok">Current · '26</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="gov-col">
+        <h4>II · Local-authority registrations</h4>
+        <ul class="gov-list">
+          <li>
+            <span class="code">DM 1979</span>
+            <span class="body">Dubai Municipality, Building Contractor Grade A<em>continuous since 1979</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">DMT</span>
+            <span class="body">Abu Dhabi Department of Municipalities &amp; Transport<em>Civil &amp; Cultural; renewed FY '26</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">SPW</span>
+            <span class="body">Sharjah Public Works Dept., enrolment '02<em>Civic, cultural, infrastructure</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">DCT</span>
+            <span class="body">Department of Culture &amp; Tourism — Abu Dhabi<em>Approved cultural delivery contractor</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">DED</span>
+            <span class="body">Dept. of Economic Development, Dubai<em>Trade licence 1979/0742; perpetual renewal</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">FTA</span>
+            <span class="body">Federal Tax Authority, U.A.E.<em>VAT 100 246 091 700 003</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="gov-col">
+        <h4>III · Audit &amp; assurance</h4>
+        <ul class="gov-list">
+          <li>
+            <span class="code">KPMG</span>
+            <span class="body">External auditor (financial)<em>Engagement continuous since FY 2009</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">BV</span>
+            <span class="body">Bureau Veritas — ISO surveillance<em>Annual audit, three certifications</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">DNV</span>
+            <span class="body">Independent commissioning agent (panel)<em>Engaged on cultural, infrastructure</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">IA-Co.</span>
+            <span class="body">Internal Audit Committee<em>Three independent non-executive members</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">Whistle</span>
+            <span class="body">External whistleblowing line<em>Operated by an unaffiliated third party</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">DPO</span>
+            <span class="body">Data Protection Officer<em>Per U.A.E. PDPL · in post since 2022</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="gov-col">
+        <h4>IV · Board governance</h4>
+        <ul class="gov-list">
+          <li>
+            <span class="code">BOD</span>
+            <span class="body">Board of Directors<em>5 members · 3 independent non-executives</em></span>
+            <span class="stat ok">Constituted</span>
+          </li>
+          <li>
+            <span class="code">AC</span>
+            <span class="body">Audit &amp; Risk Committee<em>Quarterly · chaired by INED</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">PC</span>
+            <span class="body">Procurement &amp; Tender Committee<em>Reviews all sovereign-tier tenders &gt; AED 50m</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">HSE</span>
+            <span class="body">HSE &amp; Site-Safety Committee<em>Monthly · LTIFR returned to principals</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">EC</span>
+            <span class="body">Ethics &amp; COI Committee<em>Standing — every tender screened</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+          <li>
+            <span class="code">CEO</span>
+            <span class="body">Office of the Chief Engineer<em>Final escalation of technical disputes</em></span>
+            <span class="stat ok">Active</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pagenum"><b>16</b> · 22 · § 06 · Governance &amp; Compliance</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 07 LEADERSHIP ═════════════════════ -->
+  <section class="section" id="leadership">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>18 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 07</b></span>
+      <span class="pair"><span>FIGURES</span><b>FIG. 07 — 12</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 07<small>Leadership</small></div>
+      <div>
+        <h2 class="section-title">The standing officers <span class="em">of the firm,</span> 2026.</h2>
+        <p class="section-deck">Six officers under whose names the firm tenders, signs, builds and warrants. Each carries personal professional registration with the relevant U.A.E. authority and is named on the firm's tender filings.</p>
+      </div>
+    </header>
+
+    <div class="leaders">
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 07 · ML-001"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 07 <em>· ML-001</em></div>
+          <h4>Mohammed A. Al-Madar</h4>
+          <p class="role">Chief Engineer · Office of the Managing Director</p>
+          <p>With the firm since <b>1989</b>. Former director of works at the Department of Public Works, Sharjah. Personal RICS chartered membership; ICOMOS-affiliated. Signs on every cultural-tier handover.</p>
+        </figure>
+      </article>
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 08 · ML-002"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 08 <em>· ML-002</em></div>
+          <h4>Aisha R. Bin Saleh</h4>
+          <p class="role">Director · Cultural &amp; Heritage Practice</p>
+          <p>Joined <b>2011</b> from the Sharjah Heritage Authority. Heads the Restoration Studio (D-07). Standing seat on the firm's Ethics &amp; COI Committee. Member of the ICOMOS scientific committee, U.A.E.</p>
+        </figure>
+      </article>
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 09 · ML-003"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 09 <em>· ML-003</em></div>
+          <h4>Khalid M. Al-Suwaidi</h4>
+          <p class="role">Director · Civil Works &amp; Infrastructure</p>
+          <p>With the firm since <b>1998</b>. PE (U.A.E.); fellow ICE (UK). Holds principal-engineer responsibility on every infrastructure-tier tender lodged under D-01 and D-06.</p>
+        </figure>
+      </article>
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 10 · ML-004"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 10 <em>· ML-004</em></div>
+          <h4>Hessa N. Al-Marri</h4>
+          <p class="role">Director · Audit, Compliance &amp; Risk</p>
+          <p>Joined <b>2015</b> from KPMG (GCC), where she was senior manager on the firm's audit. Holds CIA and CISA designations. Reports to the Audit &amp; Risk Committee.</p>
+        </figure>
+      </article>
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 11 · ML-005"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 11 <em>· ML-005</em></div>
+          <h4>Carlo P. di Stefano</h4>
+          <p class="role">Director · Hospitality &amp; Decorative Finishes</p>
+          <p>With the firm since <b>2002</b>. Trained Florence; runs the Al Quoz joinery and finishes studio. Personal portfolio includes 24 five-star openings across the GCC and Levant.</p>
+        </figure>
+      </article>
+
+      <article class="leader">
+        <figure>
+          <div class="leader-portrait" data-id="Fig. 12 · ML-006"><div class="silhouette"></div></div>
+          <div class="leader-num">Fig. 12 <em>· ML-006</em></div>
+          <h4>Yusra K. Al-Hammadi</h4>
+          <p class="role">Director · Tenders &amp; Public Procurement</p>
+          <p>Joined <b>2019</b> from the Federal Tender Board. Leads the Office of Tenders. First point of contact for accredited procuring authorities; holds the firm's pre-qualification register under § 06.</p>
+        </figure>
+      </article>
+
+    </div>
+
+    <div class="pagenum"><b>18</b> · 22 · § 07 · Leadership</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 08 LETTER FROM CHIEF ENGINEER ═════════════════════ -->
+  <section class="letter-section" id="letter">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>20 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 08</b></span>
+      <span class="pair"><span>FORM</span><b>OPEN LETTER</b></span>
+    </div>
+
+    <article class="letter">
+
+      <header class="letter-head">
+        <h3>
+          A letter from the Chief Engineer
+          <small>For the public record · open distribution · § 08</small>
+        </h3>
+        <div class="letter-date">
+          <b>9 May 2026</b>
+          Dubai, United Arab Emirates<br>
+          OCE/LTR/26-04
+        </div>
+      </header>
+
+      <div class="letter-body">
+        <p class="letter-greeting">To the principal officer reading this document, in whatever ministry, sovereign office, council or accredited consultancy it has reached you,</p>
+
+        <p>
+          A capability statement is, in the end, a promise made on paper to people one may not yet have met. Ours is brief, and made plainly: that whatever we accept to build for you, we will build to a standard that does not embarrass the public hand on whose behalf you commissioned it; that we will keep the file in good order while we do so; that we will hand it back closed, with the warranties intact and the manuals accepted in writing; and that we will answer for it, in writing, for as long as the file is open.
+        </p>
+
+        <p>
+          We are forty-seven years old. We are privately held. We submit, every year, to an audit we do not control, and we have not been qualified once. None of that is ornament; all of it is the working basis on which our principals — ministerial, sovereign, cultural and civic — return to us, season after season. If, after reading this document, you feel inclined to enter into correspondence with the Office of Tenders, we would be honoured to receive your enquiry. We will reply within five working days.
+        </p>
+      </div>
+
+      <footer class="letter-foot">
+        <div>
+          <p class="letter-sig">M. A. Al-Madar</p>
+          <p class="letter-name">
+            Mohammed A. Al-Madar
+            <small>Chief Engineer · Office of the Managing Director</small>
+          </p>
+        </div>
+        <div class="letter-seal" aria-hidden="true">
+          <span>Seal · OCE<br>2026</span>
+        </div>
+      </footer>
+
+    </article>
+  </section>
+
+  <!-- ═════════════════════ § 09 ENDNOTES ═════════════════════ -->
+  <section class="section" id="endnotes">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>21 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 09</b></span>
+      <span class="pair"><span>FORMAT</span><b>NUMBERED REFERENCES</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 09<small>Endnotes</small></div>
+      <div>
+        <h2 class="section-title">Endnotes <span class="em">&amp;</span> references.</h2>
+        <p class="section-deck">Footnoted material referenced through the body of this capability statement. References follow the <em>Chicago Manual</em>, 17th ed., adapted for U.A.E. ministerial and sovereign documentation.</p>
+      </div>
+    </header>
+
+    <div class="endnotes">
+      <h4>Notes</h4>
+      <ol>
+        <li data-n="¹"><span><em>Founding date verified</em> against the original DED licence 1979/0742 on file. The firm's current corporate form (L.L.C.) dates from a 1989 reconstitution.</span></li>
+        <li data-n="²"><span><em>Twelve fiscal years</em> — KPMG GCC, audit reports FY 2013–FY 2024 inclusive. Audit findings = qualifications, not observations.</span></li>
+        <li data-n="³"><span><em>Sections referenced</em> are §§ 01–06 of the present document. Section folios per the table of contents on folio 01.</span></li>
+        <li data-n="⁴"><span><em>"Standard that does not embarrass"</em> — phrase taken from the standing instruction of the Office of the Chief Engineer, 2014 cohort, and adopted as the firm's working test of acceptable delivery.</span></li>
+        <li data-n="⁵"><span><em>Selective private commercial work</em> — caps applied at the start of each fiscal year by the Procurement &amp; Tender Committee. Caps lodged with the auditor.</span></li>
+        <li data-n="⁶"><span><em>RICS pricing</em> — tendered against current RICS NRM (New Rules of Measurement), with full bill-of-quantities transparency where required by the principal.</span></li>
+        <li data-n="⁷"><span><em>Al Quoz joinery shop</em> — operated continuously by the firm since 1996; capacity 11,200 m² floor; six master craftsmen on indefinite engagement.</span></li>
+        <li data-n="⁸"><span><em>FIDIC Red &amp; Yellow</em> — 1999 and 2017 editions, as elected in the principal's contract. Variations governed strictly under the chosen edition.</span></li>
+        <li data-n="⁹"><span><em>Independent audit</em> — KPMG (GCC), engagement letter on file, lodged with the Audit &amp; Risk Committee.</span></li>
+        <li data-n="¹⁰"><span><em>LTIFR</em> — Lost-Time Injury Frequency Rate, computed on a rolling 200,000-hour basis per ISO 45001.</span></li>
+        <li data-n="¹¹"><span><em>Litigation</em> figures exclude routine commercial recovery actions under AED 100,000 and small-claims work-permit matters.</span></li>
+        <li data-n="¹²"><span><em>Audit findings</em> — qualifications issued by the external auditor, not observations or recommendations to management.</span></li>
+        <li data-n="¹³"><span><em>OCE/MET/V12.3</em> — current methodology revision; v12.2 retired 2026-01-08; full revision history available to accredited principals on application.</span></li>
+        <li data-n="¹⁴"><span><em>All figures</em> are stated in U.A.E. dirham (AED) unless otherwise indicated. FX rates per Central Bank of the U.A.E., closing rate.</span></li>
+      </ol>
+    </div>
+
+    <div class="pagenum"><b>21</b> · 22 · § 09 · Endnotes</div>
+  </section>
+
+  <div class="asterism" aria-hidden="true">⁂</div>
+
+  <!-- ═════════════════════ § 10 OFFICE OF TENDERS / CONTACT ═════════════════════ -->
+  <section class="section" id="contact">
+    <div class="section-meta">
+      <span class="pair"><span>FILED</span><b>2026-04-12</b></span>
+      <span class="pair"><span>CLASSIFICATION</span><b>OPEN</b></span>
+      <span class="pair"><span>FOLIO</span><b>22 / 22</b></span>
+      <span class="pair"><span>SECTION</span><b>§ 10</b></span>
+      <span class="pair"><span>OFFICE</span><b>TENDERS &amp; PUBLIC PROCUREMENT</b></span>
+    </div>
+    <header class="section-head">
+      <div class="section-num">§ 10<small>Contact</small></div>
+      <div>
+        <h2 class="section-title">Office of Tenders <span class="em">&amp;</span> Public Procurement.</h2>
+        <p class="section-deck">For RFQ / ITT / EOI correspondence, pre-qualification packs, and accredited-principal site visits. The office is staffed Sunday – Thursday, 0830 – 1730 GST. Out-of-hours enquiries are acknowledged within one working day.</p>
+      </div>
+    </header>
+
+    <div class="contact-wrap">
+
+      <div>
+        <h3 class="contact-h">Bring us <span class="em">a brief.</span> We will reply in five working days.</h3>
+        <p class="contact-deck">
+          Address all correspondence to the Director · Tenders, marked <em>Capability Reference DOC-2026-AM-MGM-0142</em>. Encrypted submission is available on application; PGP key fingerprint published on the firm's domain. We do not work through unsolicited intermediaries.
+        </p>
+
+        <div class="redact-row">
+          <span class="redact r1"></span>
+          <span class="redact r2"></span>
+          <span class="redact r3"></span>
+          <span class="lbl">Decorative — not redacted content</span>
+        </div>
+
+        <p class="micro" style="margin-top: 1.6rem;">
+          For accredited journalists, please address the Office of the Chief Engineer directly · OCE/PRESS/26-04.
+        </p>
+      </div>
+
+      <aside class="contact-card">
+        <h5>Office of Tenders · DOC-2026-AM-MGM-0142</h5>
+        <dl>
+          <div>
+            <dt>Address</dt>
+            <dd>Al Madar MGM Construction L.L.C.<br><b>Building 14, Al Quoz 3</b><br>P.O. Box 17422 · Dubai · U.A.E.</dd>
+          </div>
+          <div>
+            <dt>Telephone</dt>
+            <dd>+971 4 347 1979<small>Sun – Thu · 0830 – 1730 GST</small></dd>
+          </div>
+          <div>
+            <dt>Facsimile</dt>
+            <dd>+971 4 347 1980<small>Direct to Office of Tenders</small></dd>
+          </div>
+          <div>
+            <dt>E-mail</dt>
+            <dd>tenders@almadar-mgm.ae<small>Acknowledged within 1 working day</small></dd>
+          </div>
+          <div>
+            <dt>Director</dt>
+            <dd>Yusra K. Al-Hammadi<small>Director · Tenders &amp; Public Procurement</small></dd>
+          </div>
+          <div>
+            <dt>Trade reg.</dt>
+            <dd>DED 1979/0742<small>Continuous since 1979</small></dd>
+          </div>
+          <div>
+            <dt>VAT No.</dt>
+            <dd>100 246 091 700 003<small>Federal Tax Authority, U.A.E.</small></dd>
+          </div>
+          <div>
+            <dt>Bank</dt>
+            <dd>Emirates NBD · Al Quoz<small>IBAN on application by accredited principals</small></dd>
+          </div>
+        </dl>
+      </aside>
+
+    </div>
+
+    <div class="pagenum"><b>22</b> · 22 · § 10 · Contact · End of capability statement</div>
+  </section>
+
+  <!-- ═════════════════════ FOOTER ═════════════════════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <h3 class="footer-brand">
+          Al Madar MGM Construction L.L.C.
+          <small>A privately held UAE construction house · Established 1979</small>
+        </h3>
+        <p class="footer-deck">
+          A capability statement compiled by the Office of the Chief Engineer for the public record. Published in plain language, with footnotes, on the understanding that public capital deserves public legibility.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h6>Document</h6>
+        <ul>
+          <li><a href="#top"><span>§ 00</span>Title page</a></li>
+          <li><a href="#mandate"><span>§ 01</span>Mandate</a></li>
+          <li><a href="#disciplines"><span>§ 02</span>Disciplines</a></li>
+          <li><a href="#works"><span>§ 03</span>Selected Works</a></li>
+          <li><a href="#record"><span>§ 04</span>Track Record</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Sections</h6>
+        <ul>
+          <li><a href="#methodology"><span>§ 05</span>Methodology</a></li>
+          <li><a href="#governance"><span>§ 06</span>Governance</a></li>
+          <li><a href="#leadership"><span>§ 07</span>Leadership</a></li>
+          <li><a href="#letter"><span>§ 08</span>Letter</a></li>
+          <li><a href="#endnotes"><span>§ 09</span>Endnotes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Office of Tenders</h6>
+        <ul>
+          <li><a href="#contact"><span>T</span>+971 4 347 1979</a></li>
+          <li><a href="#contact"><span>E</span>tenders@almadar-mgm.ae</a></li>
+          <li><a href="#contact"><span>F</span>+971 4 347 1980</a></li>
+          <li><a href="#contact"><span>R</span>DED 1979/0742</a></li>
+          <li><a href="#contact"><span>V</span>VAT 100 246 091 700 003</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-meta">
+      <span><span class="dot"></span>UNCLASSIFIED · OPEN PUBLICATION</span>
+      <span>DOC-2026-AM-MGM-0142 · REV 03</span>
+      <span>Issued 2026-05-09T14:32:08Z</span>
+      <span class="right">© 1979 — 2026 Al Madar MGM Construction L.L.C. · All rights reserved.</span>
+    </div>
+
+    <div class="footer-rev">
+      <div><span>Rev. 01</span><b>2026-02-14</b></div>
+      <div><span>Rev. 02</span><b>2026-03-29</b></div>
+      <div><span>Rev. 03 · current</span><b>2026-05-09</b></div>
+      <div><span>Next review</span><b>2026-11-09</b></div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

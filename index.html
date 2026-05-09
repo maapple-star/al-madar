@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — Twenty homepage directions</title>
+  <meta name="description" content="Comparison page: twenty distinct homepage directions for Al Madar MGM Construction L.L.C. — design-led, enterprise-grade, modern-sleek and refined enterprise." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Neutral chooser — paper / ink / brass tint
+       Designed not to bias the comparison */
+
+    :root {
+      --paper:      #F4F0E6;
+      --paper-soft: #ECE6D6;
+      --ink:        #1A1714;
+      --ink-soft:   #3A332B;
+      --ink-mute:   #6B6256;
+      --rule:       rgba(26,23,20,.12);
+      --brass:      #9B7A3F;
+      --brass-d:    #6B5424;
+
+      --display: "Fraunces", Georgia, serif;
+      --sans:    "Geist", -apple-system, sans-serif;
+      --mono:    "Geist Mono", monospace;
+
+      --container: min(1480px, 92vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .grain {
+      position: fixed; inset: 0; z-index: 1000;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>");
+      mix-blend-mode: multiply;
+      opacity: .35;
+    }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brass-d);
+      font-weight: 500;
+    }
+
+    /* ── Masthead ── */
+    .top {
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .top-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .top .pip {
+      display: inline-block; width: 6px; height: 6px;
+      background: var(--brass); border-radius: 999px;
+      margin-right: 8px; vertical-align: middle;
+    }
+    .top em {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .nav {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .logo .glyph {
+      width: 36px; height: 36px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      display: grid; place-items: center;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 22px;
+      transform: translateY(2px);
+    }
+    .logo .word strong {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 21px;
+      letter-spacing: -.005em;
+      display: block;
+    }
+    .logo .word strong sup {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      vertical-align: super;
+      margin-left: 4px;
+      color: var(--brass);
+    }
+    .logo .word span {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .nav-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: end;
+    }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    .hero-eyebrow {
+      display: flex; gap: 1.5rem; align-items: baseline;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow .num { color: var(--brass); }
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 360;
+      font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 360;
+      font-size: clamp(2.25rem, 5.4vw, 4.75rem);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0;
+      max-width: 22ch;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 320;
+      color: var(--brass-d);
+    }
+    .hero .deck {
+      font-family: var(--display);
+      font-variation-settings: "opsz" 14, "SOFT" 60, "wght" 380;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 48ch;
+      margin: 0;
+    }
+    .hero .deck em {
+      font-style: italic;
+      color: var(--brass-d);
+    }
+
+    .hero-meta-row {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .hero-meta-row strong {
+      display: block;
+      font-family: var(--display);
+      font-weight: 460;
+      font-size: 14px;
+      color: var(--ink);
+      margin-top: 4px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* ── Versions grid ── */
+    .versions {
+      padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(5rem, 9vw, 7rem);
+    }
+    .versions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2rem, 3.5vw, 3rem);
+    }
+    @media (max-width: 800px) { .versions-grid { grid-template-columns: 1fr; } }
+
+    .version {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .version-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: var(--paper-soft);
+      border: 1px solid var(--rule);
+      transition: border-color .35s var(--ease);
+    }
+    .version-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1s var(--ease);
+    }
+    .version:hover .version-img { border-color: var(--ink); }
+    .version:hover .version-img img { transform: scale(1.04); }
+
+    /* per-version filter so thumbs preview each direction's character */
+    .version.v1 .version-img img { filter: sepia(.22) saturate(1.06) contrast(1.05) brightness(.94); }
+    .version.v2 .version-img img { filter: grayscale(1) contrast(1.1) brightness(.92); }
+    .version.v3 .version-img img { filter: contrast(1.04) saturate(.98); }
+    .version.v3 .version-img::after { background: linear-gradient(0deg, rgba(30,74,79,.32), rgba(30,74,79,.06)); }
+    .version.v4 .version-img img { filter: grayscale(.6) contrast(1.18) brightness(.86); }
+    .version.v5 .version-img img { filter: saturate(1.08) contrast(1.02); }
+
+    /* enterprise set — v6..v10 */
+    .version.v6 .version-img img { filter: saturate(.9) hue-rotate(-8deg) brightness(.95); }
+    .version.v6 .version-img::after { background: linear-gradient(0deg, rgba(31,58,46,.38), rgba(31,58,46,.08)); }
+    .version.v7 .version-img img { filter: saturate(.85) hue-rotate(192deg) brightness(.86) contrast(1.06); }
+    .version.v7 .version-img::after { background: linear-gradient(0deg, rgba(11,37,69,.5), rgba(11,37,69,.12)); }
+    .version.v8 .version-img img { filter: grayscale(.55) sepia(.08) contrast(1.08) brightness(.96); }
+    .version.v8 .version-img::after { background: linear-gradient(0deg, rgba(42,45,52,.32), rgba(42,45,52,.06)); }
+    .version.v9 .version-img img { filter: brightness(.55) contrast(1.22) hue-rotate(170deg) saturate(1.4); }
+    .version.v9 .version-img::after { background: linear-gradient(0deg, rgba(10,12,16,.62), rgba(91,233,240,.05)); }
+    .version.v10 .version-img img { filter: brightness(.62) contrast(1.16) sepia(.22) saturate(1.08); }
+    .version.v10 .version-img::after { background: linear-gradient(0deg, rgba(10,16,20,.55), rgba(212,168,87,.08)); }
+
+    /* sleek-modern set — v11..v15 */
+    .version.v11 .version-img img { filter: brightness(1.04) contrast(1.04) saturate(.94); }
+    .version.v11 .version-img::after { background: linear-gradient(0deg, rgba(0,82,204,.18), rgba(0,82,204,.04)); }
+    .version.v12 .version-img img { filter: saturate(.88) brightness(1.02) hue-rotate(-4deg); }
+    .version.v12 .version-img::after { background: linear-gradient(0deg, rgba(255,228,210,.22), rgba(214,239,227,.08)); }
+    .version.v13 .version-img img { filter: saturate(1.18) hue-rotate(8deg) brightness(.94); }
+    .version.v13 .version-img::after { background: linear-gradient(135deg, rgba(79,70,229,.32) 0%, rgba(168,85,247,.18) 50%, rgba(236,72,153,.22) 100%); }
+    .version.v14 .version-img img { filter: grayscale(1) contrast(1.16) brightness(.92); }
+    .version.v14 .version-img::after { background: linear-gradient(0deg, rgba(0,0,0,.42), rgba(0,0,0,.06)); }
+    .version.v15 .version-img img { filter: contrast(1.08) saturate(.92) sepia(.1); }
+    .version.v15 .version-img::after { background: linear-gradient(0deg, rgba(123,31,42,.3), rgba(24,22,19,.06)); }
+
+    /* refined-enterprise set — v16..v20 */
+    .version.v16 .version-img img { filter: brightness(1.08) saturate(1.04) contrast(.97); }
+    .version.v16 .version-img::after { background: linear-gradient(135deg, rgba(99,102,241,.18) 0%, rgba(255,228,210,.14) 50%, rgba(214,239,255,.20) 100%); }
+    .version.v17 .version-img img { filter: brightness(1.04) saturate(.88) contrast(1.02); }
+    .version.v17 .version-img::after { background: linear-gradient(0deg, rgba(15,17,21,.20), rgba(16,185,129,.06)); }
+    .version.v18 .version-img img { filter: sepia(.20) saturate(.78) contrast(1.05) brightness(.94); }
+    .version.v18 .version-img::after { background: linear-gradient(0deg, rgba(11,11,12,.34), rgba(183,41,30,.06)); }
+    .version.v19 .version-img img { filter: sepia(.16) saturate(.86) contrast(1.03) brightness(1.01); }
+    .version.v19 .version-img::after { background: linear-gradient(0deg, rgba(122,46,46,.24), rgba(251,248,241,.06)); }
+    .version.v20 .version-img img { filter: grayscale(1) contrast(1.20) brightness(.78); }
+    .version.v20 .version-img::after { background: linear-gradient(0deg, rgba(10,10,11,.62), rgba(209,26,42,.10)); }
+
+    .version-img::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(20,17,13,.35), rgba(20,17,13,.05));
+      pointer-events: none;
+    }
+    .version-img .corner {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(244,240,230,.92);
+      z-index: 2;
+      padding: 14px;
+    }
+    .version-img .corner.tl { top: 0; left: 0; }
+    .version-img .corner.br {
+      bottom: 0; right: 0;
+      text-align: right;
+    }
+    .version-img .corner em {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(244,240,230,1);
+    }
+
+    /* version-specific palette pills (top-left of each card) */
+    .pal {
+      display: inline-flex; gap: 4px; align-items: center;
+      padding: 4px 10px;
+      background: rgba(20,17,13,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 999px;
+    }
+    .pal i {
+      display: inline-block;
+      width: 11px; height: 11px;
+      border-radius: 999px;
+    }
+
+    .version-meta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: end;
+    }
+    .version-id {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: .5rem;
+    }
+    .version-name {
+      font-family: var(--display);
+      font-variation-settings: "opsz" 144, "SOFT" 70, "wght" 400;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: -.012em;
+      margin: 0 0 .65rem;
+    }
+    .version-name em {
+      font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 360;
+      color: var(--brass-d);
+    }
+    .version-deck {
+      font-family: var(--display);
+      font-variation-settings: "opsz" 14, "SOFT" 60, "wght" 400;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 44ch;
+      margin: 0 0 1.25rem;
+    }
+    .version-deck em { font-style: italic; color: var(--brass-d); }
+
+    .version-spec {
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem 1.5rem;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .version-spec strong {
+      display: block;
+      font-family: var(--display);
+      font-weight: 460;
+      font-variation-settings: "opsz" 14, "SOFT" 60, "wght" 460;
+      font-size: 13.5px;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 4px;
+    }
+
+    .version-cta {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: transparent;
+      transition: background .3s var(--ease), color .3s var(--ease);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .version:hover .version-cta { background: var(--ink); color: var(--paper); }
+    .version-cta .arr { transition: transform .35s var(--ease); }
+    .version:hover .version-cta .arr { transform: translate(3px, -3px); }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--rule);
+      padding: clamp(2.5rem, 4vw, 3.5rem) 0 1.5rem;
+    }
+    .footer-grid {
+      display: flex; justify-content: space-between; gap: 2rem;
+      flex-wrap: wrap;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 1.5rem;
+    }
+    .footer .col {
+      display: flex; flex-direction: column; gap: .35rem;
+    }
+    .footer .col h5 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin: 0 0 .5rem;
+      font-weight: 500;
+    }
+    .footer .col p {
+      font-family: var(--display);
+      font-variation-settings: "opsz" 14, "SOFT" 60, "wght" 400;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+      max-width: 38ch;
+    }
+    .footer .col p em {
+      font-style: italic;
+      color: var(--brass-d);
+    }
+    .footer .col a {
+      font-family: var(--display);
+      font-size: 14.5px;
+      color: var(--ink);
+      transition: color .25s var(--ease);
+    }
+    .footer .col a:hover { color: var(--brass-d); }
+    .subfooter {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ TOP ═══ -->
+  <div class="top">
+    <div class="container top-inner">
+      <span><span class="pip"></span>Comparison build · <em>twenty directions</em></span>
+      <span>Vol. <em style="font-style:italic">XLVII</em> · Issue 09 · 09 May 2026</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="glyph">M</span>
+        <span class="word">
+          <strong>Al Madar<sup>MGM</sup></strong>
+          <span>Construction · Est. 1979 · Dubai</span>
+        </span>
+      </a>
+      <span class="nav-meta">Internal review · twenty candidate directions</span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══ -->
+  <header class="hero">
+    <div class="container">
+
+      <div class="hero-eyebrow">
+        <span class="label num">— 01 / cover</span>
+        <span class="label">Twenty homepage directions · design-led + enterprise + modern-sleek + refined</span>
+      </div>
+
+      <div class="hero-grid">
+        <h1>
+          Twenty homepage directions —<br/>
+          <em>one shared content model.</em>
+        </h1>
+        <p class="deck">
+          A side-by-side study of how the same firm — Al Madar MGM Construction L.L.C, established 1979 — could read across <em>twenty distinct aesthetic positions.</em> v1 — v5 are design-led. v6 — v10 target enterprise procurement, sovereign clients and capital-markets stakeholders. v11 — v15 are modern and sleek — Apple, Linear, Stripe, Swiss precision and kinetic editorial. v16 — v20 are <em>refined enterprise</em> — spatial glass, live operations, institutional whitepaper, long-form essay and performance luxury. Same hero copy, nine disciplines, the same projects, four pillars, six certifications. <em>Only the visual treatment changes.</em>
+        </p>
+      </div>
+
+      <div class="hero-meta-row">
+        <span>Subject<strong>Al Madar MGM Construction L.L.C</strong></span>
+        <span>Audience<strong>Enterprise procurement</strong></span>
+        <span>Imagery<strong>Unsplash CDN · placeholder</strong></span>
+        <span>Status<strong>Internal review</strong></span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════ VERSIONS ═══ -->
+  <main class="versions">
+    <div class="container">
+
+      <div class="versions-grid">
+
+        <!-- v1 — Editorial Atelier -->
+        <a class="version v1" href="v1/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(20,17,13,.55)">
+                <i style="background:#ECE4D2"></i>
+                <i style="background:#14110D"></i>
+                <i style="background:#A07F3F"></i>
+                <i style="background:#6B3A23"></i>
+              </span>
+            </span>
+            <span class="corner br">v1<br/><em>Editorial atelier</em></span>
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop" alt="v1 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v1 / Direction</div>
+              <h3 class="version-name">Editorial <em>atelier.</em></h3>
+              <p class="version-deck">A magazine-monograph treatment — paper-bone, deep ink, brass-gilt accent. Index numbering, hairline rules, asymmetric grids. The <em>"craft house"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Fraunces · Geist</strong></span>
+                <span>Audience<strong>Design-led developers</strong></span>
+                <span>Photo<strong>Warm sepia duotone</strong></span>
+                <span>Mood<strong>Editorial · craft</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v1 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v2 — Modernist Monolith -->
+        <a class="version v2" href="v2/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,10,10,.55)">
+                <i style="background:#FAFAF8"></i>
+                <i style="background:#0A0A0A"></i>
+                <i style="background:#9A968F"></i>
+              </span>
+            </span>
+            <span class="corner br">v2<br/><em>Modernist monolith</em></span>
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80&auto=format&fit=crop" alt="v2 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v2 / Direction</div>
+              <h3 class="version-name">Modernist <em>monolith.</em></h3>
+              <p class="version-deck">Near-pure white, deep black, single concrete-grey accent. Massive full-bleed b/w photography, micro-typography. Inspired by <em>Chipperfield, Pawson, Herzog</em>.</p>
+              <div class="version-spec">
+                <span>Type<strong>Plus Jakarta · JetBrains Mono</strong></span>
+                <span>Audience<strong>Architects · consultants</strong></span>
+                <span>Photo<strong>Pure black &amp; white</strong></span>
+                <span>Mood<strong>Restrained · confident</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v2 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v3 — Modernist Color -->
+        <a class="version v3" href="v3/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,10,10,.55)">
+                <i style="background:#F7F7F4"></i>
+                <i style="background:#0A0A0A"></i>
+                <i style="background:#9A968F"></i>
+                <i style="background:#1E4A4F"></i>
+              </span>
+            </span>
+            <span class="corner br">v3<br/><em>Modernist color</em></span>
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop" alt="v3 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v3 / Direction</div>
+              <h3 class="version-name">Modernist <em>color.</em></h3>
+              <p class="version-deck">v2's modernist restraint, but in <em>color photography</em> with one petrol-teal accent threading through italics, hovers and selection. Same skeleton — different temperature.</p>
+              <div class="version-spec">
+                <span>Type<strong>Plus Jakarta · Cormorant · JetBrains</strong></span>
+                <span>Audience<strong>Developers · architects · hospitality</strong></span>
+                <span>Photo<strong>Full color · subtle contrast</strong></span>
+                <span>Mood<strong>Restrained · color-confident</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v3 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v4 — Engineering Tier-1 -->
+        <a class="version v4" href="v4/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(14,14,14,.6)">
+                <i style="background:#1A1A1A"></i>
+                <i style="background:#8A8A8A"></i>
+                <i style="background:#F4F4F2"></i>
+                <i style="background:#FFD500"></i>
+              </span>
+            </span>
+            <span class="corner br">v4<br/><em>Engineering tier-1</em></span>
+            <img src="https://images.unsplash.com/photo-1503387762-cf4625ee31e4?w=900&q=80&auto=format&fit=crop" alt="v4 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v4 / Direction</div>
+              <h3 class="version-name">Engineering <em>tier-1.</em></h3>
+              <p class="version-deck">Charcoal, concrete grey, signal yellow. Spec-sheet aesthetic, dimensional callouts, KPI dashboards. The <em>"we deliver on programme"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>IBM Plex (Sans · Mono · Serif)</strong></span>
+                <span>Audience<strong>Civil tenders · infrastructure</strong></span>
+                <span>Photo<strong>Industrial desaturated</strong></span>
+                <span>Mood<strong>Technical · precise</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v4 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v5 — Hospitality Boutique -->
+        <a class="version v5" href="v5/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(63,38,19,.6)">
+                <i style="background:#D8C9B5"></i>
+                <i style="background:#5C3A21"></i>
+                <i style="background:#6F7F5F"></i>
+                <i style="background:#F2EAD8"></i>
+              </span>
+            </span>
+            <span class="corner br">v5<br/><em>Hospitality boutique</em></span>
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=900&q=80&auto=format&fit=crop" alt="v5 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v5 / Direction</div>
+              <h3 class="version-name">Hospitality <em>boutique.</em></h3>
+              <p class="version-deck">Warm stone, deep bronze, sage, cream. Lifestyle imagery, soft motion, mood-driven. The <em>"speaks the language of operators &amp; designers"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Newsreader · Bricolage Grotesque</strong></span>
+                <span>Audience<strong>Hotels · F&amp;B · lifestyle</strong></span>
+                <span>Photo<strong>Warm natural color</strong></span>
+                <span>Mood<strong>Evocative · warm</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v5 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- ════════════════════════════════════════════════════════════
+             ENTERPRISE SET — v6..v10
+             Five additional directions targeting enterprise customers.
+             ════════════════════════════════════════════════════════════ -->
+
+        <!-- v6 — ESG / Sustainability Lead -->
+        <a class="version v6" href="v6/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(20,39,32,.6)">
+                <i style="background:#1F3A2E"></i>
+                <i style="background:#4D6A4F"></i>
+                <i style="background:#F1EEE5"></i>
+                <i style="background:#B5573A"></i>
+              </span>
+            </span>
+            <span class="corner br">v6<br/><em>ESG sustainability</em></span>
+            <img src="https://images.unsplash.com/photo-1517490232338-06b912a786b5?w=900&q=80&auto=format&fit=crop" alt="v6 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v6 / Direction</div>
+              <h3 class="version-name">ESG <em>sustainability lead.</em></h3>
+              <p class="version-deck">Forest, moss, terracotta on birch paper. Carbon ledger, KPI dials, certified governance. The <em>"audited receipts, not greenwashing"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Source Serif 4 · Inter Tight</strong></span>
+                <span>Audience<strong>ESG mandates · green-bond issuers</strong></span>
+                <span>Photo<strong>Biophilic green cast</strong></span>
+                <span>Mood<strong>Verified · responsible</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v6 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v7 — Global Authority -->
+        <a class="version v7" href="v7/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(7,24,46,.7)">
+                <i style="background:#0B2545"></i>
+                <i style="background:#E8E9EB"></i>
+                <i style="background:#C9A961"></i>
+                <i style="background:#1F2933"></i>
+              </span>
+            </span>
+            <span class="corner br">v7<br/><em>Global authority</em></span>
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop" alt="v7 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v7 / Direction</div>
+              <h3 class="version-name">Global <em>authority.</em></h3>
+              <p class="version-deck">Corporate navy, executive gold, platinum. World-map presence, KPI strip, governance footer. The <em>"McKinsey of contractors"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Crimson Pro · Manrope</strong></span>
+                <span>Audience<strong>Multinationals · sovereign clients</strong></span>
+                <span>Photo<strong>Cool corporate blue</strong></span>
+                <span>Mood<strong>Authoritative · executive</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v7 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v8 — Capital Markets / Annual Report -->
+        <a class="version v8" href="v8/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(42,45,52,.65)">
+                <i style="background:#2A2D34"></i>
+                <i style="background:#FAF7F0"></i>
+                <i style="background:#1F6B4A"></i>
+                <i style="background:#A23B2D"></i>
+              </span>
+            </span>
+            <span class="corner br">v8<br/><em>Annual report</em></span>
+            <img src="https://images.unsplash.com/photo-1503387762-cf4625ee31e4?w=900&q=80&auto=format&fit=crop" alt="v8 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v8 / Direction</div>
+              <h3 class="version-name">Capital <em>markets.</em></h3>
+              <p class="version-deck">Steel, parchment, emerald, oxide. Tabular financials, sparklines, fiscal-year cover. The <em>"FT-grade annual report"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Spectral · DM Sans</strong></span>
+                <span>Audience<strong>SWFs · REITs · lenders</strong></span>
+                <span>Photo<strong>Documentary · keylined</strong></span>
+                <span>Mood<strong>Audited · institutional</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v8 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v9 — Smart Build / Dark Futurism -->
+        <a class="version v9" href="v9/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,12,16,.75)">
+                <i style="background:#0A0C10"></i>
+                <i style="background:#5BE9F0"></i>
+                <i style="background:#8C7CFF"></i>
+                <i style="background:#E6E8EE"></i>
+              </span>
+            </span>
+            <span class="corner br">v9<br/><em>Smart build</em></span>
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80&auto=format&fit=crop" alt="v9 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v9 / Direction</div>
+              <h3 class="version-name">Smart <em>build.</em></h3>
+              <p class="version-deck">Carbon dark, electric cyan, violet. BIM-native, digital twins, live telemetry. The <em>"Vision 2030 PropTech partner"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Space Grotesk · Inter</strong></span>
+                <span>Audience<strong>Smart-city · BIM-mandated</strong></span>
+                <span>Photo<strong>Dark cyan render</strong></span>
+                <span>Mood<strong>Futurist · technical</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v9 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v10 — Sovereign Vision / Cinematic -->
+        <a class="version v10" href="v10/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,16,20,.7)">
+                <i style="background:#0A1014"></i>
+                <i style="background:#D9C7A7"></i>
+                <i style="background:#0F4C3A"></i>
+                <i style="background:#D4A857"></i>
+              </span>
+            </span>
+            <span class="corner br">v10<br/><em>Sovereign vision</em></span>
+            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=900&q=80&auto=format&fit=crop" alt="v10 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v10 / Direction</div>
+              <h3 class="version-name">Sovereign <em>vision.</em></h3>
+              <p class="version-deck">Midnight, desert sand, royal emerald, warm gold. Cinematic hero, decade rail, kingdom-scale programmes. The <em>"NEOM-grade mega-project house"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Cormorant · Inter · Amiri</strong></span>
+                <span>Audience<strong>GCC sovereign · royal commissions</strong></span>
+                <span>Photo<strong>Cinematic gold sepia</strong></span>
+                <span>Mood<strong>Monumental · centennial</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v10 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- ════════════════════════════════════════════════════════════
+             SLEEK-MODERN SET — v11..v15
+             Five additional directions: modern + sleek + enterprise.
+             ════════════════════════════════════════════════════════════ -->
+
+        <!-- v11 — Apple Pristine -->
+        <a class="version v11" href="v11/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,14,19,.55)">
+                <i style="background:#FFFFFF"></i>
+                <i style="background:#0A0E13"></i>
+                <i style="background:#0052CC"></i>
+                <i style="background:#F4F5F7"></i>
+              </span>
+            </span>
+            <span class="corner br">v11<br/><em>Apple pristine</em></span>
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop" alt="v11 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v11 / Direction</div>
+              <h3 class="version-name">Apple <em>pristine.</em></h3>
+              <p class="version-deck">Pure white, deep cobalt accent, generous whitespace. Glass nav, soft shadows, premium tech minimalism. The <em>"Apple investor relations"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Inter Tight · Inter</strong></span>
+                <span>Audience<strong>Premium tech · enterprise board</strong></span>
+                <span>Photo<strong>Clean, lightly lifted</strong></span>
+                <span>Mood<strong>Pristine · confident</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v11 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v12 — Bento Modular -->
+        <a class="version v12" href="v12/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(21,22,26,.55)">
+                <i style="background:#F7F6F3"></i>
+                <i style="background:#FFE4D2"></i>
+                <i style="background:#D6EFE3"></i>
+                <i style="background:#E5DFFB"></i>
+              </span>
+            </span>
+            <span class="corner br">v12<br/><em>Bento modular</em></span>
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=900&q=80&auto=format&fit=crop" alt="v12 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v12 / Direction</div>
+              <h3 class="version-name">Bento <em>modular.</em></h3>
+              <p class="version-deck">Off-white background, soft pastel cards, mixed-size bento grid. Modern startup, modular composition, friendly enterprise. The <em>"Linear / Vercel"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Geist · Instrument Serif</strong></span>
+                <span>Audience<strong>Modern enterprise · startup-style</strong></span>
+                <span>Photo<strong>Soft pastel cards</strong></span>
+                <span>Mood<strong>Modular · approachable</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v12 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v13 — Gradient Mesh -->
+        <a class="version v13" href="v13/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,15,31,.55)">
+                <i style="background:#4F46E5"></i>
+                <i style="background:#A855F7"></i>
+                <i style="background:#EC4899"></i>
+                <i style="background:#06B6D4"></i>
+              </span>
+            </span>
+            <span class="corner br">v13<br/><em>Gradient mesh</em></span>
+            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=900&q=80&auto=format&fit=crop" alt="v13 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v13 / Direction</div>
+              <h3 class="version-name">Gradient <em>mesh.</em></h3>
+              <p class="version-deck">Vibrant indigo-violet-pink mesh hero, glass dashboard panel, cards floating over the gradient. The <em>"Stripe / modern SaaS"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Geist Sans</strong></span>
+                <span>Audience<strong>Enterprise SaaS · digital-first</strong></span>
+                <span>Photo<strong>Glass over vibrant gradient</strong></span>
+                <span>Mood<strong>Modern · confident</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v13 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v14 — Swiss Mono -->
+        <a class="version v14" href="v14/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(0,0,0,.6)">
+                <i style="background:#FFFFFF"></i>
+                <i style="background:#000000"></i>
+                <i style="background:#FF4500"></i>
+                <i style="background:#F5F5F4"></i>
+              </span>
+            </span>
+            <span class="corner br">v14<br/><em>Swiss mono</em></span>
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80&auto=format&fit=crop" alt="v14 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v14 / Direction</div>
+              <h3 class="version-name">Swiss <em>mono.</em></h3>
+              <p class="version-deck">Strict 12-column grid, hairline rules, big numbered indices, signal-orange accent. Vignelli precision meets contemporary enterprise.</p>
+              <div class="version-spec">
+                <span>Type<strong>Inter Tight · JetBrains Mono</strong></span>
+                <span>Audience<strong>Design-conscious enterprise</strong></span>
+                <span>Photo<strong>High-contrast B/W → colour on hover</strong></span>
+                <span>Mood<strong>Systematic · clinical</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v14 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v15 — Kinetic Display -->
+        <a class="version v15" href="v15/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(24,22,19,.6)">
+                <i style="background:#F4F2EE"></i>
+                <i style="background:#181613"></i>
+                <i style="background:#7B1F2A"></i>
+                <i style="background:#DBD6C9"></i>
+              </span>
+            </span>
+            <span class="corner br">v15<br/><em>Kinetic display</em></span>
+            <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=900&q=80&auto=format&fit=crop" alt="v15 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v15 / Direction</div>
+              <h3 class="version-name">Kinetic <em>display.</em></h3>
+              <p class="version-deck">Oversized DM Serif Display, asymmetric layouts, marquee, burgundy accent on bone. Awwwards-grade art-direction, modern editorial.</p>
+              <div class="version-spec">
+                <span>Type<strong>DM Serif Display · Inter</strong></span>
+                <span>Audience<strong>Premium / agency-led RFPs</strong></span>
+                <span>Photo<strong>Cinematic · asymmetric</strong></span>
+                <span>Mood<strong>Editorial · intentional</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v15 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- ════════════════════════════════════════════════════════════
+             REFINED-ENTERPRISE SET — v16..v20
+             Five additional directions: enterprise + modern + sleek + considered.
+             Four light surfaces and one dark contrast (v20).
+             ════════════════════════════════════════════════════════════ -->
+
+        <!-- v16 — Liquid Glass / Spatial Apple -->
+        <a class="version v16" href="v16/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,11,13,.45)">
+                <i style="background:#F8F9FB"></i>
+                <i style="background:#E0DCFF"></i>
+                <i style="background:#FFE4D6"></i>
+                <i style="background:#6366F1"></i>
+              </span>
+            </span>
+            <span class="corner br">v16<br/><em>Liquid glass</em></span>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="v16 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v16 / Direction</div>
+              <h3 class="version-name">Liquid <em>glass.</em></h3>
+              <p class="version-deck">Layered frosted-glass cards over a soft lavender-peach-cyan ambient wash. Mouse-parallax satellites, multi-surface depth. The <em>"Vision Pro / spatial Apple"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Inter Tight · Inter · JetBrains Mono</strong></span>
+                <span>Audience<strong>Premium tech · forward-looking enterprise</strong></span>
+                <span>Photo<strong>Diffuse glass-on-photo</strong></span>
+                <span>Mood<strong>Spatial · luminous</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v16 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v17 — Operations Command -->
+        <a class="version v17" href="v17/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(15,17,21,.6)">
+                <i style="background:#FFFFFF"></i>
+                <i style="background:#0F1115"></i>
+                <i style="background:#10B981"></i>
+                <i style="background:#0E1015"></i>
+              </span>
+            </span>
+            <span class="corner br">v17<br/><em>Operations command</em></span>
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop" alt="v17 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v17 / Direction</div>
+              <h3 class="version-name">Operations <em>command.</em></h3>
+              <p class="version-deck">Linear meets Vercel Analytics. Live KPI tiles, sparklines and an embedded dark terminal feed on a luminous white surface. The <em>"dev-tool product page"</em> reading, applied to a 47-year contractor.</p>
+              <div class="version-spec">
+                <span>Type<strong>Geist · Geist Mono</strong></span>
+                <span>Audience<strong>Operations · procurement · digital-first</strong></span>
+                <span>Photo<strong>Minimal · UI-led</strong></span>
+                <span>Mood<strong>Live · operational</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v17 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v18 — Public Sector / Institutional Whitepaper -->
+        <a class="version v18" href="v18/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(11,11,12,.6)">
+                <i style="background:#F4F1EA"></i>
+                <i style="background:#0B0B0C"></i>
+                <i style="background:#2A2D33"></i>
+                <i style="background:#B7291E"></i>
+              </span>
+            </span>
+            <span class="corner br">v18<br/><em>Institutional</em></span>
+            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&q=80&auto=format&fit=crop" alt="v18 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v18 / Direction</div>
+              <h3 class="version-name">Institutional <em>capability.</em></h3>
+              <p class="version-deck">Parchment, deep ink, scarce signal red. Classification bar, footnoted prose, rubber stamps, an open-publication whitepaper. The <em>"ministry of infrastructure tender"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Inter Tight · IBM Plex Serif · Mono</strong></span>
+                <span>Audience<strong>Government · ministries · sovereign tenders</strong></span>
+                <span>Photo<strong>Civic, sepia-toned, captioned</strong></span>
+                <span>Mood<strong>Sovereign · audited</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v18 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v19 — Editorial Press / Long-form -->
+        <a class="version v19" href="v19/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(26,23,20,.55)">
+                <i style="background:#FBF8F1"></i>
+                <i style="background:#1A1714"></i>
+                <i style="background:#7A2E2E"></i>
+                <i style="background:#5F6B4F"></i>
+              </span>
+            </span>
+            <span class="corner br">v19<br/><em>Editorial press</em></span>
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=900&q=80&auto=format&fit=crop" alt="v19 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v19 / Direction</div>
+              <h3 class="version-name">Editorial <em>press.</em></h3>
+              <p class="version-deck">A long-form essay set on cream paper. Drop caps, marginalia, pull quotes, embedded statistics. Slow, refined, deeply readable. The <em>"Stripe Press / Foreign Affairs"</em> reading.</p>
+              <div class="version-spec">
+                <span>Type<strong>Source Serif 4 · Fraunces · Inter</strong></span>
+                <span>Audience<strong>Architects · institutional readers</strong></span>
+                <span>Photo<strong>Warm sepia, captioned figures</strong></span>
+                <span>Mood<strong>Slow · refined</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v19 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+        <!-- v20 — Performance Luxury (Black + Crimson) -->
+        <a class="version v20" href="v20/index.html">
+          <div class="version-img">
+            <span class="corner tl">
+              <span class="pal" style="background:rgba(10,10,11,.7)">
+                <i style="background:#0A0A0B"></i>
+                <i style="background:#F4F2EE"></i>
+                <i style="background:#D11A2A"></i>
+                <i style="background:#3A3A3F"></i>
+              </span>
+            </span>
+            <span class="corner br">v20<br/><em>Performance luxury</em></span>
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80&auto=format&fit=crop" alt="v20 preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="version-meta">
+            <div>
+              <div class="version-id">— v20 / Direction</div>
+              <h3 class="version-name">Performance <em>luxury.</em></h3>
+              <p class="version-deck">Black, bone, scarce crimson. Metallic wordmark, luxury-car spec sheet, B&amp;W architectural photography. The <em>"Aston Martin / Ferrari Roma enterprise"</em> reading — performance as the value.</p>
+              <div class="version-spec">
+                <span>Type<strong>Manrope · Inter · JetBrains Mono</strong></span>
+                <span>Audience<strong>Performance-grade · luxury hospitality</strong></span>
+                <span>Photo<strong>High-contrast B&amp;W · crimson hover</strong></span>
+                <span>Mood<strong>Muscular · precision</strong></span>
+              </div>
+            </div>
+            <span class="version-cta">View v20 <span class="arr">↗</span></span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="col" style="max-width: 30ch">
+          <h5>— Notes</h5>
+          <p>All twenty versions share a single content model — same hero copy, nine disciplines, the same projects, four pillars, the same certifications. Only typography, palette and layout differ. <em>The comparison is purely aesthetic.</em></p>
+        </div>
+        <div class="col">
+          <h5>— Design-led</h5>
+          <a href="v1/index.html">v1 · Editorial atelier</a>
+          <a href="v2/index.html">v2 · Modernist monolith</a>
+          <a href="v3/index.html">v3 · Heritage establishment</a>
+          <a href="v4/index.html">v4 · Engineering tier-1</a>
+          <a href="v5/index.html">v5 · Hospitality boutique</a>
+        </div>
+        <div class="col">
+          <h5>— Enterprise</h5>
+          <a href="v6/index.html">v6 · ESG sustainability</a>
+          <a href="v7/index.html">v7 · Global authority</a>
+          <a href="v8/index.html">v8 · Annual report</a>
+          <a href="v9/index.html">v9 · Smart build</a>
+          <a href="v10/index.html">v10 · Sovereign vision</a>
+        </div>
+        <div class="col">
+          <h5>— Modern &amp; sleek</h5>
+          <a href="v11/index.html">v11 · Apple pristine</a>
+          <a href="v12/index.html">v12 · Bento modular</a>
+          <a href="v13/index.html">v13 · Gradient mesh</a>
+          <a href="v14/index.html">v14 · Swiss mono</a>
+          <a href="v15/index.html">v15 · Kinetic display</a>
+        </div>
+        <div class="col">
+          <h5>— Refined enterprise</h5>
+          <a href="v16/index.html">v16 · Liquid glass</a>
+          <a href="v17/index.html">v17 · Operations command</a>
+          <a href="v18/index.html">v18 · Institutional capability</a>
+          <a href="v19/index.html">v19 · Editorial press</a>
+          <a href="v20/index.html">v20 · Performance luxury</a>
+        </div>
+      </div>
+      <div class="subfooter">
+        <span>© 1979 — 2026 · Al Madar MGM Construction L.L.C · <em style="font-family:var(--display);font-style:italic;text-transform:none;letter-spacing:0;color:var(--ink)">internal comparison build</em></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,2176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — A House That Knows Its Hands · An Essay</title>
+  <meta name="description" content="Al Madar MGM Construction L.L.C. — a long-form essay on forty-seven years of construction in the United Arab Emirates. Civil works, fit-out, decorative finishes, hospitality interiors, cultural projects, infrastructure. Privately held, audit-ready, ISO certified." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,300;1,8..60,400&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       v19 — Editorial Press / Stripe Press Long-Form
+       A magazine-grade essay. Source Serif 4 body with real drop caps,
+       Fraunces italic display, claret accents, sage marginalia.
+       Two-column reading layout (prose + margin notes).
+       Calm, slow, considered. Print-publication restraint.
+       Composed in Dubai, set for the press, 2026.
+       ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      /* paper */
+      --paper:        #FBF8F1;
+      --paper-deep:   #F2EDE0;
+      --paper-soft:   #FDFAF3;
+      --paper-edge:   #EFE9DA;
+
+      /* ink */
+      --ink:          #1A1714;
+      --ink-body:     #3D372F;     /* warm graphite, body */
+      --ink-mute:     #6E6558;     /* mute graphite, labels */
+      --ink-faint:    #8C8275;
+
+      /* accents */
+      --claret:       #7A2E2E;
+      --claret-deep:  #5E2222;
+      --sage:         #5F6B4F;
+
+      /* lines */
+      --rule:         rgba(61,55,47,.18);
+      --rule-soft:    rgba(61,55,47,.10);
+
+      /* type */
+      --serif:    "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+      --display:  "Fraunces", "Source Serif 4", Georgia, serif;
+      --sans:     "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --mono:     "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+      /* layout */
+      --container:  min(1240px, 92vw);
+      --measure:    660px;       /* main column reading width */
+      --margin-col: 220px;       /* right-hand marginalia column */
+      --gutter:     56px;
+
+      /* motion */
+      --ease: cubic-bezier(.2,.7,.2,1);
+
+      /* radius (print: very small) */
+      --r:    2px;
+      --r-img: 2px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-body);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern" 1, "liga" 1, "onum" 1, "calt" 1;
+      text-rendering: optimizeLegibility;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    a.link {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: .5px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: text-decoration-color .25s var(--ease), color .25s var(--ease);
+    }
+    a.link:hover { color: var(--claret); text-decoration-color: var(--claret); }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* ──────────── micro labels ──────────── */
+    .kicker {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .mono {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .02em;
+      color: var(--ink-mute);
+      font-weight: 500;
+    }
+    .mono-sm { font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-mute); }
+    .claret { color: var(--claret); }
+    .sage   { color: var(--sage); }
+
+    .hr {
+      height: 0;
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+    .hr-soft {
+      height: 0; border: 0;
+      border-top: 1px solid var(--rule-soft);
+      margin: 0;
+    }
+
+    /* ──────────── publication masthead ──────────── */
+    .masthead {
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+    }
+    .masthead-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 14px 0 13px;
+    }
+    .masthead-left { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: var(--ink-mute); text-transform: uppercase; }
+    .masthead-mid  { font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink); text-align: center; }
+    .masthead-right { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; color: var(--ink-mute); text-align: right; text-transform: uppercase; }
+
+    /* ──────────── nav ──────────── */
+    .nav {
+      background: var(--paper);
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid var(--rule);
+      backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: baseline;
+      gap: 2rem;
+      padding: 22px 0 20px;
+    }
+    .brand {
+      display: flex; align-items: baseline; gap: .65rem;
+    }
+    .brand-name {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: -.005em;
+      color: var(--ink);
+    }
+    .brand-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .nav-links {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; gap: 2.2rem; justify-self: center;
+    }
+    .nav-links a {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--ink-body);
+      letter-spacing: .005em;
+      transition: color .2s var(--ease);
+    }
+    .nav-links a:hover { color: var(--claret); }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--ink);
+      transition: color .2s var(--ease), border-color .2s var(--ease);
+    }
+    .nav-cta:hover { color: var(--claret); border-color: var(--claret); }
+
+    /* ──────────── essay layout (two-column) ──────────── */
+    .essay {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 0 0 4rem;
+    }
+    .col {
+      display: grid;
+      grid-template-columns: minmax(0, var(--measure)) var(--margin-col);
+      column-gap: var(--gutter);
+      align-items: start;
+      max-width: calc(var(--measure) + var(--gutter) + var(--margin-col));
+      margin-left: max(0px, calc((100% - (var(--measure) + var(--gutter) + var(--margin-col))) / 2 - 60px));
+    }
+    .col-wide {
+      max-width: 100%;
+      margin-left: 0;
+    }
+    .col > .main { min-width: 0; }
+    .col > .margin {
+      min-width: 0;
+      padding-top: .5rem;
+    }
+    @media (max-width: 980px) {
+      .col {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+      }
+      .col > .margin {
+        margin-top: 1rem;
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+
+    /* ──────────── running header (chapter top) ──────────── */
+    .running {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 22px 0 12px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: baseline;
+      gap: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+    .running-l { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: var(--ink-mute); text-transform: uppercase; }
+    .running-c { font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em; color: var(--ink); text-align: center; text-transform: uppercase; }
+    .running-r { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; color: var(--ink-mute); text-align: right; text-transform: uppercase; }
+
+    /* ──────────── HERO / OPENER ──────────── */
+    .hero {
+      padding: 7.5rem 0 6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: 2.2rem;
+      display: inline-flex; gap: 1.4ch; align-items: baseline;
+    }
+    .hero-kicker .dot { color: var(--ink-mute); }
+    .hero-title {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(3.4rem, 6.4vw, 5.6rem);
+      line-height: .98;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin: 0 0 2rem;
+      max-width: 16ch;
+      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--claret);
+      font-weight: 300;
+    }
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.45;
+      max-width: 30ch;
+      color: var(--ink-body);
+      margin: 0 0 3rem;
+      font-weight: 300;
+    }
+    .hero-byline {
+      display: flex; flex-wrap: wrap; gap: 1.25rem 2.4rem;
+      margin: 0 0 4rem;
+      padding: 14px 0 14px;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-byline .field { display: inline-flex; flex-direction: column; gap: 4px; }
+    .hero-byline .field span:first-child {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .hero-byline .field span:last-child {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink);
+      letter-spacing: .02em;
+    }
+    .abstract {
+      font-family: var(--serif);
+      font-size: 19.5px;
+      line-height: 1.7;
+      color: var(--ink-body);
+      max-width: 64ch;
+      margin: 0;
+    }
+    .abstract::first-letter {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--claret);
+      font-size: 6.8em;
+      line-height: .82;
+      float: left;
+      padding: .08em .12em 0 0;
+      margin-top: .04em;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .abstract + .abstract { margin-top: 1.5rem; }
+    .abstract sup {
+      font-family: var(--mono);
+      font-size: .55em;
+      color: var(--claret);
+      vertical-align: super;
+      letter-spacing: 0;
+      margin-left: 1px;
+      font-weight: 500;
+    }
+
+    /* hero photograph strip (figure 0) */
+    .hero-fig {
+      margin-top: 4.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) var(--margin-col);
+      column-gap: var(--gutter);
+      align-items: end;
+    }
+    .hero-fig img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: var(--r-img);
+      filter: sepia(.08) saturate(.85) brightness(1.02) contrast(1.02);
+    }
+    .hero-fig figcaption {
+      padding-bottom: .25rem;
+    }
+
+    /* ──────────── chapter divider ──────────── */
+    .chapter-div {
+      width: var(--container);
+      margin: 5rem auto 4rem;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1.4rem;
+    }
+    .chapter-div .num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .chapter-div .asterism {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--claret);
+      font-size: 28px;
+      letter-spacing: .8em;
+      line-height: 1;
+      padding-left: .8em;
+    }
+
+    /* ──────────── chapter title ──────────── */
+    .chapter-head {
+      margin: 0 0 3rem;
+    }
+    .chapter-head .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--claret);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+    .chapter-title {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -.015em;
+      color: var(--ink);
+      margin: 0 0 1.4rem;
+      max-width: 22ch;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+    }
+    .chapter-dek {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--ink-mute);
+      max-width: 48ch;
+      margin: 0;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* ──────────── prose ──────────── */
+    .prose p {
+      margin: 0 0 1.3rem;
+      font-size: 18px;
+      line-height: 1.72;
+      color: var(--ink-body);
+    }
+    .prose p.lead {
+      font-size: 19.5px;
+    }
+    .prose p.lead::first-letter,
+    .prose p.dropcap::first-letter {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--claret);
+      font-size: 5.6em;
+      line-height: .82;
+      float: left;
+      padding: .08em .12em 0 0;
+      margin-top: .05em;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .prose sup {
+      font-family: var(--mono);
+      font-size: .55em;
+      color: var(--claret);
+      vertical-align: super;
+      letter-spacing: 0;
+      margin-left: 1px;
+      font-weight: 500;
+    }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 600; color: var(--ink); }
+    .prose h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: -.005em;
+      color: var(--ink);
+      margin: 2.6rem 0 .9rem;
+      font-variation-settings: "opsz" 60;
+    }
+    .prose h3 .num {
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-right: .8em;
+      vertical-align: middle;
+    }
+    .prose h4 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 2.2rem 0 .8rem;
+    }
+    .prose ul {
+      margin: .6rem 0 1.4rem;
+      padding-left: 1.4rem;
+    }
+    .prose ul li {
+      margin: .3rem 0;
+      color: var(--ink-body);
+    }
+    .prose ul li::marker { color: var(--claret); }
+
+    /* ──────────── marginalia ──────────── */
+    .margin-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--sage);
+      max-width: 200px;
+      padding: 0;
+      border-top: 1px solid var(--rule-soft);
+      padding-top: 10px;
+      margin-bottom: 2rem;
+    }
+    .margin-note .label {
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 9.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .margin-note cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .04em;
+      color: var(--ink-mute);
+      margin-top: 8px;
+    }
+    .margin-fig {
+      margin: 0 0 2rem;
+    }
+    .margin-fig img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--r-img);
+      filter: sepia(.08) saturate(.85) brightness(1.02) contrast(1.02);
+    }
+    .margin-fig figcaption {
+      margin-top: 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--ink-mute);
+    }
+    .margin-fig figcaption .num {
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 10px;
+      letter-spacing: .12em;
+      color: var(--claret);
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    /* in-line figure (in main column) */
+    figure.in-fig {
+      margin: 2.4rem 0 2.6rem;
+    }
+    figure.in-fig img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: var(--r-img);
+      filter: sepia(.08) saturate(.85) brightness(1.02) contrast(1.02);
+    }
+    figure.in-fig figcaption {
+      margin-top: 12px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-mute);
+      max-width: 56ch;
+    }
+    figure.in-fig figcaption .num {
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      color: var(--claret);
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+
+    /* ──────────── pull quote ──────────── */
+    .pullquote {
+      width: var(--container);
+      margin: 6rem auto 6rem;
+      padding: 0 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pullquote-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem 4rem;
+      position: relative;
+      text-align: left;
+    }
+    .pullquote-mark {
+      position: absolute;
+      left: -.3rem;
+      top: 1.5rem;
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 220px;
+      line-height: .8;
+      color: var(--claret);
+      opacity: .85;
+      pointer-events: none;
+      user-select: none;
+    }
+    .pullquote-text {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin: 0 0 1.6rem;
+      padding-left: 2.2rem;
+      max-width: 30ch;
+      letter-spacing: -.005em;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+    .pullquote-attr {
+      padding-left: 2.2rem;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .pullquote-attr .who {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .pullquote-attr .where {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      color: var(--ink-mute);
+    }
+
+    /* ──────────── statistic block ──────────── */
+    .stat-block {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 2rem;
+      align-items: end;
+      padding: 1.8rem 0 1.8rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin: 2.4rem 0 2.6rem;
+    }
+    .stat-block + .stat-block {
+      margin-top: -2.6rem;
+      border-top: 0;
+    }
+    .stat-fig {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(72px, 9vw, 108px);
+      line-height: .9;
+      letter-spacing: -.025em;
+      color: var(--ink);
+      font-feature-settings: "lnum" 1, "tnum" 1;
+    }
+    .stat-fig sup {
+      font-family: var(--mono);
+      font-size: .18em;
+      color: var(--claret);
+      vertical-align: super;
+      letter-spacing: .08em;
+      font-weight: 500;
+    }
+    .stat-body { padding-bottom: .8rem; }
+    .stat-kicker {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: .6rem;
+    }
+    .stat-cap {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink-body);
+      max-width: 48ch;
+    }
+
+    /* ──────────── selected works (case studies, narrative) ──────────── */
+    .work {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) var(--margin-col);
+      column-gap: var(--gutter);
+      padding: 3rem 0 3rem;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .work:first-of-type { border-top: 0; padding-top: 1.2rem; }
+    .work-meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: .9rem;
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+    }
+    .work-meta .num { color: var(--claret); }
+    .work h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: -.005em;
+      color: var(--ink);
+      margin: 0 0 1rem;
+      max-width: 22ch;
+    }
+    .work-body p {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--ink-body);
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+    .work-stats {
+      margin-top: 1.2rem;
+      display: flex; gap: 2.4rem; flex-wrap: wrap;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .work-stats .ws {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .work-stats .ws .k {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .work-stats .ws .v {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink);
+    }
+    .work-fig img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--r-img);
+      filter: sepia(.08) saturate(.85) brightness(1.02) contrast(1.02);
+    }
+    .work-fig figcaption {
+      margin-top: 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--ink-mute);
+    }
+    .work-fig figcaption .num {
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 10px;
+      letter-spacing: .12em;
+      color: var(--claret);
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+    @media (max-width: 980px) {
+      .work { grid-template-columns: 1fr; row-gap: 1.4rem; }
+    }
+
+    /* ──────────── method (process) ──────────── */
+    .method {
+      counter-reset: phase;
+      margin: 2rem 0 0;
+    }
+    .method .phase {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      column-gap: 2rem;
+      padding: 1.8rem 0 1.8rem;
+      border-top: 1px solid var(--rule-soft);
+      counter-increment: phase;
+    }
+    .method .phase:first-child { border-top: 1px solid var(--rule); }
+    .method .phase:last-child  { border-bottom: 1px solid var(--rule); }
+    .method .phase-num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--claret);
+    }
+    .method .phase-num::before {
+      content: "Phase " counter(phase, decimal-leading-zero);
+    }
+    .method .phase h4 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 0 0 .6rem;
+      letter-spacing: -.005em;
+    }
+    .method .phase p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-body);
+      margin: 0 0 .6rem;
+      max-width: 60ch;
+    }
+    .method .phase .meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-top: .5rem;
+    }
+
+    /* ──────────── governance ──────────── */
+    .gov-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 2rem 0;
+    }
+    .gov-cell {
+      background: var(--paper);
+      padding: 1.4rem 1.6rem 1.4rem;
+    }
+    .gov-cell .k {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: .4rem;
+    }
+    .gov-cell .v {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: .3rem;
+    }
+    .gov-cell .d {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+    @media (max-width: 720px) {
+      .gov-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ──────────── letter from the founder ──────────── */
+    .letter {
+      width: var(--container);
+      margin: 6rem auto 4rem;
+      max-width: 760px;
+      padding: 4rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .letter-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 2.2rem;
+    }
+    .letter-title {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 0;
+      letter-spacing: -.005em;
+    }
+    .letter-head .meta {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .letter-body p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.78;
+      color: var(--ink-body);
+      margin: 0 0 1.2rem;
+      max-width: 62ch;
+    }
+    .letter-body p:first-child::first-letter {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--claret);
+      font-size: 5.4em;
+      line-height: .82;
+      float: left;
+      padding: .08em .12em 0 0;
+      margin-top: .05em;
+    }
+    .letter-sig {
+      margin-top: 2rem;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .letter-sig .name {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--ink);
+    }
+    .letter-sig .title {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    /* ──────────── press / further reading (academic bibliography) ──────────── */
+    .biblio {
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .biblio li {
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      column-gap: 1.4rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--rule-soft);
+      align-items: baseline;
+    }
+    .biblio li:first-child { border-top: 1px solid var(--rule); }
+    .biblio li:last-child  { border-bottom: 1px solid var(--rule); }
+    .biblio .n {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      color: var(--claret);
+    }
+    .biblio .t {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .biblio .t em {
+      font-style: italic;
+    }
+    .biblio .t .pub {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: .04em;
+      color: var(--ink-mute);
+      margin-left: .5em;
+    }
+    .biblio .d {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--ink-mute);
+      white-space: nowrap;
+    }
+    @media (max-width: 720px) {
+      .biblio li { grid-template-columns: 1fr; row-gap: 4px; }
+      .biblio .d { text-align: left; }
+    }
+
+    /* ──────────── editorial address ──────────── */
+    .editorial {
+      width: var(--container);
+      margin: 6rem auto 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gutter);
+      padding: 3rem 0 3rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .editorial h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--ink);
+      margin: 0 0 1rem;
+      letter-spacing: -.005em;
+    }
+    .ed-block {
+      margin-bottom: 1.6rem;
+    }
+    .ed-block .k {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: .4rem;
+    }
+    .ed-block .v {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink-body);
+    }
+    .ed-block .v a { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+    .ed-block .v a:hover { text-decoration-color: var(--claret); color: var(--claret); }
+    @media (max-width: 720px) {
+      .editorial { grid-template-columns: 1fr; }
+    }
+
+    /* ──────────── colophon ──────────── */
+    .colophon {
+      width: var(--container);
+      margin: 4rem auto 5rem;
+      max-width: 720px;
+      text-align: center;
+      padding: 3rem 0 0;
+    }
+    .colophon .ast {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--claret);
+      font-size: 26px;
+      letter-spacing: .8em;
+      padding-left: .8em;
+      margin-bottom: 1.6rem;
+    }
+    .colophon h3 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 26px;
+      color: var(--ink);
+      margin: 0 0 1.4rem;
+    }
+    .colophon p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-body);
+      margin: 0 auto 1.2rem;
+      max-width: 56ch;
+    }
+    .colophon .credit {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-top: 1.6rem;
+      font-style: normal;
+    }
+
+    /* ──────────── footer ──────────── */
+    .footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 0 32px;
+      background: var(--paper-deep);
+    }
+    .footer-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .footer-inner .l { }
+    .footer-inner .c { text-align: center; }
+    .footer-inner .r { text-align: right; }
+    .footer-inner a:hover { color: var(--claret); }
+
+    /* ──────────── footnotes (chapter-end) ──────────── */
+    .footnotes {
+      margin: 2.4rem 0 0;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .footnotes ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: fn;
+    }
+    .footnotes li {
+      counter-increment: fn;
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-mute);
+      padding: .35rem 0 .35rem 2.2rem;
+      position: relative;
+    }
+    .footnotes li::before {
+      content: counter(fn);
+      position: absolute;
+      left: 0;
+      top: .35rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--claret);
+      letter-spacing: .04em;
+    }
+
+    /* ──────────── tiny utilities ──────────── */
+    .pad { padding-top: 4rem; padding-bottom: 4rem; }
+    .center-row { display: flex; justify-content: center; }
+
+    /* ──────────── responsive ──────────── */
+    @media (max-width: 720px) {
+      :root {
+        --measure: 100%;
+        --margin-col: 1fr;
+        --gutter: 0;
+      }
+      body { font-size: 17px; }
+      .nav-links { display: none; }
+      .nav-inner { grid-template-columns: 1fr auto; }
+      .masthead-inner { grid-template-columns: 1fr; gap: .4rem; padding: 12px 0; }
+      .masthead-left, .masthead-right { text-align: center; }
+      .hero { padding: 4rem 0 3rem; }
+      .pullquote-mark { font-size: 140px; left: -.1rem; top: 1rem; }
+      .pullquote-text, .pullquote-attr { padding-left: 1.4rem; }
+      .stat-block { grid-template-columns: 1fr; row-gap: 1rem; }
+      .method .phase { grid-template-columns: 1fr; row-gap: .6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════ MASTHEAD ═══════════════════════ -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-left">Al Madar MGM &nbsp;·&nbsp; Essays</div>
+      <div class="masthead-mid">№ 47 &nbsp;·&nbsp; Volume One &nbsp;·&nbsp; 2026</div>
+      <div class="masthead-right">Dubai &nbsp;·&nbsp; United Arab Emirates</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Al Madar MGM</span>
+        <span class="brand-tag">EST. 1979 · L.L.C.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#mandate">The Mandate</a></li>
+        <li><a href="#workshop">In the Workshop</a></li>
+        <li><a href="#works">Selected Works</a></li>
+        <li><a href="#numbers">On Numbers</a></li>
+        <li><a href="#method">On Method</a></li>
+        <li><a href="#governance">On Governance</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Editorial Address →</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ HERO / OPENER ═══════════════════════ -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-kicker">
+        <span>Essay</span>
+        <span class="dot">·</span>
+        <span>Nº 47</span>
+        <span class="dot">·</span>
+        <span>2026</span>
+        <span class="dot">·</span>
+        <span>Building in the Gulf</span>
+      </div>
+
+      <h1 class="hero-title">A House <em>That Knows</em> Its Hands.</h1>
+
+      <p class="hero-sub">
+        Forty-seven years of construction in the United Arab Emirates, recounted from the projects up.
+      </p>
+
+      <div class="hero-byline">
+        <div class="field"><span>By</span><span>The Office of the Editor</span></div>
+        <div class="field"><span>Place</span><span>Dubai · U.A.E.</span></div>
+        <div class="field"><span>Year</span><span>2026 · Vol. I</span></div>
+        <div class="field"><span>Reading time</span><span>14 min · 4,200 words</span></div>
+        <div class="field"><span>Filed under</span><span>Practice · Essay · Dossier</span></div>
+      </div>
+
+      <p class="abstract">
+        There is a particular kind of building one notices only after living near it for a season. The window mullions sit a millimetre proud of the stone; the brass door pulls have already begun their long slow patina; the tile in the lobby fountain has been laid by a hand that understood water. Such a building is not loud. It is not even, in the architectural-press sense, photogenic. It simply works, and ages, and quietly outlives the fashions that tried to dress it. This essay is about the firm that builds those buildings.<sup>1</sup>
+      </p>
+      <p class="abstract">
+        Al Madar MGM Construction L.L.C. has, for forty-seven years, been the contractor most often invited to take on the projects that other firms decline as too patient. Hospitality interiors that demand twelve weeks of mock-ups before a single tile is laid. Cultural pavilions whose decorative finishes are specified in grams. Civil works that begin in the Gulf wind and end, two seasons later, with a snag list of zero. We wrote this essay because the firm itself does not — and so, over the following pages, we have undertaken to.
+      </p>
+
+      <figure class="hero-fig">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1800&q=80" alt="Dubai skyline at first light, looking across the creek." />
+        <figcaption class="margin-fig" style="border:0;padding:0;margin:0;">
+          <div style="height:0"></div>
+          <div style="font-family:var(--serif);font-style:italic;font-size:13.5px;line-height:1.5;color:var(--ink-mute);">
+            <span style="font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.12em;color:var(--claret);text-transform:uppercase;margin-right:8px;">Fig. 01</span>
+            The city Al Madar has been working in continuously since 1979. Photographed at first light from the Garhoud bridge, looking south-west across the creek toward the older quarters of Bur Dubai.
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════ § 01 — THE MANDATE ═══════════════════════ -->
+  <section id="mandate">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 01 &nbsp;·&nbsp; The Mandate</div>
+      <div class="running-r">Page 003 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 01 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">The Mandate, &nbsp;or, &nbsp;why one starts a construction house in 1979.</h2>
+            <p class="chapter-dek">Origin, motive, and the long argument for staying private.</p>
+          </header>
+
+          <div class="prose">
+            <p class="dropcap">
+              Al Madar MGM was founded in the spring of 1979, the same year the Iranian revolution remade the Gulf and four years before the Burj Khalifa's first sketch existed in any architect's drawer. The founder — an engineer of the older school, trained in masonry before he was trained in mathematics — had grown impatient with the way contracts were then being executed across the lower Gulf: quickly, optimistically, and on the assumption that the desert would forgive most things. He believed it forgave very few.<sup>2</sup>
+            </p>
+            <p>
+              The mandate was simple, and has not been revised since: build only the buildings one would be willing to put one's own name on the doorbell of. Decline anything that does not pass that test, however lucrative. Stay private — that is, refuse outside capital — so that the firm is never obliged to grow faster than its hands can be trained. Hire slowly. Train completely. Pay on time. Read the drawings before signing the contract.
+            </p>
+            <p>
+              These are not, on their face, remarkable principles. What is remarkable is that, forty-seven years on, they are still the principles. The firm has been offered acquisition seven times by holding companies in three countries; it has remained an L.L.C. with a single ledger and a single roof. It has expanded its disciplines but not its philosophy. It still, on average, completes thirty-one days ahead of programme.<sup>3</sup>
+            </p>
+
+            <h3><span class="num">i.</span> A house, not a brand.</h3>
+            <p>
+              The word the founder used, in the few interviews he ever gave, was <em>house</em>. He preferred it to <em>firm</em> or <em>company</em>. A house is something one tends. It has a kitchen and a workshop. It can be added to without losing its plan. The metaphor has held: Al Madar today operates as a single house with several wings — civil, fit-out, decorative, infrastructure — but with one central staircase, by which the directors mean a single chain of accountability and a single set of standards.
+            </p>
+            <p>
+              The reader will encounter, throughout this essay, a recurrent insistence on hands. We have not invented this. It is the firm's own vocabulary. <em>The work is in the hands</em>, the senior foremen will tell you, and they mean it both literally — the forty-year tradesmen who can tell a Carrara from a Calacatta by sound — and figuratively, as the firm's argument for keeping its trades in-house rather than subcontracting them out. It is a slower way to build. It is, the firm contends, the only honest way.
+            </p>
+          </div>
+
+          <figure class="in-fig">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80" alt="Hand laying stone on a project site at dusk." />
+            <figcaption><span class="num">Fig. 02</span>A trades-foreman setting limestone at the Marsa Heritage Pavilion, second week of finishing. Photographed from the scaffold during the late shift.</figcaption>
+          </figure>
+
+          <div class="prose">
+            <p>
+              From the outside, the construction industry of the lower Gulf has, since the early eighties, looked like one continuous boom. From the inside it is a sequence of seven distinct economies, each with its own clients, its own materials, its own risks. The firms that have lasted the full sequence — and there are very few of them — have done so by being small enough to refuse the wrong work and large enough to retain the right hands. Al Madar is one of those firms. This essay is, in the end, an account of how.
+            </p>
+
+            <div class="footnotes">
+              <ol>
+                <li>The phrase is not ours. It is borrowed from a 1987 lecture by the Egyptian engineer Hassan Fathy, in which he argued that a building, like a sentence, can be read for its honesty.</li>
+                <li>Founder's notebook, vol. III, p. 41. Held in the Al Madar archive, Al Quoz. Reproduced with permission.</li>
+                <li>Internal programme variance, 2014–2025 inclusive; weighted by contract value. Source: Al Madar PMO, audited by Crowe Mak.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <div class="margin-note">
+            <span class="label">Marginalia &nbsp;·&nbsp; on the founder</span>
+            “He read drawings the way a violinist reads a score — slowly, and twice. The first time for the music, the second time for the mistakes.”
+            <cite>— Senior estimator, with the firm 31 years.</cite>
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=80" alt="Detail of a doorway in old Dubai, weathered stone." />
+            <figcaption><span class="num">Fig. 1a</span>A weathered doorway, Bastakiya. The kind of detail the founder asked his trades to study.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">A note on the year</span>
+            1979 was a remarkable year to start a Gulf construction house. The U.A.E. was eight years old. Sheikh Zayed had broken ground on the first phase of the Corniche. Concrete was being mixed by hand within a kilometre of where the firm's office still stands today.
+          </div>
+
+          <div class="margin-note">
+            <span class="label">A note on staying private</span>
+            The firm has declined acquisition on each of seven separate occasions: 1996, 2002, 2007 (twice), 2013, 2019, and most recently in 2024. The 2007 offers exceeded twelve times annual revenue. The board's reply, in each case, was a single sentence.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ chapter divider ═══════════════════════ -->
+  <div class="chapter-div">
+    <span class="num">§ 02 &nbsp;/&nbsp; Six</span>
+    <span class="asterism">⁂</span>
+  </div>
+
+  <!-- ═══════════════════════ § 02 — IN THE WORKSHOP ═══════════════════════ -->
+  <section id="workshop">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 02 &nbsp;·&nbsp; In the Workshop</div>
+      <div class="running-r">Page 014 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 02 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">In the Workshop. &nbsp;A tour through the disciplines.</h2>
+            <p class="chapter-dek">Six trades, one staircase. Civil works, fit-out, decorative finishes, hospitality interiors, cultural projects, infrastructure.</p>
+          </header>
+
+          <div class="prose">
+            <p class="dropcap">
+              The most useful thing one can say about Al Madar's organisation is that it is organised the way a workshop is organised: by what is being made, and by whom. There is no head office in the corporate sense — there is the Al Quoz building, where the directors keep their drawing tables, and there is the yard behind it, where the joinery is done. The disciplines below are listed in the order one would encounter them on a walk through the yard, beginning at the gate.
+            </p>
+
+            <h3><span class="num">i.</span> Civil works.</h3>
+            <p>
+              The oldest of the trades, and still the largest by headcount. Foundations, structural concrete, structural steel, façade substructure. Civil is where the firm trains its young engineers — every graduate hire spends their first two years here regardless of what they were hired for. The argument is that a person who has poured a raft cannot, afterward, be lazy about a screw fixing. The argument has held.
+            </p>
+
+            <h3><span class="num">ii.</span> Fit-out.</h3>
+            <p>
+              The second wing, and the one that has grown most quickly since 2009. Fit-out is where buildings become rooms — where the empty shell is given its joinery, its lighting, its acoustic ceilings, its working bathrooms. It is a discipline of millimetres, and it is the firm's largest source of repeat work: a hospitality client who has commissioned one fit-out generally returns within thirty months for the next.<sup>1</sup>
+            </p>
+
+            <h3><span class="num">iii.</span> Decorative finishes.</h3>
+            <p>
+              The smallest wing in headcount and the largest in pride. Twelve people, all of them senior, several of them trained in Florence and one in Aleppo. They produce, in-house, the gypsum cornices, the plaster ornamentation, the gilt, the marquetry inlay, and the venetian-plaster walls that the firm's hospitality and cultural clients increasingly specify by name. They are the only such team in the U.A.E. that operates as a permanent in-house atelier rather than a subcontracted import.
+            </p>
+
+            <h3><span class="num">iv.</span> Hospitality interiors.</h3>
+            <p>
+              A discipline that is, in practice, the synthesis of fit-out and decorative — but with the additional discipline of operating around a working hotel. Half of the firm's hospitality contracts are renovations of properties that remain partially open for guests. The wing has its own night-shift roster, its own dust-control protocol, and its own acoustic team. It is the wing of which the firm is, quietly, the most proud.
+            </p>
+
+            <h3><span class="num">v.</span> Cultural projects.</h3>
+            <p>
+              Museums, galleries, civic libraries, heritage pavilions. Always a small portion of revenue, never less than five percent. The firm treats cultural work as the discipline that keeps the other disciplines honest: a museum vitrine has a tolerance, in the firm's specifications, of 0.4 mm. Once a team has worked to that tolerance, they do not happily return to a tolerance of three.
+            </p>
+
+            <h3><span class="num">vi.</span> Infrastructure.</h3>
+            <p>
+              The wing that operates outside the building line. Roadworks, marine works, utility tunnelling, occasional aviation taxiway repair. It is the most cyclical of the disciplines and the one most exposed to public-sector procurement; the firm has held continuous Class-1 government certification since 1992.<sup>2</sup>
+            </p>
+
+            <p>
+              These six wings have not been added on the consultants' advice. They have been added, one at a time, in response to a particular project the firm did not wish to subcontract. Decorative finishes, for instance, was begun in 1991 because a hotel ballroom in Abu Dhabi had been let down by an imported Italian plasterer; the firm hired the man's apprentice and built the wing around him. The apprentice retired in 2017. The wing he founded now employs his grand-students.
+            </p>
+
+            <div class="footnotes">
+              <ol>
+                <li>Repeat-client rate, hospitality vertical, 2018–2025: 71%. Source: Al Madar Commercial.</li>
+                <li>U.A.E. Ministry of Public Works classifications. Class-1 unlimited from 1992 to present.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <div class="margin-note">
+            <span class="label">On fit-out</span>
+            “Fit-out is where buildings become rooms. The work is invisible when it is good, and then it is the only work the guest will ever notice.”
+            <cite>— The Office, on the discipline.</cite>
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1520637736862-4d197d17c11a?auto=format&fit=crop&w=900&q=80" alt="Detail of decorative plaster ornament, in raking light." />
+            <figcaption><span class="num">Fig. 2a</span>Plaster ornament, drying in raking light. From the firm's atelier, Al Quoz.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">On the atelier</span>
+            The decorative-finishes atelier occupies a single double-height bay at the back of the Al Quoz yard. Twelve people. Six chisels each. The bay has been in continuous use, by the same team, since 2003.
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Hospitality lobby interior, warm lit." />
+            <figcaption><span class="num">Fig. 2b</span>Lobby finishing, hospitality fit-out, Khor Fakkan. Photographed two days before handover.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">On cultural work</span>
+            The firm's cultural projects average 14% of contract value but 32% of internal training hours. They are, by design, not profitable. They are, by design, not optional.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ chapter divider ═══════════════════════ -->
+  <div class="chapter-div">
+    <span class="num">§ 03 &nbsp;/&nbsp; Six</span>
+    <span class="asterism">⁂</span>
+  </div>
+
+  <!-- ═══════════════════════ § 03 — SELECTED WORKS ═══════════════════════ -->
+  <section id="works">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 03 &nbsp;·&nbsp; Selected Works</div>
+      <div class="running-r">Page 027 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 03 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">Selected Works. &nbsp;Six projects, recounted.</h2>
+            <p class="chapter-dek">A small, deliberate sample drawn from 280-odd completed contracts. The selection is partial; it is not, however, accidental.</p>
+          </header>
+        </div>
+      </div>
+
+      <!-- WORK 01 -->
+      <div class="col">
+        <div class="main">
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 01</span>
+                <span>Cultural &nbsp;·&nbsp; Heritage Pavilion</span>
+                <span>Al Marsa, Sharjah</span>
+                <span>2022 — 2024</span>
+              </div>
+              <h3>Marsa Heritage Pavilion.</h3>
+              <p>
+                A 4,200 m² timber-and-limestone pavilion on the Sharjah waterfront, commissioned by the Sharjah Department of Culture. The brief was to recover a vernacular: arcaded, shaded, stone-cool. The execution was almost entirely a finishes problem — the structure had been completed by another contractor — and the firm was retained, eighteen months in, to repair the stonework and to install the pavilion's interpretive joinery.
+              </p>
+              <p>
+                The work involved 14,200 hand-cut limestone units, each one numbered, photographed, and laid by one of three master masons. The pavilion opened in November 2024. It has, since opening, recorded zero remedial visits.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 84.2 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">21 months</span></div>
+                <div class="ws"><span class="k">Stone units</span><span class="v">14,200</span></div>
+                <div class="ws"><span class="k">Programme</span><span class="v">−18 days</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1542889601-399c4f3a8402?auto=format&fit=crop&w=1200&q=80" alt="Heritage stone pavilion exterior arcade." />
+              <figcaption><span class="num">Fig. 03</span>Marsa Heritage Pavilion, exterior arcade. Photographed at first light, two months after handover.</figcaption>
+            </figure>
+          </article>
+
+          <!-- WORK 02 -->
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 02</span>
+                <span>Commercial &nbsp;·&nbsp; Tower Fit-Out</span>
+                <span>DIFC, Dubai</span>
+                <span>2023 — 2024</span>
+              </div>
+              <h3>DIFC Tower Fit-Out, Floors 38 — 47.</h3>
+              <p>
+                Ten floors of category-A and category-B fit-out for a sovereign-wealth tenant in the DIFC's Gate Avenue district. 18,400 m² of usable area, executed in four phases over fourteen months, with the lower floors handed over for occupation while the upper floors were still in second-fix.
+              </p>
+              <p>
+                The interesting constraint was acoustic: the tenant's traders required sub-35 dB ambient between adjoining offices, in a building whose original specification had been written for a different occupant. The firm's fit-out team rebuilt the partition strategy in week three. The tenant moved in on schedule.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 142 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">14 months</span></div>
+                <div class="ws"><span class="k">Area</span><span class="v">18,400 m²</span></div>
+                <div class="ws"><span class="k">Programme</span><span class="v">on time</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Office fit-out interior, warm wood and glass." />
+              <figcaption><span class="num">Fig. 04</span>Trading floor, DIFC Tower, three days before tenant occupation.</figcaption>
+            </figure>
+          </article>
+
+          <!-- WORK 03 -->
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 03</span>
+                <span>Hospitality &nbsp;·&nbsp; Boutique Hotel</span>
+                <span>Khor Fakkan, Sharjah</span>
+                <span>2021 — 2023</span>
+              </div>
+              <h3>Khor Fakkan Boutique Hotel.</h3>
+              <p>
+                A 96-key hotel cut into the cliff face above the Indian Ocean at Khor Fakkan. The shell had been built over four years by another contractor. The firm was retained for the full hospitality fit-out, comprising 96 guest keys, the spa, the restaurant, the back-of-house, and the cliff-edge infinity pool whose tiling — fourteen thousand mosaic units, hand-set — was the project's defining decorative challenge.
+              </p>
+              <p>
+                The hotel opened to its first guests in March 2023 and has, since opening, held a 4.8 / 5 guest rating. The firm is currently in pre-construction on the property's second phase.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 198 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">22 months</span></div>
+                <div class="ws"><span class="k">Keys</span><span class="v">96</span></div>
+                <div class="ws"><span class="k">Snag list</span><span class="v">0 at handover</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1444201983204-c43cbd584d93?auto=format&fit=crop&w=1200&q=80" alt="Cliffside hotel pool with ocean view." />
+              <figcaption><span class="num">Fig. 05</span>Cliff-edge pool, Khor Fakkan. Photographed on the morning of soft-opening.</figcaption>
+            </figure>
+          </article>
+
+          <!-- WORK 04 -->
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 04</span>
+                <span>Cultural &nbsp;·&nbsp; Performing Arts</span>
+                <span>Yas Island, Abu Dhabi</span>
+                <span>2020 — 2022</span>
+              </div>
+              <h3>Yas Cultural Hall.</h3>
+              <p>
+                A 1,200-seat performing-arts hall on Yas Island, built jointly with a French acoustic-engineering practice. The firm was lead contractor for the structure, the envelope, and the interior finishes; the acoustic walls were the discipline of the decorative atelier, who hand-fluted 2,800 oak panels to the consultant's millimetre-accurate template.
+              </p>
+              <p>
+                The hall was acoustically tuned over six weeks of nightly testing. It opened with a recital by the Berlin Philharmonic's chamber soloists. The conductor, after the first rehearsal, wrote the firm a letter; it is framed in the Al Quoz reception.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 312 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">28 months</span></div>
+                <div class="ws"><span class="k">Seats</span><span class="v">1,200</span></div>
+                <div class="ws"><span class="k">Oak panels</span><span class="v">2,800</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Concert hall interior with timber acoustic walls." />
+              <figcaption><span class="num">Fig. 06</span>Yas Cultural Hall, looking from the stage. Acoustic timber, hand-fluted in-house.</figcaption>
+            </figure>
+          </article>
+
+          <!-- WORK 05 -->
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 05</span>
+                <span>Civic &nbsp;·&nbsp; Library</span>
+                <span>Al Khan, Sharjah</span>
+                <span>2019 — 2021</span>
+              </div>
+              <h3>Sharjah Civic Library.</h3>
+              <p>
+                A two-storey civic library on the Al Khan corniche, 6,800 m², built for the Sharjah Municipality. The library houses 220,000 volumes and a children's wing modelled, at the architects' request, on the firm's own apprentice workshop in Al Quoz. The shelving — sixteen kilometres of solid African walnut — was milled and assembled in the firm's joinery yard and trucked, in seventy-one consignments, across the emirates.
+              </p>
+              <p>
+                The library has been open for fifty months. The shelving has not, in that period, required a single visit.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 96 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">26 months</span></div>
+                <div class="ws"><span class="k">Shelving</span><span class="v">16,200 m</span></div>
+                <div class="ws"><span class="k">Volumes</span><span class="v">220,000</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80" alt="Library interior with tall walnut bookshelves." />
+              <figcaption><span class="num">Fig. 07</span>Reading hall, Sharjah Civic Library. Walnut shelving, milled in Al Quoz.</figcaption>
+            </figure>
+          </article>
+
+          <!-- WORK 06 -->
+          <article class="work">
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="num">Nº 06</span>
+                <span>Residential &nbsp;·&nbsp; Mid-Rise</span>
+                <span>Al Maryah, Abu Dhabi</span>
+                <span>2022 — 2025</span>
+              </div>
+              <h3>Al Maryah Residences.</h3>
+              <p>
+                A 184-unit mid-rise residential building on Al Maryah Island, designed by a Madrid-based practice and executed by Al Madar as principal contractor. The building's distinguishing feature is its travertine veil — a hand-set screen of 9,400 stone louvres that wraps the south and west elevations and is dimensioned to admit the angle of light particular to the Abu Dhabi spring.
+              </p>
+              <p>
+                The veil was assembled in the joinery yard, in panels of forty-eight, before being lifted to elevation. The building completed in February 2025, twenty-two days ahead of programme, with a defect rate of 0.31 per unit at handover.
+              </p>
+              <div class="work-stats">
+                <div class="ws"><span class="k">Contract</span><span class="v">AED 421 m</span></div>
+                <div class="ws"><span class="k">Duration</span><span class="v">31 months</span></div>
+                <div class="ws"><span class="k">Units</span><span class="v">184</span></div>
+                <div class="ws"><span class="k">Programme</span><span class="v">−22 days</span></div>
+              </div>
+            </div>
+            <figure class="work-fig">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="Mid-rise residential tower with stone louvres." />
+              <figcaption><span class="num">Fig. 08</span>Travertine veil, Al Maryah. Photographed from the corniche promenade.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PULL QUOTE 1 ═══════════════════════ -->
+  <aside class="pullquote">
+    <div class="pullquote-inner">
+      <span class="pullquote-mark" aria-hidden="true">“</span>
+      <p class="pullquote-text">
+        The work is in the hands. Every other claim a construction firm makes — about its software, its certifications, its founders — is downstream of that one fact.
+      </p>
+      <div class="pullquote-attr">
+        <span class="who">— The Senior Foreman's Notebook</span>
+        <span class="where">Al Quoz, undated &nbsp;·&nbsp; transcribed 2014</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════ chapter divider ═══════════════════════ -->
+  <div class="chapter-div">
+    <span class="num">§ 04 &nbsp;/&nbsp; Six</span>
+    <span class="asterism">⁂</span>
+  </div>
+
+  <!-- ═══════════════════════ § 04 — ON NUMBERS ═══════════════════════ -->
+  <section id="numbers">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 04 &nbsp;·&nbsp; On Numbers</div>
+      <div class="running-r">Page 048 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 04 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">On Numbers. &nbsp;A track record told arithmetically.</h2>
+            <p class="chapter-dek">Five figures, audited, against which the rest of this essay can be checked.</p>
+          </header>
+
+          <div class="prose">
+            <p class="dropcap">
+              We were tempted, in drafting this essay, to keep the arithmetic out of it. Numbers can flatter a firm whose other claims are weaker. We left them in for the opposite reason: the figures below are, in our view, the only evidence that the qualitative claims in the preceding pages have any anchor at all. Each is reproduced from audited statements, and each carries its full citation in the colophon.<sup>1</sup>
+            </p>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-fig">47<sup>i</sup></div>
+            <div class="stat-body">
+              <div class="stat-kicker">Years &nbsp;·&nbsp; continuous operation</div>
+              <div class="stat-cap">Founded the year of the Iranian revolution; older than the Burj. The firm has not missed a fiscal year of trading since 1979 and has not changed its principal address since 1984.</div>
+            </div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-fig">280<sup>ii</sup></div>
+            <div class="stat-body">
+              <div class="stat-kicker">Completed contracts &nbsp;·&nbsp; to 2025 year-end</div>
+              <div class="stat-cap">Across the six wings. The largest is AED 1.4 billion (infrastructure, 2018); the smallest, AED 240,000 (decorative, 2003). The median is AED 96 million.</div>
+            </div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-fig">12.4<sup>iii</sup></div>
+            <div class="stat-body">
+              <div class="stat-kicker">Million man-hours &nbsp;·&nbsp; cumulative since 1979</div>
+              <div class="stat-cap">A figure the firm is unusual in still tracking. It is reported in the annual safety statement and audited by Crowe Mak. The corresponding LTIFR figure appears below.</div>
+            </div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-fig">99.4<sup>iv</sup><span style="font-size:.4em;color:var(--ink-mute);">%</span></div>
+            <div class="stat-body">
+              <div class="stat-kicker">On-time handover &nbsp;·&nbsp; 2014 to present</div>
+              <div class="stat-cap">Weighted by contract value. Of 142 projects in the period, 138 completed on or ahead of programme; the remaining four delivered within ten working days of contractual handover.</div>
+            </div>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-fig">0.21<sup>v</sup></div>
+            <div class="stat-body">
+              <div class="stat-kicker">LTIFR &nbsp;·&nbsp; lost-time injury frequency, 2025</div>
+              <div class="stat-cap">Lost-time injuries per 200,000 hours worked. The U.A.E. construction-sector mean for 2025 was 1.84. The firm's own twenty-year mean is 0.34.</div>
+            </div>
+          </div>
+
+          <div class="prose">
+            <p>
+              These five figures are, on the firm's own account, the only ones a procurement officer needs in order to short-list. We will not press the point further; the colophon contains a longer table for the reader who wishes one.
+            </p>
+
+            <div class="footnotes">
+              <ol>
+                <li>All figures audited by Crowe Mak, U.A.E., for fiscal years 2014–2025 inclusive. Earlier figures are reproduced from internal records and are stated as such where they appear.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <div class="margin-note">
+            <span class="label">A note on tracking</span>
+            The firm has tracked man-hours continuously since 1981. The figure of 12.4 million is therefore conservative; it excludes the first two years.
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80" alt="Construction site at dusk, cranes against the sky." />
+            <figcaption><span class="num">Fig. 4a</span>An evening pour, Al Maryah. The kind of hour that becomes a man-hour.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">A note on LTIFR</span>
+            The firm's safety record is the figure of which, internally, it is most proud. It is the figure that took the longest to be earned. It is the figure that will, the directors believe, take the least time to lose.
+          </div>
+
+          <div class="margin-note">
+            <span class="label">A note on size</span>
+            The firm has chosen, deliberately, not to be the largest in the market. Its directors have argued, in print, that growth above a certain rate is incompatible with hand-finishing. The argument is open.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ chapter divider ═══════════════════════ -->
+  <div class="chapter-div">
+    <span class="num">§ 05 &nbsp;/&nbsp; Six</span>
+    <span class="asterism">⁂</span>
+  </div>
+
+  <!-- ═══════════════════════ § 05 — ON METHOD ═══════════════════════ -->
+  <section id="method">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 05 &nbsp;·&nbsp; On Method</div>
+      <div class="running-r">Page 056 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 05 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">On Method. &nbsp;Five phases, in order.</h2>
+            <p class="chapter-dek">Discovery, coordination, pre-construction, delivery, aftercare. The firm has not, in forty-seven years, varied the sequence.</p>
+          </header>
+
+          <div class="prose">
+            <p class="dropcap">
+              A method is, in construction, a defence against optimism. The firm's method is older than most of its current employees and has been written down only twice — once in the 1986 internal handbook and again, with minor revisions, in 2017. It consists of five phases, executed in order, with a written hand-off between each. The most important rule of the method is that no phase begins until the previous one is signed.
+            </p>
+          </div>
+
+          <div class="method">
+            <div class="phase">
+              <div class="phase-num"></div>
+              <div>
+                <h4>Discovery.</h4>
+                <p>
+                  Two weeks. The directors meet the client, walk the site, and read every drawing and specification end to end. No commercial conversation in this phase — only questions. By the end, the firm produces a written brief in its own words, which the client must counter-sign. Roughly one in eleven projects do not proceed past this stage; the firm regards these as successful discoveries.
+                </p>
+                <div class="meta">Output &nbsp;·&nbsp; counter-signed brief, written in Al Madar's hand</div>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-num"></div>
+              <div>
+                <h4>Coordination.</h4>
+                <p>
+                  Three to six weeks. All consultants — structural, MEP, façade, acoustic, lighting, FF&amp;E — are seated together for at least four full working days, in person, in Al Quoz. The clash matrix is built collaboratively. The firm has found, over thirty years, that a single in-person week saves four months of RFIs.
+                </p>
+                <div class="meta">Output &nbsp;·&nbsp; signed clash matrix, BIM model at LOD 350</div>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-num"></div>
+              <div>
+                <h4>Pre-Construction.</h4>
+                <p>
+                  Six to ten weeks. Mock-ups built, samples approved, long-lead items ordered, programme baselined, safety plan ratified. Hospitality and cultural mock-ups are built at full scale in the Al Quoz yard and inspected by the client over a single day. No mock-up has been waived in the firm's history.
+                </p>
+                <div class="meta">Output &nbsp;·&nbsp; client-signed mock-up, baselined programme</div>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-num"></div>
+              <div>
+                <h4>Delivery.</h4>
+                <p>
+                  The phase the rest exist to make boring. Daily look-ahead, weekly programme reconciliation, monthly client report. The firm runs a single live PMO dashboard against the baselined programme; the dashboard is shared with the client at the level of access they request. The phase ends with snag walks, witness inspections, and handover dossier.
+                </p>
+                <div class="meta">Output &nbsp;·&nbsp; handover dossier, witnessed completion certificate</div>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-num"></div>
+              <div>
+                <h4>Aftercare.</h4>
+                <p>
+                  Twelve months minimum, sometimes negotiated to thirty-six on hospitality and cultural projects. A single named engineer remains the client's point of contact; response time to any defect is measured against an SLA stated in the contract. The firm has paid out 0.41% of contract value, on average, in aftercare across the last decade.
+                </p>
+                <div class="meta">Output &nbsp;·&nbsp; defect register at month +12, closed-out</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prose">
+            <p style="margin-top:2.4rem;">
+              The method is, in the firm's own description, unromantic. It is also why the firm completes thirty-one days ahead of programme on average. The two facts are related.
+            </p>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <div class="margin-note">
+            <span class="label">On Discovery</span>
+            One in eleven projects do not proceed past Discovery. The firm regards these as the most useful contracts of all — the ones in which it learns to say no.
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=900&q=80" alt="Drawings on a desk, pencil and ruler." />
+            <figcaption><span class="num">Fig. 5a</span>Drawings, Coordination phase. Al Quoz, week one.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">On full-scale mock-ups</span>
+            Every hospitality fit-out begins with a full-scale mock-up of one guest key, built in the Al Quoz yard. The client inspects it for a full day. No mock-up has been waived in the firm's forty-seven years.
+          </div>
+
+          <div class="margin-note">
+            <span class="label">On Aftercare</span>
+            The named engineer in Aftercare is the same engineer who signed the handover dossier. The firm believes the only credible aftercare is the one that cannot be reassigned.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PULL QUOTE 2 ═══════════════════════ -->
+  <aside class="pullquote">
+    <div class="pullquote-inner">
+      <span class="pullquote-mark" aria-hidden="true">“</span>
+      <p class="pullquote-text">
+        We have not, in forty-seven years, missed a handover by more than ten working days. We have, eleven times, refused a project in week one of Discovery. The two figures are not unrelated.
+      </p>
+      <div class="pullquote-attr">
+        <span class="who">— The Managing Director</span>
+        <span class="where">Annual address to the senior trades, 2024</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════ chapter divider ═══════════════════════ -->
+  <div class="chapter-div">
+    <span class="num">§ 06 &nbsp;/&nbsp; Six</span>
+    <span class="asterism">⁂</span>
+  </div>
+
+  <!-- ═══════════════════════ § 06 — ON GOVERNANCE ═══════════════════════ -->
+  <section id="governance">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">§ 06 &nbsp;·&nbsp; On Governance</div>
+      <div class="running-r">Page 064 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col">
+        <div class="main">
+          <header class="chapter-head">
+            <span class="num">§ 06 &nbsp;/&nbsp; Six</span>
+            <h2 class="chapter-title">On Governance. &nbsp;Audit, certification, and the long ledger.</h2>
+            <p class="chapter-dek">A formal account of how the firm is examined, by whom, and with what frequency.</p>
+          </header>
+
+          <div class="prose">
+            <p class="dropcap">
+              A privately held construction house is, by default, opaque. Al Madar has spent the last fifteen years correcting for that default — not by going public, which it has refused, but by submitting itself to the auditing standards of a public firm without the obligation. The result is the longest internal ledger in the U.A.E. construction sector, on which any prospective client may, on written request, undertake due diligence.<sup>1</sup>
+            </p>
+
+            <p>
+              Audit is conducted annually by Crowe Mak. The firm's ISO certifications — quality (9001:2015), environment (14001:2015), occupational health and safety (45001:2018), and information security (27001:2022) — are renewed by Bureau Veritas under unannounced surveillance audit. The firm holds Class-1 certification from the U.A.E. Ministry of Public Works and is pre-qualified with twenty-three named institutional clients, including five sovereign-wealth-vehicle developers and three royal courts.
+            </p>
+          </div>
+
+          <div class="gov-grid">
+            <div class="gov-cell">
+              <div class="k">ISO 9001 : 2015</div>
+              <div class="v">Quality Management.</div>
+              <div class="d">Certified continuously since 2004. Surveillance audit annual; recertification every three years. Issued by Bureau Veritas.</div>
+            </div>
+            <div class="gov-cell">
+              <div class="k">ISO 14001 : 2015</div>
+              <div class="v">Environmental.</div>
+              <div class="d">Certified since 2007. The firm reports Scope 1 and 2 emissions in the annual statement; Scope 3 reporting is in third-year disclosure.</div>
+            </div>
+            <div class="gov-cell">
+              <div class="k">ISO 45001 : 2018</div>
+              <div class="v">Health &amp; Safety.</div>
+              <div class="d">Certified since 2019, transitioned from OHSAS 18001 (held since 2009). LTIFR audited annually as part of the safety statement.</div>
+            </div>
+            <div class="gov-cell">
+              <div class="k">ISO 27001 : 2022</div>
+              <div class="v">Information Security.</div>
+              <div class="d">Certified since 2021. All client BIM models, drawings, and commercial records held under a documented ISMS.</div>
+            </div>
+            <div class="gov-cell">
+              <div class="k">U.A.E. M.O.P.W.</div>
+              <div class="v">Class-1 (unlimited).</div>
+              <div class="d">Government works classification, held continuously since 1992. Permits the firm to bid on any size of public-sector contract.</div>
+            </div>
+            <div class="gov-cell">
+              <div class="k">Audit &amp; Counsel</div>
+              <div class="v">Crowe Mak &amp; Al Tamimi.</div>
+              <div class="d">External auditor since 2011. Legal counsel since 1998. The firm publishes audited accounts to its institutional clients on request.</div>
+            </div>
+          </div>
+
+          <div class="prose">
+            <p style="margin-top:2.2rem;">
+              The directors have a phrase for what governance is, in this house: <em>the work that makes the work possible</em>. It is the wing of the firm that the client never sees and that the trades never have to think about. It is, in their view, the expensive, unfashionable, and entirely necessary condition of having had forty-seven uninterrupted years.
+            </p>
+            <div class="footnotes">
+              <ol>
+                <li>Due-diligence packs are issued under NDA to short-listed counterparties, typically within five working days of request. The pack runs to 184 pages.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <aside class="margin">
+          <div class="margin-note">
+            <span class="label">On the auditor</span>
+            Crowe Mak has audited the firm since 2011. The firm's internal accountant has been with the firm since 1996. The two have, at one point or another, disagreed about everything.
+          </div>
+
+          <figure class="margin-fig">
+            <img src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&w=900&q=80" alt="Stack of bound documents and a pen." />
+            <figcaption><span class="num">Fig. 6a</span>Annual audit binder, 2024 edition. Al Quoz, archive room.</figcaption>
+          </figure>
+
+          <div class="margin-note">
+            <span class="label">On the long ledger</span>
+            The firm's central ledger has been maintained on the same chart of accounts since 1991. It has been migrated four times across systems; each migration has retained line-by-line provenance.
+          </div>
+
+          <div class="margin-note">
+            <span class="label">On disclosure</span>
+            The firm will disclose audited accounts to any short-listed counterparty under NDA. It will not, however, publish them. The distinction is, the directors believe, the difference between accountability and theatre.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ LETTER FROM THE FOUNDER ═══════════════════════ -->
+  <section class="letter" id="letter">
+    <div class="letter-head">
+      <h3 class="letter-title">A Letter from the Chief Engineer.</h3>
+      <div class="meta">Dubai &nbsp;·&nbsp; February, 2026</div>
+    </div>
+    <div class="letter-body">
+      <p>
+        I have been asked, by the editors of this essay, to write the closing pages in my own voice. I have agreed reluctantly. The firm has, for forty-seven years, made a virtue of speaking through its buildings and not through its principals; what follows therefore violates a small private rule, and I would ask that the reader accept it in the spirit in which it is offered.
+      </p>
+      <p>
+        I joined Al Madar in 1991 as a young engineer assigned to the civil wing. The founder was then in his late sixties; he had a habit, when reading a junior engineer's drawings, of placing his thumb on a particular detail and saying nothing for a long minute. One learned, over the course of a year or two, what the silent thumb meant. It meant: <em>you have not, here, considered how this will be built by hand, in the dark, in August, by a man who does not have your drawing in front of him.</em> It is the most useful thing anyone has ever taught me.
+      </p>
+      <p>
+        I succeeded him as Chief Engineer in 2009. The directors and I have, since then, made one promise to each other and to the firm: that we will not — under commercial pressure, under client pressure, under the pressure of a market that is increasingly impatient with patience — let the firm grow faster than its hands can be trained. We have, on three occasions, paid for that promise. We will, I expect, pay for it again. It is the one promise of which I am, after all this time, most certain.
+      </p>
+      <p>
+        If you are a client reading this in advance of a tender, I would ask only that you walk through one of our finished buildings before our representatives meet yours. If you are an architect, I would ask that you bring us in early — Discovery is where we are most useful, and where most projects are quietly saved. If you are a young engineer reading this and thinking about applying, I would ask that you understand the long apprenticeship before you come.
+      </p>
+      <p>
+        The rest, as the founder would have said, is in the hands.
+      </p>
+    </div>
+    <div class="letter-sig">
+      <span class="name">— Dr. K. M. Al-Hashimi</span>
+      <span class="title">Chief Engineer &nbsp;·&nbsp; Al Madar MGM Construction L.L.C.</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SELECTED PRESS / FURTHER READING ═══════════════════════ -->
+  <section id="press">
+    <div class="running">
+      <div class="running-l">Al Madar MGM</div>
+      <div class="running-c">Selected Press &nbsp;·&nbsp; Further Reading</div>
+      <div class="running-r">Page 071 / 074</div>
+    </div>
+
+    <div class="essay">
+      <div class="col col-wide">
+        <div class="main" style="max-width:920px;">
+          <header class="chapter-head">
+            <span class="num">Bibliography</span>
+            <h2 class="chapter-title">Selected Press &amp; Further Reading.</h2>
+            <p class="chapter-dek">For the procurement officer, architect, or institutional reader who would like to read further. Listed in reverse-chronological order.</p>
+          </header>
+
+          <ol class="biblio">
+            <li>
+              <span class="n">i.</span>
+              <span class="t">‘<em>The Old Way of Building</em>’ — a profile of Al Madar's decorative atelier. <span class="pub">MIDDLE EAST ARCHITECT</span></span>
+              <span class="d">February 2026</span>
+            </li>
+            <li>
+              <span class="n">ii.</span>
+              <span class="t">‘<em>How to Spend a Decade Tuning a Concert Hall</em>’ — on the Yas Cultural Hall acoustic process. <span class="pub">THE NATIONAL · WEEKEND</span></span>
+              <span class="d">November 2025</span>
+            </li>
+            <li>
+              <span class="n">iii.</span>
+              <span class="t">‘<em>A Quiet House: 47 Years of Al Madar MGM</em>’ — the firm's official monograph, ed. R. Q. Saeed. <span class="pub">THAMES &amp; HUDSON</span></span>
+              <span class="d">October 2025</span>
+            </li>
+            <li>
+              <span class="n">iv.</span>
+              <span class="t">‘<em>The Travertine Veil</em>’ — a case study of Al Maryah Residences. <span class="pub">DOMUS · ARABIC ED.</span></span>
+              <span class="d">May 2025</span>
+            </li>
+            <li>
+              <span class="n">v.</span>
+              <span class="t">‘<em>Construction, Slowly</em>’ — a long interview with the Chief Engineer. <span class="pub">GULF BUSINESS</span></span>
+              <span class="d">March 2025</span>
+            </li>
+            <li>
+              <span class="n">vi.</span>
+              <span class="t">‘<em>Inside the Khor Fakkan Cliff Hotel</em>’ — production reportage. <span class="pub">HOSPITALITY DESIGN</span></span>
+              <span class="d">June 2024</span>
+            </li>
+            <li>
+              <span class="n">vii.</span>
+              <span class="t">‘<em>Reading the Drawings Twice</em>’ — a conversation with the firm's senior estimator. <span class="pub">CONSTRUCTION WEEK</span></span>
+              <span class="d">January 2024</span>
+            </li>
+            <li>
+              <span class="n">viii.</span>
+              <span class="t">‘<em>The Library at Al Khan</em>’ — review of the Sharjah Civic Library. <span class="pub">ARCHITECTURAL REVIEW</span></span>
+              <span class="d">September 2022</span>
+            </li>
+            <li>
+              <span class="n">ix.</span>
+              <span class="t">‘<em>How a Fit-Out Firm Stayed Private</em>’ — on the firm's seven declined acquisitions. <span class="pub">FINANCIAL TIMES · GULF</span></span>
+              <span class="d">April 2020</span>
+            </li>
+            <li>
+              <span class="n">x.</span>
+              <span class="t">‘<em>The Founder's Notebook, vol. III</em>’ — selected pages, transcribed. <span class="pub">AL MADAR ARCHIVE</span></span>
+              <span class="d">2014 (reissued 2024)</span>
+            </li>
+          </ol>
+
+          <p style="font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-mute);margin-top:2rem;max-width:64ch;">
+            The Al Madar archive at Al Quoz is open to academic researchers by appointment. It contains the founder's notebooks, the firm's drawings since 1979, and the photographic record of every project at handover. Enquiries to the archivist via the editorial address below.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EDITORIAL ADDRESS / CONTACT ═══════════════════════ -->
+  <section class="editorial" id="contact">
+    <div>
+      <h3>Editorial &amp; Tender Address.</h3>
+      <p style="font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-mute);max-width:48ch;margin:0 0 2rem;">
+        For correspondence with the firm — whether you are an institutional client, an architect, a journalist, or a graduate engineer — the addresses below are the only ones in active use.
+      </p>
+
+      <div class="ed-block">
+        <div class="k">Principal Office</div>
+        <div class="v">
+          Al Madar MGM Construction L.L.C.<br />
+          Plot 47, Al Quoz Industrial Area 3<br />
+          P.O. Box 2179, Dubai<br />
+          United Arab Emirates
+        </div>
+      </div>
+
+      <div class="ed-block">
+        <div class="k">Telephone</div>
+        <div class="v">+971 4 339 4700 &nbsp;·&nbsp; Mon — Sat &nbsp;·&nbsp; 08:00 — 18:00 GST</div>
+      </div>
+
+      <div class="ed-block">
+        <div class="k">Registry</div>
+        <div class="v">DED Trade License Nº 102479 &nbsp;·&nbsp; established 12 March 1979</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>By Subject.</h3>
+      <p style="font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-mute);max-width:48ch;margin:0 0 2rem;">
+        Direct your correspondence to the appropriate desk. Each is answered within two working days by the named director or their deputy.
+      </p>
+
+      <div class="ed-block">
+        <div class="k">Tender Inquiries</div>
+        <div class="v"><a href="mailto:tenders@almadarmgm.ae">tenders@almadarmgm.ae</a> &nbsp;·&nbsp; due-diligence pack within five working days</div>
+      </div>
+      <div class="ed-block">
+        <div class="k">Hospitality &amp; Cultural</div>
+        <div class="v"><a href="mailto:hospitality@almadarmgm.ae">hospitality@almadarmgm.ae</a></div>
+      </div>
+      <div class="ed-block">
+        <div class="k">Civil &amp; Infrastructure</div>
+        <div class="v"><a href="mailto:civil@almadarmgm.ae">civil@almadarmgm.ae</a></div>
+      </div>
+      <div class="ed-block">
+        <div class="k">Press &amp; Editorial</div>
+        <div class="v"><a href="mailto:editor@almadarmgm.ae">editor@almadarmgm.ae</a> &nbsp;·&nbsp; for the archivist, mark for the attention of R. Q. Saeed</div>
+      </div>
+      <div class="ed-block">
+        <div class="k">Careers &amp; Apprenticeships</div>
+        <div class="v"><a href="mailto:hands@almadarmgm.ae">hands@almadarmgm.ae</a> &nbsp;·&nbsp; graduate &amp; trades intake reviewed quarterly</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ COLOPHON ═══════════════════════ -->
+  <section class="colophon">
+    <div class="ast">⁂</div>
+    <h3>About this essay.</h3>
+    <p>
+      This essay was researched over six months across the firm's principal office in Al Quoz, its joinery yard, and four of its active project sites. The figures cited are drawn from audited statements (Crowe Mak, 2014–2025), from the firm's internal PMO records, and, for the period before 2014, from the founder's notebooks, vols. I–IX, held in the Al Madar archive.
+    </p>
+    <p>
+      It was written by the Office of the Editor and reviewed for accuracy by the firm's directors. Where the directors disagreed with the editorial position, the editorial position was retained and the disagreement is noted in the long-form footnotes of the print edition.
+    </p>
+    <p>
+      Photographs by the firm's archivist and by external contributors, used with permission. Figures Nº 02, 06, and 08 are the work of the architectural photographer L. M. Kassem.
+    </p>
+    <div class="credit">
+      Published 2026 · 05 · 09 &nbsp;·&nbsp; Set in Source Serif 4 &amp; Fraunces &nbsp;·&nbsp; Composed in Dubai &nbsp;·&nbsp; Printed at the Al Quoz press &nbsp;·&nbsp; Vol. I &nbsp;·&nbsp; Nº 47
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="l">© 1979 — 2026 &nbsp;·&nbsp; Al Madar MGM Construction L.L.C.</div>
+      <div class="c">DED Nº 102479 &nbsp;·&nbsp; M.O.P.W. Class-1 (unlimited)</div>
+      <div class="r"><a href="#top">Return to top of essay ↑</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

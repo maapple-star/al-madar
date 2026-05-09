@@ -1,0 +1,1985 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Madar MGM — A construction partner of global standing.</title>
+  <meta name="description" content="Al Madar MGM Construction L.L.C. — multinational construction partner. Forty-seven years delivering for sovereign clients, multinationals and Fortune-500 occupiers across the UAE." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       v7 — Global Authority
+       McKinsey/Bechtel — corporate navy, executive gold, contemporary serif.
+       For multinationals, sovereign infrastructure, JV partners.
+       ═══════════════════════════════════════════════════════════════ */
+
+    :root {
+      --navy:       #0B2545;
+      --navy-d:     #07182E;
+      --navy-2:     #163A66;
+      --navy-l:     #2A5F9E;
+      --platinum:   #E8E9EB;
+      --platinum-2: #D4D6D9;
+      --white:      #FFFFFF;
+      --paper:      #F8F9FB;
+      --graphite:   #1F2933;
+      --graphite-2: #3F4A55;
+      --grey:       #6E7886;
+      --grey-l:     #A9B0B9;
+      --gold:       #C9A961;
+      --gold-d:     #A88A47;
+      --gold-l:     #E2C589;
+      --rule:       rgba(11,37,69,.12);
+      --rule-soft:  rgba(11,37,69,.06);
+
+      --display: "Crimson Pro", Georgia, serif;
+      --sans:    "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+      --container: min(1480px, 92vw);
+      --ease: cubic-bezier(.2,.7,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--graphite);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    .micro {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      font-weight: 500;
+    }
+
+    /* ════════════════════ TOP BAR ════════════════════ */
+    .top-bar {
+      background: var(--navy-d);
+      color: var(--platinum);
+      padding: 9px 0;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+    .top-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .top-meta { display: inline-flex; gap: 1.6rem; align-items: center; }
+    .top-meta span { display: inline-flex; gap: .5rem; align-items: center; opacity: .8; }
+    .top-meta b { color: var(--gold-l); font-weight: 600; }
+    .top-locales { display: inline-flex; gap: .8rem; align-items: center; }
+    .top-locales a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .7;
+      transition: opacity .2s var(--ease);
+    }
+    .top-locales a:hover, .top-locales a.active { opacity: 1; color: var(--gold-l); }
+    .top-locales a.active { font-weight: 600; }
+
+    /* ════════════════════ NAV ════════════════════ */
+    .nav {
+      background: var(--navy);
+      color: var(--platinum);
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid rgba(232,233,235,.1);
+    }
+    .nav-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 22px 0;
+    }
+    .brand { display: flex; align-items: center; gap: .9rem; }
+    .brand-mark {
+      width: 38px; height: 38px;
+      background: var(--gold);
+      color: var(--navy);
+      display: grid; place-items: center;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 21px;
+      font-weight: 700;
+      flex: 0 0 38px;
+    }
+    .brand-text {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -.005em;
+    }
+    .brand-text small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+    .nav-links { list-style: none; padding: 0; margin: 0; display: flex; gap: 2.4rem; justify-self: center; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--platinum);
+      letter-spacing: .005em;
+      transition: color .2s var(--ease);
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--gold-l); }
+    .nav-cta {
+      display: inline-flex; gap: .55rem; align-items: center;
+      padding: 11px 22px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      transition: all .25s var(--ease);
+    }
+    .nav-cta:hover { background: var(--gold-l); }
+    .nav-cta::after {
+      content: "→"; font-size: 14px;
+      transition: transform .25s var(--ease);
+    }
+    .nav-cta:hover::after { transform: translateX(3px); }
+
+    /* ════════════════════ HERO ════════════════════ */
+    .hero {
+      background: var(--navy);
+      color: var(--platinum);
+      padding: 6rem 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(201,169,97,.08), transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(42,95,158,.18), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      padding-bottom: 5rem;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: .6rem;
+      padding: 7px 16px;
+      background: rgba(201,169,97,.12);
+      border: 1px solid rgba(201,169,97,.34);
+      color: var(--gold-l);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    .hero-tag i {
+      width: 6px; height: 6px; background: var(--gold); border-radius: 999px;
+    }
+    .hero-headline {
+      font-family: var(--display);
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.02em;
+      margin: 0 0 2rem;
+      color: var(--white);
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-l);
+      font-weight: 500;
+    }
+    .hero-lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(232,233,235,.85);
+      max-width: 540px;
+      margin: 0 0 2.5rem;
+      font-weight: 400;
+    }
+    .hero-lede em { color: var(--gold-l); font-family: var(--display); font-style: italic; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: 14px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      border: 1px solid transparent;
+      transition: all .25s var(--ease);
+      font-family: var(--sans);
+    }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: var(--gold-l); transform: translateY(-1px); }
+    .btn-ghost-light {
+      background: transparent;
+      color: var(--platinum);
+      border-color: rgba(232,233,235,.3);
+    }
+    .btn-ghost-light:hover { border-color: var(--gold); color: var(--gold-l); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--graphite);
+      border-color: var(--rule);
+    }
+    .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--navy-2); }
+    .btn .arr { font-size: 13px; transition: transform .25s var(--ease); }
+    .btn:hover .arr { transform: translateX(3px); }
+
+    /* ──── world map / globe panel ──── */
+    .hero-globe {
+      position: relative;
+      aspect-ratio: 1.3 / 1;
+      max-height: 540px;
+    }
+    .globe-svg {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 12px 40px rgba(0,0,0,.4));
+    }
+    .globe-svg .grid { stroke: rgba(201,169,97,.18); stroke-width: 0.5; fill: none; }
+    .globe-svg .ring { fill: none; stroke: rgba(201,169,97,.3); stroke-width: 0.6; }
+    .globe-svg .land { fill: rgba(232,233,235,.08); stroke: rgba(232,233,235,.18); stroke-width: 0.5; }
+    .globe-svg .marker { fill: var(--gold); }
+    .globe-svg .marker-uae { fill: var(--gold-l); filter: drop-shadow(0 0 8px var(--gold)); }
+    .globe-svg .marker-pulse { fill: var(--gold-l); opacity: .35; animation: pulse 2.6s var(--ease) infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: .55; }
+      80% { transform: scale(2.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+    .globe-meta {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem; right: 1.2rem;
+      display: flex; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.7);
+    }
+    .globe-meta b { color: var(--gold-l); font-weight: 600; }
+
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+    /* hero KPI strip */
+    .hero-kpi {
+      background: var(--navy-d);
+      border-top: 1px solid rgba(232,233,235,.1);
+      padding: 2rem 0;
+    }
+    .hero-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) { .hero-kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    .hero-kpi-cell {
+      padding-left: 1.2rem;
+      border-left: 1px solid rgba(201,169,97,.3);
+    }
+    .hero-kpi-cell .lbl {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      font-weight: 500;
+      margin-bottom: .4rem;
+    }
+    .hero-kpi-cell .val {
+      font-family: var(--display);
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -.012em;
+      line-height: 1;
+      color: var(--white);
+    }
+    .hero-kpi-cell .val em { font-style: italic; color: var(--gold-l); font-size: .55em; margin-left: .2em; font-weight: 400; }
+    .hero-kpi-cell .desc {
+      margin-top: .5rem;
+      font-size: 12.5px;
+      color: rgba(232,233,235,.6);
+      line-height: 1.5;
+    }
+
+    /* ════════════════════ CLIENT MARQUEE ════════════════════ */
+    .client-strip {
+      border-top: 1px solid rgba(232,233,235,.08);
+      background: var(--navy-d);
+      padding: 1.8rem 0;
+    }
+    .client-strip-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .client-strip .micro { color: var(--gold-l); }
+    .client-row {
+      display: flex; gap: 3rem; flex-wrap: wrap;
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 500;
+      color: rgba(232,233,235,.7);
+      letter-spacing: -.005em;
+    }
+    .client-row span { transition: color .25s var(--ease); }
+    .client-row span:hover { color: var(--gold-l); cursor: default; }
+    .client-row em { font-style: italic; color: var(--gold-l); font-weight: 400; }
+
+    /* ════════════════════ SECTION SCAFFOLD ════════════════════ */
+    .section { padding: 6rem 0; border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .section-light { background: var(--white); }
+    .section-platinum { background: var(--platinum); }
+    .section-navy { background: var(--navy); color: var(--platinum); }
+    .section-navy .section-num { color: var(--gold-l); }
+    .section-navy h2 { color: var(--white); }
+    .section-navy h2 em { color: var(--gold-l); }
+    .section-navy .section-deck { color: rgba(232,233,235,.78); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: end;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-navy .section-head { border-bottom-color: rgba(232,233,235,.14); }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      font-weight: 600;
+    }
+    .section-num b { display: block; font-family: var(--display); font-size: 36px; font-weight: 500; color: var(--navy); margin-top: .5rem; letter-spacing: -.012em; }
+    .section-navy .section-num b { color: var(--white); }
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+      font-weight: 500;
+      letter-spacing: -.018em;
+      line-height: 1.04;
+      color: var(--navy);
+    }
+    .section-head h2 em { font-style: italic; color: var(--gold-d); font-weight: 500; }
+    .section-deck {
+      max-width: 60ch;
+      font-size: 16.5px;
+      line-height: 1.65;
+      color: var(--graphite-2);
+      margin-top: 1rem;
+    }
+    @media (max-width: 800px) { .section-head { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    /* ════════════════════ ABOUT ════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-lead {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.4;
+      font-weight: 400;
+      color: var(--navy);
+      margin: 0 0 2rem;
+      letter-spacing: -.005em;
+    }
+    .about-lead em { font-style: italic; color: var(--gold-d); }
+    .about-body { font-size: 16px; line-height: 1.75; color: var(--graphite-2); }
+    .about-body p { margin: 0 0 1.2rem; }
+
+    .creds-card {
+      background: var(--navy);
+      color: var(--platinum);
+      padding: 2.4rem 2rem;
+      position: relative;
+    }
+    .creds-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 60px; height: 4px;
+      background: var(--gold);
+    }
+    .creds-card h4 {
+      margin: 0 0 1.5rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      font-weight: 600;
+    }
+    .creds-card dl { margin: 0; }
+    .creds-card div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: .9rem 0;
+      border-bottom: 1px solid rgba(232,233,235,.12);
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .creds-card div:last-child { border-bottom: none; }
+    .creds-card dt {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.6);
+      font-weight: 500;
+    }
+    .creds-card dd {
+      margin: 0;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* ════════════════════ NUMBERS / PRESENCE ════════════════════ */
+    .numbers-section { background: var(--navy); color: var(--platinum); padding: 7rem 0; }
+    .numbers-section .section-head { border-bottom-color: rgba(232,233,235,.14); }
+    .numbers-section .section-num { color: var(--gold-l); }
+    .numbers-section .section-num b { color: var(--white); }
+    .numbers-section h2 { color: var(--white); }
+    .numbers-section h2 em { color: var(--gold-l); }
+    .numbers-section .section-deck { color: rgba(232,233,235,.75); }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid rgba(232,233,235,.14);
+    }
+    @media (max-width: 800px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } }
+    .number-cell {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(232,233,235,.14);
+    }
+    .number-cell:last-child { border-right: none; }
+    .number-cell .micro { color: var(--gold-l); margin-bottom: .8rem; display: block; }
+    .number-cell .figure {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--white);
+    }
+    .number-cell .figure .suffix {
+      font-size: .55em;
+      color: var(--gold-l);
+      margin-left: .15em;
+      font-weight: 400;
+    }
+    .number-cell .name {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(232,233,235,.78);
+      margin-top: 1rem;
+      max-width: 30ch;
+    }
+
+    /* ════════════════════ FULL BLEED ════════════════════ */
+    .full-bleed {
+      position: relative;
+      min-height: 80vh;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .full-bleed img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: saturate(.65) hue-rotate(190deg) brightness(.65);
+    }
+    .full-bleed::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11,37,69,.4) 0%, rgba(7,24,46,.85) 100%);
+    }
+    .full-bleed-content {
+      position: relative; z-index: 2;
+      width: var(--container);
+      margin: 0 auto;
+      padding: 4.5rem 0 4rem;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--platinum);
+    }
+    .fb-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .fb-top span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.7);
+    }
+    .fb-top span b { color: var(--gold-l); font-weight: 600; }
+    .full-bleed h3 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4.8vw, 4rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin: 0 0 1.5rem;
+      max-width: 18ch;
+      color: var(--white);
+    }
+    .full-bleed h3 em { font-style: italic; color: var(--gold-l); }
+    .fb-meta {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 760px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.7);
+    }
+    .fb-meta li { padding-left: 1rem; border-left: 2px solid var(--gold); }
+    .fb-meta strong {
+      display: block;
+      color: var(--white);
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 16px;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: .35rem;
+      font-weight: 500;
+    }
+
+    /* ════════════════════ SERVICES — chapter cards ════════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+    .service-card {
+      background: var(--white);
+      padding: 2.4rem 2rem;
+      transition: all .3s var(--ease);
+      position: relative;
+      display: block;
+    }
+    .service-card:hover { background: var(--navy); color: var(--platinum); }
+    .service-card .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--gold-d);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: color .3s var(--ease);
+    }
+    .service-card:hover .num { color: var(--gold-l); }
+    .service-card h3 {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+      font-weight: 500;
+      letter-spacing: -.01em;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--navy);
+      transition: color .3s var(--ease);
+    }
+    .service-card:hover h3 { color: var(--white); }
+    .service-card h3 em { font-style: italic; color: var(--gold-d); transition: color .3s var(--ease); }
+    .service-card:hover h3 em { color: var(--gold-l); }
+    .service-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--graphite-2);
+      margin: 0 0 1.5rem;
+      transition: color .3s var(--ease);
+    }
+    .service-card:hover p { color: rgba(232,233,235,.85); }
+    .service-card .arr {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 600;
+      transition: color .3s var(--ease);
+    }
+    .service-card:hover .arr { color: var(--gold-l); }
+    .service-card .arr::after { content: " →"; }
+
+    /* ════════════════════ PORTFOLIO ════════════════════ */
+    .case-list { display: grid; gap: 5rem; }
+    .case {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .case.flip { grid-template-columns: 1fr 1.2fr; }
+    .case.flip .case-img { order: 2; }
+    .case-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--platinum);
+    }
+    .case-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(.85) hue-rotate(195deg) brightness(.86);
+      transition: transform .8s var(--ease);
+    }
+    .case:hover .case-img img { transform: scale(1.04); }
+    .case-img::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(11,37,69,.45) 100%);
+    }
+    .case-img .index {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 6px 12px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .case-img .country {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .case-meta { padding: 1rem 0; }
+    .case-meta .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--gold-d);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .case-meta h3 {
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -.012em;
+      margin: 0 0 1.2rem;
+      color: var(--navy);
+    }
+    .case-meta h3 em { font-style: italic; color: var(--gold-d); }
+    .case-meta .body {
+      font-size: 16px;
+      color: var(--graphite-2);
+      line-height: 1.75;
+      margin: 0 0 1.8rem;
+    }
+    .case-meta .body em { color: var(--navy); font-family: var(--display); font-style: italic; font-weight: 500; }
+
+    .case-meta .specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 1.5rem;
+    }
+    .case-meta .specs > div {
+      padding: 1rem 0;
+      border-right: 1px solid var(--rule-soft);
+      padding-right: 1rem;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+    .case-meta .specs > div:nth-child(2n) { border-right: none; padding-left: 1rem; }
+    .case-meta .specs > div:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
+    .case-meta .specs strong {
+      display: block;
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 15px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--navy);
+      font-weight: 500;
+      margin-top: .35rem;
+    }
+    .case-link {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      font-weight: 700;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 4px;
+      display: inline-block;
+    }
+
+    @media (max-width: 900px) {
+      .case, .case.flip { grid-template-columns: 1fr; gap: 2rem; }
+      .case.flip .case-img { order: 0; }
+    }
+
+    /* ════════════════════ SECTORS ════════════════════ */
+    .sectors-list {
+      list-style: none; padding: 0; margin: 0;
+      border-top: 2px solid var(--navy);
+    }
+    .sector-row {
+      display: grid;
+      grid-template-columns: 60px 1.4fr 2fr 1fr 50px;
+      gap: 2rem;
+      padding: 1.8rem 1rem;
+      align-items: center;
+      border-bottom: 1px solid var(--rule);
+      transition: all .25s var(--ease);
+    }
+    .sector-row:hover { background: var(--white); padding-left: 1.8rem; }
+    .sector-row .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--gold-d);
+      font-weight: 600;
+    }
+    .sector-row .name {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+      font-weight: 500;
+      letter-spacing: -.005em;
+      color: var(--navy);
+    }
+    .sector-row .name em { font-style: italic; color: var(--gold-d); font-weight: 500; }
+    .sector-row .clients {
+      font-size: 14px;
+      color: var(--graphite-2);
+      line-height: 1.5;
+    }
+    .sector-row .stat {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .04em;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .sector-row .stat .lbl {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      font-weight: 500;
+    }
+    .sector-row .arr {
+      width: 38px; height: 38px;
+      border: 1px solid var(--rule);
+      display: grid; place-items: center;
+      transition: all .25s var(--ease);
+      color: var(--grey);
+    }
+    .sector-row:hover .arr { background: var(--gold); color: var(--navy); border-color: var(--gold); transform: translateX(3px); }
+
+    @media (max-width: 800px) {
+      .sector-row { grid-template-columns: 50px 1fr 50px; }
+      .sector-row .clients, .sector-row .stat { grid-column: 1 / -1; }
+    }
+
+    /* ════════════════════ PILLARS ════════════════════ */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pillar {
+      padding: 3rem 2.4rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      background: var(--white);
+      transition: background .25s var(--ease);
+    }
+    .pillar:nth-child(2n) { border-right: none; }
+    .pillar:nth-child(n+3) { border-bottom: none; }
+    .pillar:hover { background: var(--paper); }
+    .pillar .num {
+      font-family: var(--display);
+      font-size: 56px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: -.012em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .pillar h3 {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -.012em;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: var(--navy);
+    }
+    .pillar h3 em { font-style: italic; color: var(--gold-d); }
+    .pillar p {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--graphite-2);
+      margin: 0 0 1.5rem;
+    }
+    .pillar p em { color: var(--navy); font-family: var(--display); font-style: italic; font-weight: 500; }
+    .pillar .stat {
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+    .pillar .stat strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--gold-d);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: .35rem;
+    }
+    @media (max-width: 800px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .pillar { border-right: none !important; border-bottom: 1px solid var(--rule); }
+      .pillar:last-child { border-bottom: none; }
+    }
+
+    /* ════════════════════ CREDENTIALS ════════════════════ */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+    }
+    @media (max-width: 900px) { .credentials-grid { grid-template-columns: 1fr; } }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+    .client-cell {
+      padding: 1.5rem 1.2rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.005em;
+      color: var(--navy);
+      transition: background .2s var(--ease);
+      background: var(--white);
+    }
+    .client-cell em { font-style: italic; color: var(--gold-d); font-weight: 500; }
+    .client-cell:hover { background: var(--paper); }
+
+    .certs-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--navy); }
+    .cert-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: center;
+    }
+    .cert-line .cert-name {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -.005em;
+      color: var(--navy);
+    }
+    .cert-line .cert-name em { font-style: italic; color: var(--gold-d); font-weight: 500; }
+    .cert-line .cert-name small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: .35rem;
+      font-weight: 500;
+    }
+    .cert-line .valid {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      padding: 6px 12px;
+      border: 1px solid var(--gold);
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    /* ════════════════════ JOURNAL ════════════════════ */
+    .journal-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+    @media (max-width: 900px) { .journal-grid { grid-template-columns: 1fr; } }
+    .article {
+      display: block;
+      transition: transform .3s var(--ease);
+    }
+    .article:hover { transform: translateY(-3px); }
+    .article-img {
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: var(--platinum);
+      position: relative;
+    }
+    .article-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(.7) hue-rotate(195deg);
+      transition: transform .6s var(--ease);
+    }
+    .article:hover .article-img img { transform: scale(1.04); }
+    .article-meta {
+      display: flex; justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: .8rem;
+    }
+    .article-meta b { color: var(--gold-d); font-weight: 700; }
+    .article h3 {
+      font-family: var(--display);
+      font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -.005em;
+      margin: 0 0 .8rem;
+      color: var(--navy);
+    }
+    .article.lead h3 { font-size: clamp(1.6rem, 2.4vw, 2rem); }
+    .article h3 em { font-style: italic; color: var(--gold-d); }
+    .article p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--graphite-2);
+      margin: 0 0 1rem;
+    }
+    .article .read {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      font-weight: 700;
+    }
+
+    /* ════════════════════ CTA ════════════════════ */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 0;
+      background: var(--navy);
+      color: var(--platinum);
+      border-bottom: 1px solid rgba(232,233,235,.1);
+    }
+    .cta-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,169,97,.1), transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(42,95,158,.18), transparent 50%);
+    }
+    .cta-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr; } }
+    .cta-section .section-num { color: var(--gold-l); }
+    .cta-section h2 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.022em;
+      margin: 1.5rem 0 1.5rem;
+      color: var(--white);
+    }
+    .cta-section h2 em { font-style: italic; color: var(--gold-l); }
+    .cta-section .lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(232,233,235,.82);
+      max-width: 540px;
+      margin: 0 0 2.4rem;
+    }
+    .cta-section .lede em { color: var(--gold-l); font-family: var(--display); font-style: italic; }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .cta-side {
+      background: rgba(232,233,235,.04);
+      border: 1px solid rgba(232,233,235,.14);
+      padding: 2rem;
+    }
+    .cta-side h4 {
+      margin: 0 0 1.4rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      font-weight: 600;
+    }
+    .cta-side ul { list-style: none; margin: 0; padding: 0; }
+    .cta-side li {
+      padding: .85rem 0;
+      border-bottom: 1px solid rgba(232,233,235,.08);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.65);
+      display: flex; justify-content: space-between;
+    }
+    .cta-side li:last-child { border-bottom: none; }
+    .cta-side li b {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ════════════════════ FOOTER ════════════════════ */
+    .footer { background: var(--navy-d); color: var(--platinum); padding: 5rem 0 2rem; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(232,233,235,.12);
+    }
+    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    .footer-brand .name {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .footer-brand .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      margin: .4rem 0 1.2rem;
+    }
+    .footer-brand .blurb {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(232,233,235,.7);
+      max-width: 32ch;
+      margin: 0;
+    }
+    .footer-brand .blurb em { color: var(--gold-l); font-family: var(--display); font-style: italic; }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      margin: 0 0 1.2rem;
+      font-weight: 600;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { margin-bottom: .65rem; }
+    .footer-col a {
+      font-size: 13.5px;
+      color: rgba(232,233,235,.78);
+      transition: color .2s var(--ease);
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-col .addr {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: rgba(232,233,235,.78);
+    }
+    .footer-foot {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-foot, .footer-foot a {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(232,233,235,.5);
+    }
+    .governance-strip {
+      background: var(--navy);
+      color: rgba(232,233,235,.7);
+      padding: 1.4rem 0;
+      border-top: 1px solid rgba(232,233,235,.1);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .governance-strip-inner { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
+    .governance-strip b { color: var(--gold-l); font-weight: 600; }
+
+    /* ════════════════════ REVEAL ════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+      transition-delay: var(--d, 0ms);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ TOP BAR ═══ -->
+  <div class="top-bar">
+    <div class="container top-inner">
+      <div class="top-meta">
+        <span>Headquartered in <b>Dubai</b></span>
+        <span>Reach <b>UAE-wide</b></span>
+        <span>Backlog <b>AED 1.42 bn</b></span>
+        <span>FY25 — <b>Audited</b></span>
+      </div>
+      <div class="top-locales">
+        <a class="active" href="#">EN</a>
+        <a href="#">AR</a>
+        <a href="#">FR</a>
+        <a href="#">中文</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">
+          Al Madar MGM
+          <small>Construction · Est. 1979</small>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#journal">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Speak with a Principal</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════ HERO ═══ -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="hero-tag"><i></i> Trusted by sovereign &amp; multinational clients</span>
+        <h1 class="hero-headline">
+          A construction partner of <em>global standing.</em>
+        </h1>
+        <p class="hero-lede">
+          Forty-seven years delivering for sovereign clients, multinationals and Fortune-500 occupiers across the UAE — <em>from civil structure to specialist finishes.</em>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#capabilities">Our capabilities <span class="arr">→</span></a>
+          <a class="btn btn-ghost-light" href="#contact">Speak with a Principal <span class="arr">→</span></a>
+        </div>
+      </div>
+
+      <!-- World presence map -->
+      <aside class="hero-globe reveal" style="--d:120ms" aria-label="Global presence">
+        <svg class="globe-svg" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg">
+          <!-- grid -->
+          <g class="grid">
+            <line x1="0" y1="155" x2="800" y2="155"/>
+            <line x1="0" y1="310" x2="800" y2="310"/>
+            <line x1="0" y1="465" x2="800" y2="465"/>
+            <line x1="100" y1="0" x2="100" y2="620"/>
+            <line x1="266" y1="0" x2="266" y2="620"/>
+            <line x1="400" y1="0" x2="400" y2="620"/>
+            <line x1="533" y1="0" x2="533" y2="620"/>
+            <line x1="700" y1="0" x2="700" y2="620"/>
+          </g>
+
+          <!-- world dots / continents abstracted as dot grid -->
+          <g class="land">
+            <!-- North America -->
+            <ellipse cx="160" cy="240" rx="105" ry="80"/>
+            <!-- South America -->
+            <ellipse cx="240" cy="430" rx="55" ry="85"/>
+            <!-- Europe -->
+            <ellipse cx="420" cy="220" rx="55" ry="40"/>
+            <!-- Africa -->
+            <ellipse cx="450" cy="380" rx="68" ry="88"/>
+            <!-- Asia -->
+            <ellipse cx="580" cy="240" rx="120" ry="80"/>
+            <!-- Australia -->
+            <ellipse cx="660" cy="450" rx="55" ry="35"/>
+          </g>
+
+          <!-- network rings around UAE -->
+          <g transform="translate(490 305)">
+            <circle class="ring" r="40"/>
+            <circle class="ring" r="80"/>
+            <circle class="ring" r="140"/>
+            <circle class="ring" r="220"/>
+          </g>
+
+          <!-- markers — major presence -->
+          <!-- UAE (HQ) -->
+          <g transform="translate(490 305)">
+            <circle class="marker-pulse" r="6"/>
+            <circle class="marker-uae" r="6"/>
+          </g>
+
+          <!-- partner markers -->
+          <circle class="marker" cx="160" cy="220" r="3.5"/><!-- NYC -->
+          <circle class="marker" cx="200" cy="240" r="3.5"/><!-- Houston -->
+          <circle class="marker" cx="380" cy="200" r="3.5"/><!-- London -->
+          <circle class="marker" cx="420" cy="225" r="3.5"/><!-- Paris -->
+          <circle class="marker" cx="455" cy="240" r="3.5"/><!-- Cairo -->
+          <circle class="marker" cx="500" cy="270" r="3.5"/><!-- Riyadh -->
+          <circle class="marker" cx="528" cy="290" r="3.5"/><!-- Doha -->
+          <circle class="marker" cx="560" cy="270" r="3.5"/><!-- Mumbai -->
+          <circle class="marker" cx="590" cy="225" r="3.5"/><!-- Beijing -->
+          <circle class="marker" cx="640" cy="220" r="3.5"/><!-- Tokyo -->
+          <circle class="marker" cx="610" cy="290" r="3.5"/><!-- Singapore -->
+          <circle class="marker" cx="660" cy="445" r="3.5"/><!-- Sydney -->
+
+          <!-- arc lines from UAE to partner cities -->
+          <g stroke="rgba(201,169,97,.45)" stroke-width="0.7" fill="none">
+            <path d="M 490 305 Q 320 180 200 240"/>
+            <path d="M 490 305 Q 430 180 380 200"/>
+            <path d="M 490 305 Q 470 240 420 225"/>
+            <path d="M 490 305 Q 530 220 590 225"/>
+            <path d="M 490 305 Q 570 245 640 220"/>
+            <path d="M 490 305 Q 565 380 660 445"/>
+            <path d="M 490 305 Q 540 290 560 270"/>
+          </g>
+        </svg>
+
+        <div class="globe-meta">
+          <span>HQ — <b>Dubai · UAE</b></span>
+          <span>Partner reach — <b>34 cities</b></span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="hero-kpi">
+      <div class="container hero-kpi-grid">
+        <div class="hero-kpi-cell">
+          <div class="lbl">AED delivered</div>
+          <div class="val">14.6<em>bn</em></div>
+          <div class="desc">Cumulative contract value · 1979 — 2025</div>
+        </div>
+        <div class="hero-kpi-cell">
+          <div class="lbl">Cities served</div>
+          <div class="val">34</div>
+          <div class="desc">Through partner network &amp; JVs</div>
+        </div>
+        <div class="hero-kpi-cell">
+          <div class="lbl">Sectors served</div>
+          <div class="val">12</div>
+          <div class="desc">From hospitality to civic infrastructure</div>
+        </div>
+        <div class="hero-kpi-cell">
+          <div class="lbl">Active sites</div>
+          <div class="val">14</div>
+          <div class="desc">Across UAE, FY 2025</div>
+        </div>
+        <div class="hero-kpi-cell">
+          <div class="lbl">Headcount</div>
+          <div class="val">1,840</div>
+          <div class="desc">Permanent · including in-house atelier</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client marquee -->
+    <div class="client-strip">
+      <div class="container client-strip-inner">
+        <span class="micro">— Trusted by</span>
+        <div class="client-row">
+          <span>Emaar <em>Properties</em></span>
+          <span>Aldar</span>
+          <span>Mandarin <em>Oriental</em></span>
+          <span>Atlantis</span>
+          <span>Jumeirah <em>Group</em></span>
+          <span>MAF</span>
+          <span>Dubai <em>Holding</em></span>
+          <span>Meraas</span>
+          <span>DAMAC</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════ ABOUT ═══ -->
+  <section class="section section-light" id="about">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 01<b>About</b></div>
+        <div>
+          <h2>A construction house with the discipline of a contractor and the craftsmanship of an <em>atelier.</em></h2>
+          <p class="section-deck">Privately held, family-owned and conservatively financed. We have grown through cycles, kept clients for decades, and delivered the work that defined modern UAE.</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="about-lead">
+            A privately held UAE construction house. Forty-seven years building this country —
+            <em>from structure to surface.</em>
+          </p>
+          <div class="about-body">
+            <p>Al Madar MGM was established in 1979, predating modern Dubai's construction boom by a decade. Across nine in-house disciplines we deliver projects spanning civil works, fit-out, maintenance, specialist finishes, decorative arts, architectural concrete, decorative flooring, metal coatings and theming.</p>
+            <p>Most peers are either generalists or boutique finishers. We are both. Our anchor client relationships have averaged 18 years, and our oldest active maintenance contract dates to 1991. Senior project management has worked through at least one cycle of UAE construction; many through several.</p>
+            <p>We work with sovereign clients, multinationals and family offices. The board reviews every contract above AED 50 m. Our ICV score is 78%; our health-and-safety record is independently audited; our financial position is conservatively cash-positive.</p>
+          </div>
+        </div>
+
+        <aside class="creds-card reveal" style="--d:120ms">
+          <h4>At a glance · FY25</h4>
+          <dl>
+            <div><dt>Founded</dt><dd>1979 — Dubai</dd></div>
+            <div><dt>Ownership</dt><dd>Family · private</dd></div>
+            <div><dt>Disciplines</dt><dd>9 in-house</dd></div>
+            <div><dt>Active sites</dt><dd>14</dd></div>
+            <div><dt>Headcount</dt><dd>1,840</dd></div>
+            <div><dt>Backlog</dt><dd>AED 1.42 bn</dd></div>
+            <div><dt>Anchor relationships</dt><dd>18-year avg.</dd></div>
+            <div><dt>Auditor</dt><dd>Bureau Veritas</dd></div>
+            <div><dt>ICV score</dt><dd>78%</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ NUMBERS / GLOBAL FOOTPRINT ═══ -->
+  <section class="numbers-section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 02<b>Footprint</b></div>
+        <div>
+          <h2>Forty-seven years of <em>cumulative receipts.</em></h2>
+          <p class="section-deck">Numbers behind the brand — verified, audited, and reported annually to clients, lenders and the board.</p>
+        </div>
+      </div>
+
+      <div class="numbers-grid">
+        <div class="number-cell reveal">
+          <span class="micro">Years building</span>
+          <div class="figure">47</div>
+          <p class="name">Established 1979 — predating modern Dubai's construction boom by a decade.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:80ms">
+          <span class="micro">Projects delivered</span>
+          <div class="figure">1,247<span class="suffix">+</span></div>
+          <p class="name">From boutique hotels to palaces — civil, fit-out, decorative.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:160ms">
+          <span class="micro">Cumulative AED</span>
+          <div class="figure">14.6<span class="suffix">bn</span></div>
+          <p class="name">Total contract value across 47 years of trading.</p>
+        </div>
+        <div class="number-cell reveal" style="--d:240ms">
+          <span class="micro">Anchor relationships</span>
+          <div class="figure">18<span class="suffix">yrs</span></div>
+          <p class="name">Average tenure of our top-twenty clients.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FULL BLEED ═══ -->
+  <section class="full-bleed">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=85&auto=format&fit=crop" alt="Saadiyat Cultural District" loading="lazy" decoding="async" />
+    <div class="full-bleed-content">
+      <div class="fb-top">
+        <span>Project № <b>1.247</b> · In execution · 2024 — 2026</span>
+        <span>Client — <b>Cultural Authority of Abu Dhabi</b></span>
+      </div>
+      <div>
+        <h3>Saadiyat Cultural District —<br/><em>galleries &amp; concourse.</em></h3>
+        <ul class="fb-meta">
+          <li>Gross floor area<strong>18,400 m²</strong></li>
+          <li>Programme<strong>14 months · Q4 2026</strong></li>
+          <li>Contract value<strong>AED 312 m</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CAPABILITIES ═══ -->
+  <section class="section" id="capabilities">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 03<b>Capabilities</b></div>
+        <div>
+          <h2>Nine disciplines.<br/><em>One contractor.</em></h2>
+          <p class="section-deck">From civil structure to gilt — the full scope of our delivery, all in-house.</p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <a href="#" class="service-card reveal">
+          <div class="num">— 01</div>
+          <h3>Civil <em>construction</em></h3>
+          <p>Low and mid-rise structures, refurbishments, additions. RCC frames, ground works, MEP, completion.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:60ms">
+          <div class="num">— 02</div>
+          <h3>Fit-<em>out</em></h3>
+          <p>Commercial, hospitality, retail, residential. End-to-end interior delivery.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:120ms">
+          <div class="num">— 03</div>
+          <h3><em>Maintenance</em></h3>
+          <p>Annual maintenance contracts, facilities, planned upkeep. Many clients have stayed twenty years.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:180ms">
+          <div class="num">— 04</div>
+          <h3>Specialist <em>finishes</em></h3>
+          <p>Venetian plaster, micro-cement, tadelakt, marmorino. Hand-applied, hand-burnished.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:240ms">
+          <div class="num">— 05</div>
+          <h3>Decorative <em>arts</em></h3>
+          <p>Murals, gilding, hand-painted ornament. 22-carat gold leaf, palladium.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:300ms">
+          <div class="num">— 06</div>
+          <h3>Architectural <em>concrete</em></h3>
+          <p>Polished, board-formed, exposed-aggregate. Cast-in-place finishes.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:360ms">
+          <div class="num">— 07</div>
+          <h3>Decorative <em>flooring</em></h3>
+          <p>Epoxy, terrazzo, resin, micro-screed.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:420ms">
+          <div class="num">— 08</div>
+          <h3>Metal <em>coatings</em></h3>
+          <p>Architectural metallics, patinas, brass &amp; copper finishes.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+        <a href="#" class="service-card reveal" style="--d:480ms">
+          <div class="num">— 09</div>
+          <h3><em>Theming</em></h3>
+          <p>Themed environments — sculpted GRC, faux finishes, set design crossed with permanent construction.</p>
+          <span class="arr">Capability brief</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PORTFOLIO ═══ -->
+  <section class="section section-light" id="portfolio">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 04<b>Portfolio</b></div>
+        <div>
+          <h2>Selected <em>engagements.</em></h2>
+          <p class="section-deck">Three representative projects — sovereign, multinational and private. The full portfolio is available under NDA on request.</p>
+        </div>
+      </div>
+
+      <div class="case-list">
+
+        <article class="case reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85&auto=format&fit=crop" alt="Saadiyat Cultural" loading="lazy" decoding="async" />
+            <span class="index">№ 1.247</span>
+            <span class="country">Abu Dhabi · UAE</span>
+          </div>
+          <div class="case-meta">
+            <span class="num">Sovereign · Cultural · Abu Dhabi</span>
+            <h3>Saadiyat Cultural District —<br/><em>galleries &amp; concourse.</em></h3>
+            <p class="body">A 14-month engagement combining architectural concrete finishes, hand-applied tadelakt to interior galleries, and bespoke metal-leaf detailing across <em>18,400 m²</em>. Direct engagement with the cultural authority and project management office of Abu Dhabi.</p>
+            <div class="specs">
+              <div>Year<strong>2024 — 2026</strong></div>
+              <div>Sector<strong>Cultural</strong></div>
+              <div>GFA<strong>18,400 m²</strong></div>
+              <div>Status<strong>In execution</strong></div>
+            </div>
+            <a href="#" class="case-link">Read engagement note →</a>
+          </div>
+        </article>
+
+        <article class="case flip reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&q=85&auto=format&fit=crop" alt="Atlantis themed" loading="lazy" decoding="async" />
+            <span class="index">№ 1.192</span>
+            <span class="country">Palm Jumeirah · UAE</span>
+          </div>
+          <div class="case-meta">
+            <span class="num">Multinational · Hospitality · Palm Jumeirah</span>
+            <h3>Atlantis The Royal —<br/><em>themed environments.</em></h3>
+            <p class="body">Sculpted GRC, faux finishes and theming details across guest-facing volumes for Kerzner International. <em>Stage 02</em> — themed underwater concourse and public realm. Delivered on programme, on budget, on quality.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Hospitality</strong></div>
+              <div>GFA<strong>9,600 m²</strong></div>
+              <div>Status<strong>Completed</strong></div>
+            </div>
+            <a href="#" class="case-link">Read engagement note →</a>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-img">
+            <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=1200&q=85&auto=format&fit=crop" alt="Habtoor palace" loading="lazy" decoding="async" />
+            <span class="index">№ 1.166</span>
+            <span class="country">Dubai · UAE</span>
+          </div>
+          <div class="case-meta">
+            <span class="num">Family office · Residential · Dubai</span>
+            <h3>Al Habtoor Palace —<br/><em>gilding restoration.</em></h3>
+            <p class="body">Restoration of historic gold-leaf ornament and decorative paintwork across reception halls. <em>22-carat gold leaf</em>, palladium and hand-painted detailing — restored under NDA, with chain-of-custody on every gram of precious material.</p>
+            <div class="specs">
+              <div>Year<strong>2023</strong></div>
+              <div>Sector<strong>Residential</strong></div>
+              <div>GFA<strong>4,200 m²</strong></div>
+              <div>Status<strong>Completed</strong></div>
+            </div>
+            <a href="#" class="case-link">Read engagement note →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ SECTORS ═══ -->
+  <section class="section" id="sectors">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 05<b>Sectors</b></div>
+        <div>
+          <h2>Six sectors. <em>One standard of care.</em></h2>
+          <p class="section-deck">From hospitality to civic infrastructure — every mandate carries the same audit trail and the same sign-off discipline.</p>
+        </div>
+      </div>
+
+      <ul class="sectors-list">
+        <li><a class="sector-row" href="#">
+          <span class="num">— 01</span>
+          <span class="name"><em>Hospitality</em> &amp; F&amp;B</span>
+          <span class="clients">Atlantis · Mandarin Oriental · Emaar Hospitality · Jumeirah</span>
+          <span class="stat"><span class="lbl">Revenue</span>32%</span>
+          <span class="arr">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">— 02</span>
+          <span class="name">Retail &amp; <em>malls</em></span>
+          <span class="clients">Mall of the Emirates · Dubai Mall · MAF · Aldar</span>
+          <span class="stat"><span class="lbl">Revenue</span>14%</span>
+          <span class="arr">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">— 03</span>
+          <span class="name"><em>Residential</em></span>
+          <span class="clients">Emirates Hills · Palm Jumeirah · Saadiyat · private</span>
+          <span class="stat"><span class="lbl">Revenue</span>21%</span>
+          <span class="arr">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">— 04</span>
+          <span class="name">Commercial &amp; <em>offices</em></span>
+          <span class="clients">DIFC · ADGM · Trade Centre · Dubai South</span>
+          <span class="stat"><span class="lbl">Revenue</span>11%</span>
+          <span class="arr">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">— 05</span>
+          <span class="name">Cultural &amp; <em>heritage</em></span>
+          <span class="clients">Saadiyat · Sharjah Heritage · Etihad Museum partners</span>
+          <span class="stat"><span class="lbl">Revenue</span>14%</span>
+          <span class="arr">→</span>
+        </a></li>
+        <li><a class="sector-row" href="#">
+          <span class="num">— 06</span>
+          <span class="name">Government &amp; <em>civic</em></span>
+          <span class="clients">Dubai Municipality · Ministry of Culture · Sharjah authorities</span>
+          <span class="stat"><span class="lbl">Revenue</span>8%</span>
+          <span class="arr">→</span>
+        </a></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ PILLARS ═══ -->
+  <section class="section section-platinum">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 06<b>Pillars</b></div>
+        <div>
+          <h2>Four reasons<br/>to <em>build with us.</em></h2>
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar reveal">
+          <div class="num">01</div>
+          <h3>Heritage &amp; <em>trust.</em></h3>
+          <p>Established 1979. Forty-seven years of receipts in the UAE — palace projects, civic landmarks, hospitality. Our oldest active maintenance contract dates to <em>1991.</em></p>
+          <div class="stat">Founded<strong>1979</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:80ms">
+          <div class="num">02</div>
+          <h3>Range &amp; <em>capability.</em></h3>
+          <p>Civil to gilt under one roof. Most peers are either generalists or boutique finishers. <em>We are both.</em></p>
+          <div class="stat">Disciplines<strong>9 in-house</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:160ms">
+          <div class="num">03</div>
+          <h3>Governance &amp; <em>discipline.</em></h3>
+          <p>Independent audit, board oversight on every contract above AED 50 m, ISO-certified across quality, environment and H&amp;S. <em>The receipts compound.</em></p>
+          <div class="stat">Auditor<strong>Bureau Veritas</strong></div>
+        </article>
+        <article class="pillar reveal" style="--d:240ms">
+          <div class="num">04</div>
+          <h3>UAE-rooted, <br/><em>globally connected.</em></h3>
+          <p>Privately held, family-owned, single-country execution — supported by a partner network across 34 cities. ICV score <em>78%</em>.</p>
+          <div class="stat">Partner cities<strong>34 worldwide</strong></div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CREDENTIALS ═══ -->
+  <section class="section section-light" id="credentials">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 07<b>Credentials</b></div>
+        <div>
+          <h2>Clients &amp;<br/><em>certifications.</em></h2>
+          <p class="section-deck">A representative list of clients we are authorised to disclose, alongside our current certifications and audit status.</p>
+        </div>
+      </div>
+
+      <div class="credentials-grid">
+
+        <div class="reveal">
+          <span class="micro" style="display:block;margin-bottom:1.5rem">— Selected clients · 1979 — 2026</span>
+          <div class="clients-grid">
+            <div class="client-cell">Emaar <em>Properties</em></div>
+            <div class="client-cell">Aldar</div>
+            <div class="client-cell">Mandarin <em>Oriental</em></div>
+            <div class="client-cell">Atlantis</div>
+            <div class="client-cell">Jumeirah <em>Group</em></div>
+            <div class="client-cell">MAF</div>
+            <div class="client-cell">Dubai <em>Holding</em></div>
+            <div class="client-cell">Abu Dhabi <em>Mun.</em></div>
+            <div class="client-cell">Al Habtoor</div>
+            <div class="client-cell">Sharjah <em>Authority</em></div>
+            <div class="client-cell">Meraas</div>
+            <div class="client-cell">DAMAC</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:140ms">
+          <span class="micro" style="display:block;margin-bottom:1.5rem">— Certifications · current</span>
+          <ul class="certs-list">
+            <li class="cert-line">
+              <span class="cert-name">ISO 9001:2015 — <em>Quality Management.</em><small>Bureau Veritas · 9001-AE-04211</small></span>
+              <span class="valid">Valid 2027.09</span>
+            </li>
+            <li class="cert-line">
+              <span class="cert-name">ISO 45001:2018 — <em>Occupational H&amp;S.</em><small>Bureau Veritas · 45001-AE-00891</small></span>
+              <span class="valid">Valid 2027.04</span>
+            </li>
+            <li class="cert-line">
+              <span class="cert-name">ISO 14001:2015 — <em>Environmental.</em><small>Bureau Veritas · 14001-AE-01122</small></span>
+              <span class="valid">Valid 2026.11</span>
+            </li>
+            <li class="cert-line">
+              <span class="cert-name">Dubai Municipality — <em>Grade A.</em><small>Construction · Fit-out · Maintenance</small></span>
+              <span class="valid">Active</span>
+            </li>
+            <li class="cert-line">
+              <span class="cert-name">Estidama — <em>Pearl Builder.</em><small>Sustainability · 3-Pearl rated</small></span>
+              <span class="valid">Active</span>
+            </li>
+            <li class="cert-line">
+              <span class="cert-name">In-Country Value — <em>78%.</em><small>UAE national supplier ratio</small></span>
+              <span class="valid">2025 · Top tier</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ JOURNAL / INSIGHTS ═══ -->
+  <section class="section" id="journal">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-num">— Chapter 08<b>Insights</b></div>
+        <div>
+          <h2>Insights from the <em>studio.</em></h2>
+          <p class="section-deck">Knowledge, press and events from the practice — written for the people who specify, procure and operate the buildings we deliver.</p>
+        </div>
+      </div>
+
+      <div class="journal-grid">
+
+        <a class="article lead reveal" href="#">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1517490232338-06b912a786b5?w=1200&q=85&auto=format&fit=crop" alt="Saadiyat handover" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span><b>Lead · Press</b></span><span>22.03.2026</span></div>
+          <h3>Saadiyat galleries — <em>handover scheduled</em> for Q4 2026.</h3>
+          <p>Eighteen months on site, 38,400 m² of cast-in-place architectural concrete. Programme remains on schedule despite a challenging summer; the cultural authority confirmed the opening sequence at a board meeting on 22 March.</p>
+          <span class="read">Press release →</span>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:120ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1000&q=85&auto=format&fit=crop" alt="Decorative coatings" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Article · Knowledge</span><span>09.04.2026</span></div>
+          <h3>Choosing the right decorative coating for hospitality interiors in <em>UAE climates.</em></h3>
+          <p>How Venetian plaster, tadelakt and micro-cement behave under coastal humidity, AC cycling and direct sun.</p>
+          <span class="read">9 min read →</span>
+        </a>
+
+        <a class="article reveal" href="#" style="--d:240ms">
+          <div class="article-img">
+            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1000&q=85&auto=format&fit=crop" alt="Hotel show 2026" loading="lazy" decoding="async" />
+          </div>
+          <div class="article-meta"><span>Event</span><span>14.05.2026</span></div>
+          <h3>Al Madar at <em>The Hotel Show 2026</em> — Hall 4, Stand B-21.</h3>
+          <p>Live demonstrations of marmorino plaster, gold-leaf gilding and patinated metal coatings.</p>
+          <span class="read">Dubai World Trade Centre →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ CTA ═══ -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-grid">
+      <div class="reveal">
+        <span class="section-num">— Chapter 09<b style="color:#fff">Contact</b></span>
+        <h2>Have a project<br/><em>in mind?</em></h2>
+        <p class="lede">
+          Tell us the brief — sector, scope, programme. <em>One of the studio principals</em> replies within two working days. Drawings, RFPs, term sheets and budgets welcome.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-gold" href="#">Speak with a Principal <span class="arr">→</span></a>
+          <a class="btn btn-ghost-light" href="#">+971 4 282 1979</a>
+        </div>
+      </div>
+      <aside class="cta-side reveal" style="--d:140ms">
+        <h4>Direct lines</h4>
+        <ul>
+          <li>Tenders <b>tenders @</b></li>
+          <li>Studio principals <b>studio @</b></li>
+          <li>Press &amp; media <b>press @</b></li>
+          <li>Investor relations <b>ir @</b></li>
+          <li>Vendor portal <b>vendors @</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="name">Al Madar MGM</div>
+          <div class="tag">Construction L.L.C · Est. 1979</div>
+          <p class="blurb">A privately held UAE construction house. Civil works to specialist finishes — <em>from structure to surface.</em></p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Vision &amp; values</a></li>
+            <li><a href="#">HSE &amp; quality</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <ul>
+            <li><a href="#">Civil construction</a></li>
+            <li><a href="#">Fit-out</a></li>
+            <li><a href="#">Maintenance</a></li>
+            <li><a href="#">Specialist finishes</a></li>
+            <li><a href="#">Decorative arts</a></li>
+            <li><a href="#">Theming</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Governance</h4>
+          <ul>
+            <li><a href="#">Annual report</a></li>
+            <li><a href="#">Code of conduct</a></li>
+            <li><a href="#">Anti-bribery policy</a></li>
+            <li><a href="#">Modern slavery statement</a></li>
+            <li><a href="#">Whistleblowing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find us</h4>
+          <p class="addr">
+            Al Quoz Industrial 3<br/>
+            Dubai · United Arab Emirates<br/>
+            +971 4 282 1979<br/>
+            studio @ almadarmgm . ae
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="governance-strip">
+      <div class="container governance-strip-inner">
+        <span>© 1979 — 2026 Al Madar MGM Construction L.L.C</span>
+        <span>Code of Business Conduct · <b>v.7</b> · 09.05.2026</span>
+        <span>Audited · <b>Bureau Veritas</b></span>
+        <span><a href="#" style="color:inherit">Privacy</a> · <a href="#" style="color:inherit">Terms</a> · <a href="#" style="color:inherit">Imprint</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+
+</body>
+</html>
